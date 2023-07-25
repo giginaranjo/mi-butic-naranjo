@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+
+ /* header */
+
+
+/* BARRA PRINCIPAL ---------------------------------------------------------------------- */
+
+ .barra-principal{
+  background-color: #f55980;
+  display: flex;
+}
+
+.barra-principal h1 {
+  color: #ffffff;
+  font-size: 50px;
+  background-color: #f55980;
+}
+
+.barra-principal a i {
+  color: #910000;
+  display: block;
+  font-size: 32px;
+  margin: 20px;
+
+}
+
+
+/* MENÚ DE NAVEGACIÓN--------------------------------------------------------------------- */
+
+.menu-navegacion ul{
+  width: 100%;
+  height: 50px;
+  list-style: none;
+  display: flex;
+  background-color: #ffffff;
+}
+
+.menu-navegacion ul li a{
+  display: block;
+  text-decoration: none;
+  color: #f55980;
+  font-weight:600;
+  padding: 15px;
+}
+
+/* MAIN */
+
+/* slider --------------------------------------------------------------------------------- */
+
+.slider img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+
+/* BOTON --------------------------------------------------------------------------------- */
+
+.boton {
+  background-color: #f55980;
+  color: #ffffff;
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+}
+
+
+
+/* PRODUCTOS RECOMENDADOS Y MÁS VENDIDOS  -------------------------------------------------- */
+
+.seccion-productos {
+  display: flex;
+}
+
+.productos{
+  width: 400px;
+  height: 550px;
+  margin: 50px;
+  padding: 20px;
+  border:#f55980 solid 3px;
+}
+
+.productos img{
+  width: 350px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.productos i {
+  color: #910000;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.bajar i {
+  font-size: 25px;
+  color: #910000;
+  margin: 5px;
+}
+
+/* VER MÁS -------------------------------------------------------------------------------- */
+
+
+.seccion-ver-mas {
+  display: flex;
+}
+
+.ver-mas img{
+  width: 759px;
+  height: 600px;
+  object-fit: contain;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+  
+/* GALERÍA INSTAGRAM --------------------------------------------------------------------- */
+
+
+.galeria img{
+  width: 503px;
+  height: 600px;
+  object-fit: cover;
+  margin-top: 50px;
+}
+
+
+/* FOOTER */
+
+.pie-de-pagina {
+  background-color: #f55980;
+  width: 100%;
+  height: 350px;
+  color: #ffffff;
+  display: flex;
+  padding: 20px;
+}
+
+.info-compras{
+  margin-top: 80px;
+  margin-left: 80px;
+}
+.info-contacto{
+  margin: 80px;
+}
+
+.info-contacto i {
+  font-size: 32px;
+  margin-top: 20px;
+  margin-left: 40px ;
+  color: #910000;
+}
+
+.info-contacto a{ 
+  text-decoration: none;
+  color: #910000;
+  font-weight: 900;
+}
+
+.mapa iframe{
+  width: 380px;
+  height: 300px;
+}
+
+
+/* ------------------------------- inicio sesión y registro ---------------------------------------- */
+
+
+.main-registro {
+  background-color: #ffdbe0 ; 
+  display: flex;
+}
+
+.form {
+  width: 900px;
+  height: 500px;
+  margin: 30px;
+  padding: 20px;
+  border: #f55980 solid 3px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.form-sesion {
+  margin: 60px;
+
+}
+
+.form-registro {
+  margin-left: 30px;
+}
+
+.form input {
+  border: #910000 solid 1px;
+  width: 210px;
+  height: 25px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.titulo-form {
+  color: #910000;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.check {
+  font-size: 13px;
+}
+
+
+
+
+/* ----------------------------------------- contacto ---------------------------------------------- */
+
+
+
+.form-contact {
+  width: 1400px;
+  height: 500px;
+  margin: 30px;
+  padding: 20px;
+  border: #f55980 solid 3px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.contact {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.contact h2{
+  margin-bottom: 20px;
+}
+
+.contact h4 {
+  margin-top: 20px;
+}
+
+.contact input {
+  border: #910000 solid 1px;
+  border-radius: 10px;
+  height: 25px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.form-contact img {
+  width: 400px;
+  height: 400px; 
+  margin: 20px;
+}
+
+.mensaje textarea {
+  border: #910000 solid 1px;
+  border-radius: 10px;
+  height: 300px;
+  padding: 10px;
+  margin-top: 70px;
+}
+
+
+
