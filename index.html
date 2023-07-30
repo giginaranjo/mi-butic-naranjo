@@ -19,6 +19,15 @@
 
         <div class="barra-principal">
             <div class="vacio"></div>
+            <nav class="navegacion-mobile">
+                <i class="fa-solid fa-bars"></i>
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./paginas/productos.html">Productos</a></li>
+                    <li><a href="./paginas/lista-de-deseos.html">Lista de deseos</a></li>
+                    <li><a href="./paginas/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
             <img src="./multimedia/imagenes/loguito3.png" alt="logo-tienda">
 
             <a href="#volver-inicio">
@@ -50,28 +59,23 @@
 
         <!-- SLIDER -----------------------------------------------------------------------------------  -->
 
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="./multimedia/imagenes/novedades.png" class="d-block w-100" alt="moda-estilo">
+                <img src="./multimedia/imagenes/novedades.png" class="d-block w-100" alt="novedades">
               </div>
               <div class="carousel-item">
-                <img src="./multimedia/imagenes/modelo-morado.jpg" class="d-block w-100" alt="i-am">
+                <img src="./multimedia/imagenes/modelo-morado.jpg" class="d-block w-100" alt="modelo-morado">
               </div>
               <div class="carousel-item">
-                <img src="./multimedia/imagenes/moda-2000.png" class="d-block w-100" alt="modelo-rosa">
+                <img src="./multimedia/imagenes/moda-2000.png" class="d-block w-100" alt="moda-2000">
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
@@ -201,7 +205,7 @@
      
         
     <!-- ICONOS FLOTANTES (VOLVER AL INICIO Y WHATSAPP) -----------------------------------------------  -->
-        <section>
+        <!-- <section>
             <div class="flotantes">
                 <a href="#volver-inicio">
                     <i class="fa-solid fa-house"></i>
@@ -209,7 +213,7 @@
             <div class="flotantes ws">
                 <i class="fa-brands fa-whatsapp"></i>
             </div>
-        </section>
+        </section> -->
         
         
 

@@ -12,7 +12,7 @@
 
 /* BARRA PRINCIPAL ---------------------------------------------------------------------- */
 
- .barra-principal{
+.barra-principal{
   width: 100%;
   background-color: #ffddd1;
   display: flex;
@@ -20,42 +20,43 @@
   justify-content: space-between;
   padding: 5px;
  }
+ 
+.vacio{
+  width: 70px;
+}
 
- .barra-principal img{
+
+.navegacion-mobile{
+  display: none;
+}
+.barra-principal img{
   display: none;
   width: 70px;
   margin-left: 10px;
- }
-
-.vacio{
-width: 70px;
 }
+
 
 .barra-principal a{
   text-decoration: none;
- }
+}
 
 .titulo{
   font-family: 'Concert One', cursive;
   font-weight: normal;
   color: #910000;
-  font-size: 50px;
+  font-size: 64px;
   background-color: #ffddd1;
   text-align: center;
   text-decoration: none;
 }
-
-
 .titulo span{
   font-family: 'Concert One', cursive;
   font-weight: normal;
   color: #910000;
 }
-
 .titulo span:hover{
   color: #ff6060;
 }
-
 
 
 .acceso-iconos a i{
@@ -63,9 +64,75 @@ width: 70px;
   font-size: 32px;
   margin: 10px;
 }
-
 .acceso-iconos a i:hover{
   color: #ff6060;
+}
+
+@media(max-width:768px){
+
+  .titulo{
+   display: none;
+  }
+  .vacio{
+    display: none;
+  }
+
+  .barra-principal img{
+    display:flex;
+  }
+
+  .acceso-iconos a i{
+    font-size: 25px;
+  }
+
+  .navegacion-mobile .fa-bars{
+    display: flex;
+    font-size: 25px;
+    margin: 5px;
+    color: #910000;
+  }
+
+  .navegacion-mobile{
+    display: flex;
+    position: relative;
+    width: 100px;
+  }
+  
+  .navegacion-mobile ul{
+    text-decoration: none;
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    position: fixed;
+    top: 80px;
+    width: 200px;
+    z-index: 3;
+    background-color: #910000;
+    border-radius: 5px;
+  }
+  
+  .navegacion-mobile ul li a{
+    text-decoration: none;
+    color: #ff6060;
+    font-size: 16px;
+    padding: 15px;
+  }
+
+ 
+  .navegacion-mobile .fa-bars:hover{
+    display: block;
+  }
+
+  .navegacion-mobile .fa-bars:hover + ul{
+    display: block;
+  }
+
+
+  
+
+
 }
 
 /* MENÚ DE NAVEGACIÓN--------------------------------------------------------------------- */
@@ -85,6 +152,7 @@ width: 70px;
   display: block;
   text-decoration: none;
   color: #ff6060;
+  font-size: 20px;
   font-weight:600;
   padding: 15px;
 }
@@ -93,6 +161,11 @@ width: 70px;
   color: #910000;
 }
 
+@media(max-width:768px){
+  .menu-navegacion{
+    display: none;
+  }
+}
 
 /* MAIN */
 
@@ -100,10 +173,15 @@ width: 70px;
 
 .carousel-item img{
   width: 100%;
-  height: 600px;
+  height: 750px;
   object-fit: cover;
 }
 
+@media(max-width: 768px){
+  .carousel-item img{
+    height: auto;
+  }
+}
 
 
 /* BOTON --------------------------------------------------------------------------------- */
@@ -133,6 +211,8 @@ width: 70px;
 
 .seccion-productos {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .productos{
@@ -194,14 +274,23 @@ width: 70px;
 
 .seccion-ver-mas {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .ver-mas img{
-  width: 759px;
-  height: 600px;
-  object-fit: contain;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+@media(max-width:768px){
+  .ver-mas{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
 }
 
 
@@ -256,14 +345,14 @@ width: 70px;
 
 /* ICONOS FLOTANTES (VOLVER AL INICIO Y WHATSAPP) ----------------------------------------------- */
 
-.flotantes{
+/* .flotantes{
   position: fixed;
   bottom: 80px;
   right: 15px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,10 +367,15 @@ width: 70px;
   color: #910000;
   margin: 20px;
 }
+ 
+@media(max-width:768px){
+  .flotantes{
+    right: 30px;
+  }
+} */
 
 
-
-/* ------------------------------- inicio sesión y registro ---------------------------------------- */
+/* -------------------------------------------------------- INICIO SESIÓN Y REGISTRO ----------------------------------------------------- */
 
 
 .main-registro {
@@ -331,7 +425,7 @@ width: 70px;
 
 
 
-/* ----------------------------------------- contacto ---------------------------------------------- */
+/* --------------------------------------------------------------- CONTACTO -------------------------------------------------------------------- */
 
 
 
