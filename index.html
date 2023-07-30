@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./multimedia/imagenes/loguito.png">
-    <title>MI BUTIC</title>
+    <title>MI BÜTIC</title>
 </head>
 
 
@@ -17,8 +18,7 @@
         <!-- BARRA PRINCIPAL --------------------------------------------------------------------------  -->
 
         <div class="barra-principal">
-            <i class="fa-solid fa-bars"></i>
-            <img src="./multimedia/imagenes/loguito.png" alt="logo-tienda">
+            <img src="./multimedia/imagenes/loguito3.png" alt="logo-tienda">
             <h1>MIBÜTIC</h1>
             <div class="acceso-iconos">
                 <a href="./paginas/iniciar-sesion.html">
@@ -32,13 +32,8 @@
 
         <nav class="menu-navegacion">
             <ul>
-                <li class="acceso-responsive">
-                    <i class="fa-solid fa-user"></i>
-                    <a href="./paginas/iniciar-sesion.html"> Inicio de sesión</a>
-                </li>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./paginas/productos.html">Productos</a></li>
-                <li class="acceso-responsive"><a  href="./paginas/bolsa-de-compras.html">Bolsa de compras</a></li>
                 <li><a href="./paginas/lista-de-deseos.html">Lista de deseos</a></li>
                 <li><a href="./paginas/contacto.html">Contacto</a></li>
             </ul>
@@ -50,9 +45,32 @@
 
         <!-- SLIDER -----------------------------------------------------------------------------------  -->
 
-        <div class="slider">
-            <img src="./multimedia/imagenes/expresa-tu-personalidad.png" alt="Imagen 1">
-        </div>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./multimedia/imagenes/moda-estilo.jpg" class="d-block w-100" alt="moda-estilo">
+              </div>
+              <div class="carousel-item">
+                <img src="./multimedia/imagenes/i-am.jpg" class="d-block w-100" alt="i-am">
+              </div>
+              <div class="carousel-item">
+                <img src="./multimedia/imagenes/modelo-morado.jpg" class="d-block w-100" alt="modelo-rosa">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
 
         <!-- PRODUCTOS RECOMENDADOS -------------------------------------------------------------------  -->
@@ -60,24 +78,26 @@
         <section class="seccion-productos">
             <div class="productos">
                 <img src="./multimedia/imagenes/sweater-azul.jpg" alt="sweater-azul">
-                <h3>Sweater tonalidades azules</h3>
-                <h3>$ 1.000</h3>
+                <div class="deseos"><h4>¡Lo quiero!</h4></div>
+                <h4>Sweater tonalidades azules</h4>
+                <h5>$ 1.000</h4>
                 <button class="boton">Comprar</button>
-                <i class="fa-sharp fa-solid fa-heart"></i>
+                
+                <i class="fa-regular fa-heart"></i>
             </div>
 
             <div class="productos">
                 <img src="./multimedia/imagenes/sweater-verde.jpg" alt="sweater-verde">
-                <h3>Sweater con ondas verdes</h3>
-                <h3>$2.000</h3>
+                <h4>Sweater con ondas verdes</h4>
+                <h5>$2.000</h5>
                 <button class="boton">Comprar</button>
                 <i class="fa-regular fa-heart"></i>
             </div>
 
             <div class="productos">
                 <img src="./multimedia/imagenes/sweater-rosa.jpg" alt="sweater-de-corazones">
-                <h3>Sweater de corazones</h3>
-                <h3>$ 3.000</h3>
+                <h4>Sweater de corazones</h4>
+                <h5>$ 3.000</h5>
                 <button class="boton">Comprar</button>
                 <i class="fa-regular fa-heart"></i>
             </div>
@@ -104,24 +124,24 @@
         <section class="seccion-productos">
             <div class="productos">
                 <img src="./multimedia/imagenes/sweater-cuello-tortuga.jpg" alt="cuello-tortuga">
-                <h3>Sweater cuello tortuga</h3>
-                <h3>$ 4.000</h3>
+                <h4>Sweater cuello tortuga</h4>
+                <h5>$ 4.000</h5>
                 <button class="boton">Comprar</button>
                 <i class="fa-regular fa-heart"></i>
             </div>
 
             <div class="productos">
                 <img src="./multimedia/imagenes/conjunto-negro.jpg" alt="conjunto">
-                <h3>Conjunto negro</h3>
-                <h3>$5.000</h3>
+                <h4>Conjunto negro</h4>
+                <h5>$5.000</h5>
                 <button class="boton">Comprar</button>
                 <i class="fa-regular fa-heart"></i>
             </div>
 
             <div class="productos">
                 <img src="./multimedia/imagenes/sweater-colores.jpg" alt="set">
-                <h3>Pack de sweaters</h3>
-                <h3>$ 6.000</h3>
+                <h4>Pack de sweaters</h4>
+                <h5>$ 6.000</h5>
                 <button class="boton">Comprar</button>
                 <i class="fa-regular fa-heart"></i>
             </div>
@@ -166,6 +186,6 @@
         </section>
 
     </footer>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>    
 </body>
 </html>
