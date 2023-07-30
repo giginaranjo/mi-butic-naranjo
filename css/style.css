@@ -21,23 +21,42 @@
   padding: 5px;
  }
 
- .fa-bars {
-  display: none;
-}
-
  .barra-principal img{
+  display: none;
   width: 70px;
   margin-left: 10px;
  }
 
-.barra-principal h1{
+.vacio{
+width: 70px;
+}
+
+.barra-principal a{
+  text-decoration: none;
+ }
+
+.titulo{
   font-family: 'Concert One', cursive;
   font-weight: normal;
   color: #910000;
   font-size: 50px;
   background-color: #ffddd1;
   text-align: center;
+  text-decoration: none;
 }
+
+
+.titulo span{
+  font-family: 'Concert One', cursive;
+  font-weight: normal;
+  color: #910000;
+}
+
+.titulo span:hover{
+  color: #ff6060;
+}
+
+
 
 .acceso-iconos a i{
   color: #910000;
