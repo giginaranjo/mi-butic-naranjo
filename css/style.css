@@ -71,7 +71,7 @@
 }
 
 .menu-navegacion ul li a:hover{
-  color: #910000
+  color: #910000;
 }
 
 
@@ -102,12 +102,15 @@
 }
 
 .boton:hover{
-  box-shadow: #f55980;
+  width: 102px;
+  height: 42px;
+  color: #fd3838;
+  background-color: #facebe;
 }
 
 
 
-/* PRODUCTOS RECOMENDADOS Y MÁS VENDIDOS  -------------------------------------------------- */
+/* PRODUCTOS RECOMENDADOS, MÁS VENDIDOS Y "BOTON" LISTA DE DESEOS -------------------------------------------------- */
 
 .seccion-productos {
   display: flex;
@@ -126,38 +129,46 @@
   border:#ff6060 solid 3px;
 }
 
-.productos img{
+
+.productos h4{
+  padding: 5px;
+  margin: 5px;
+}
+
+.deseos{
+  width: 350px;
+  height: 350px;
+  position: relative;
+} 
+
+.deseos img{
   width: 350px;
   height: 350px;
   object-fit: cover;
 }
 
-.productos i {
-  color: #910000;
-  font-size: 32px;
-  margin: 10px;
+.deseos button{
+  display: none;
+  width: 350px;
+  height: 50px;
+  color: #3a3a3a;
+  background-color: #a3a3a3d0;
   position: absolute;
-  right: 50px;
-  bottom: 20px;
+  top: 300px;
+  text-align: center;
+  border: none;
 }
 
-
-.productos h4{
-  padding: 7px;
+.deseos button:hover{
+  display: block;
+  transition: 0.5s;
 }
 
-
-
-
-
-
-
-
-.bajar i {
-  font-size: 25px;
-  color: #910000;
-  margin: 5px;
+.deseos img:hover + button{
+  display: block;
+  transition: 0.5s;
 }
+
 
 /* VER MÁS -------------------------------------------------------------------------------- */
 
@@ -209,7 +220,7 @@
 .info-contacto i {
   font-size: 32px;
   margin-top: 20px;
-  margin-left: 40px ;
+  margin-left: 40px;
   color: #910000;
 }
 
@@ -223,6 +234,32 @@
   width: 380px;
   height: 300px;
 }
+
+/* ICONOS FLOTANTES (VOLVER AL INICIO Y WHATSAPP) ----------------------------------------------- */
+
+.flotantes{
+  position: fixed;
+  bottom: 80px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ws{
+  bottom: 30px;
+}
+
+.flotantes i {
+  font-size: 25px;
+  color: #910000;
+  margin: 20px;
+}
+
 
 
 /* ------------------------------- inicio sesión y registro ---------------------------------------- */
