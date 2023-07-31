@@ -20,10 +20,6 @@
   justify-content: space-between;
   padding: 5px;
  }
- 
-.vacio{
-  width: 400px;
-}
 
 
 .navegacion-mobile{
@@ -32,7 +28,6 @@
 .barra-principal img{
   display: flex;
   width: 100px;
-  margin-left: 10px;
 }
 
 
@@ -75,14 +70,11 @@
   .titulo{
    display: none;
   }
-  .vacio{
-    display: none;
-  }
-
 
   .barra-principal img{
-    display:flex;
+    margin-left: 50px;
   }
+
 
   .acceso-iconos a i{
     font-size: 25px;
@@ -109,24 +101,23 @@
     gap: 10px;
     padding: 10px;
     position: fixed;
-    top: 115px;
+    top: 50px;
     width: 200px;
     z-index: 3;
-    background-color: #910000;
+    background-color: #910000d8;
     border-radius: 5px;
   }
   
   .navegacion-mobile ul li a{
     text-decoration: none;
-    color: #ff6060;
+    color: #ffddd1;
     font-size: 16px;
     padding: 15px;
   }
 
- 
-  .navegacion-mobile .fa-bars:hover{
+  .navegacion-mobile ul:hover{
     display: block;
-    transition: 0.5;
+    transition: 0,5;
   }
 
   .navegacion-mobile .fa-bars:hover + ul{
@@ -311,33 +302,15 @@
 
 .ig-desktop img{
   object-fit: contain;
-  
 }
   
-
-.ig-mobile {
-  display: none;
-  width: 500px;
-}
-
-.ig-mobile img{
-  object-fit: cover;
-  padding: 20px;
-  height: 600px;
-}
 
 @media(max-width:768px){
-  .ig-mobile{
-    display: block;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
+  .ig-desktop img{
+    object-fit: cover;
+    padding: 20px;
+    height: 600px;
   }
-
-  .ig-desktop{
-    display: none;
-  }
-  
 }
 
 
