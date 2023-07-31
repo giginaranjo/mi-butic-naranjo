@@ -211,7 +211,7 @@
   position: relative;
   align-items: center;
   justify-content: space-evenly;
-  width: 400px;
+  width: 28%;
   height: 550px;
   margin: 40px;
   padding: 20px;
@@ -224,18 +224,17 @@
 }
 
 .deseos{
-  width: 350px;
-  height: 350px;
+  width: 95%;
   position: relative;
 } 
 .deseos img{
-  width: 350px;
+  width: 100%;
   height: 350px;
   object-fit: cover;
 }
 .deseos button{
   display: none;
-  width: 350px;
+  width: 100%;
   height: 50px;
   color: #3a3a3a;
   background-color: #a3a3a3d0;
@@ -251,6 +250,12 @@
 .deseos img:hover + button{
   display: block;
   transition: 0.5s;
+}
+
+@media(max-width:768px){
+  .productos{
+    width: 90%;
+  }
 }
 
 
