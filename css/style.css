@@ -326,6 +326,7 @@
   color: #910000;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
   align-items: center;
   padding: 20px;
 }
@@ -333,13 +334,12 @@
 .info-compras{
   display: grid;
   justify-content: center;
-  padding: 30px;
+  align-items: center;
 }
 
 .info-contacto{
   display: grid;
   grid-template-rows: 2fr 1fr ;
-  padding: 30px;
   align-items: center;
   justify-content: center;
 }
@@ -347,6 +347,7 @@
 .redes{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .redes i{
@@ -365,7 +366,7 @@
 .mapa{
   display: flex;
   justify-content: center;
-  padding: 30px;
+  align-items: center;
 
 }
 
@@ -375,6 +376,7 @@
     grid-template-rows: 3fr;
     gap: 10px;
     justify-content: center;
+    align-items: center;
   }
 }
 
