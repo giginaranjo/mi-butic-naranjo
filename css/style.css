@@ -22,7 +22,7 @@
  }
  
 .vacio{
-  width: 70px;
+  width: 400px;
 }
 
 
@@ -30,8 +30,8 @@
   display: none;
 }
 .barra-principal img{
-  display: none;
-  width: 70px;
+  display: flex;
+  width: 100px;
   margin-left: 10px;
 }
 
@@ -41,6 +41,7 @@
 }
 
 .titulo{
+  display: flex;
   font-family: 'Concert One', cursive;
   font-weight: normal;
   color: #910000;
@@ -62,7 +63,8 @@
 .acceso-iconos a i{
   color: #910000;
   font-size: 32px;
-  margin: 10px;
+  padding: 10px;
+  margin-right: 15px;
 }
 .acceso-iconos a i:hover{
   color: #ff6060;
@@ -77,6 +79,7 @@
     display: none;
   }
 
+
   .barra-principal img{
     display:flex;
   }
@@ -88,7 +91,7 @@
   .navegacion-mobile .fa-bars{
     display: flex;
     font-size: 25px;
-    margin: 5px;
+    padding: 25px;
     color: #910000;
   }
 
@@ -106,7 +109,7 @@
     gap: 10px;
     padding: 10px;
     position: fixed;
-    top: 80px;
+    top: 115px;
     width: 200px;
     z-index: 3;
     background-color: #910000;
@@ -128,11 +131,6 @@
   .navegacion-mobile .fa-bars:hover + ul{
     display: block;
   }
-
-
-  
-
-
 }
 
 /* MENÚ DE NAVEGACIÓN--------------------------------------------------------------------- */
@@ -223,11 +221,10 @@
   justify-content: space-evenly;
   width: 400px;
   height: 550px;
-  margin: 50px;
+  margin: 40px;
   padding: 20px;
   border:#ff6060 solid 3px;
 }
-
 
 .productos h4{
   padding: 5px;
@@ -239,13 +236,11 @@
   height: 350px;
   position: relative;
 } 
-
 .deseos img{
   width: 350px;
   height: 350px;
   object-fit: cover;
 }
-
 .deseos button{
   display: none;
   width: 350px;
@@ -257,12 +252,10 @@
   text-align: center;
   border: none;
 }
-
 .deseos button:hover{
   display: block;
   transition: 0.5s;
 }
-
 .deseos img:hover + button{
   display: block;
   transition: 0.5s;
@@ -271,25 +264,27 @@
 
 /* VER MÁS -------------------------------------------------------------------------------- */
 
-
 .seccion-ver-mas {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .ver-mas img{
-  width: 50%;
+  width: 50vw;
   height: auto;
   object-fit: cover;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
+
 @media(max-width:768px){
-  .ver-mas{
-    width: 100%;
-    height: auto;
-    margin: 0px;
+  .seccion-ver-mas{
+    flex-direction: column;
+    padding: 20px;
+  }
+  .ver-mas img{
+    gap: 5px;
+    width: 100vw;
+    flex-direction: column;
+    
   }
 }
 
@@ -297,12 +292,46 @@
   
 /* GALERÍA INSTAGRAM --------------------------------------------------------------------- */
 
+.titulo-galeria{
+  margin: 15px;
+  margin-left: 10vw;
+}
 
-.galeria img{
-  width: 503px;
-  height: 600px;
+.ig-desktop{
+  background-color: #ffddd173;
+  margin-bottom: 60px;
+}
+
+
+.ig-desktop img{
+  object-fit: contain;
+  
+}
+  
+
+.ig-mobile {
+  display: none;
+  width: 500px;
+}
+
+.ig-mobile img{
   object-fit: cover;
-  margin-top: 50px;
+  padding: 20px;
+  height: 600px;
+}
+
+@media(max-width:768px){
+  .ig-mobile{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .ig-desktop{
+    display: none;
+  }
+  
 }
 
 
@@ -310,42 +339,65 @@
 
 .pie-de-pagina {
   background-color: #ffddd1;
-  width: 100%;
-  height: 350px;
+  width: 100vw;
   color: #910000;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   padding: 20px;
 }
 
 .info-compras{
-  margin-top: 80px;
-  margin-left: 80px;
-}
-.info-contacto{
-  margin: 80px;
+  display: grid;
+  justify-content: center;
+  padding: 30px;
 }
 
-.info-contacto i {
-  font-size: 32px;
-  margin-top: 20px;
-  margin-left: 40px;
-  color: #910000;
+.info-contacto{
+  display: grid;
+  grid-template-rows: 2fr 1fr ;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
 }
+
+.redes{
+  display: flex;
+  justify-content: center;
+}
+
+.redes i{
+  font-size: 32px;
+  color: #910000;
+  margin: 0px 10px;
+}
+
 
 .info-contacto a{ 
   text-decoration: none;
   color: #910000;
-  font-weight: 900;
+  font-weight: 1000;
 }
 
-.mapa iframe{
-  width: 380px;
-  height: 300px;
+.mapa{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+
+}
+
+@media(max-width:768px){
+  .pie-de-pagina{
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr;
+    gap: 10px;
+    justify-content: center;
+  }
 }
 
 /* ICONOS FLOTANTES (VOLVER AL INICIO Y WHATSAPP) ----------------------------------------------- */
 
-/* .flotantes{
+.flotantes{
   position: fixed;
   bottom: 80px;
   right: 15px;
@@ -372,7 +424,7 @@
   .flotantes{
     right: 30px;
   }
-} */
+}
 
 
 /* -------------------------------------------------------- INICIO SESIÓN Y REGISTRO ----------------------------------------------------- */
