@@ -1,0 +1,143 @@
+.barra-principal{
+    width: 100%;
+    background-color: #ffddd1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    img{
+        display: flex;
+        width: 100px;
+    }
+    a{
+        text-decoration: none;
+    }
+  
+    .navegacion-mobile{
+        display: none;
+    }
+  
+    .titulo{
+        display: flex;
+        font-family: 'Concert One', cursive;
+        font-weight: normal;
+        color: #910000;
+        font-size: 64px;
+        background-color: #ffddd1;
+        text-align: center;
+        text-decoration: none;
+        span{
+            font-family: 'Concert One', cursive;
+            font-weight: normal;
+            color: #910000;
+        }
+        span:hover{
+            color: #ff6060;
+        }
+    }
+  
+  
+    .acceso-iconos a i{
+        color: #910000;
+        font-size: 32px;
+        padding: 10px;
+        margin-right: 15px;
+        &:hover{
+            color: #ff6060;
+        }
+    }
+}
+
+  
+  @media(max-width:768px){
+  
+    .titulo{
+     display: none;
+    }
+  
+    .barra-principal img{
+      margin-left: 50px;
+    }
+  
+    .acceso-iconos a i{
+      font-size: 25px;
+    }
+  
+    .navegacion-mobile .fa-bars{
+      display: flex;
+      font-size: 25px;
+      padding: 25px;
+      color: #910000;
+    }
+  
+    .navegacion-mobile{
+      display: flex;
+      position: relative;
+      width: 100px;
+    }
+    
+    .navegacion-mobile ul{
+      text-decoration: none;
+      list-style: none;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      position: fixed;
+      top: 50px;
+      width: 200px;
+      z-index: 3;
+      background-color: #910000d8;
+      border-radius: 5px;
+    }
+    
+    .navegacion-mobile ul li a{
+      text-decoration: none;
+      color: #ffddd1;
+      font-size: 16px;
+      padding: 15px;
+    }
+  
+    .navegacion-mobile ul:hover{
+      display: block;
+      transition: 0,5;
+    }
+  
+    .navegacion-mobile .fa-bars:hover + ul{
+      display: block;
+      transition: 0,5;
+    }
+  }
+  
+  /*------ NAV DESKTOP --------------------------------------------------------------------- */
+  
+.menu-navegacion ul{
+    width: 100%;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px;
+    li a{
+        display: block;
+        text-decoration: none;
+        color: #ff6060;
+        font-size: 20px;
+        font-weight:600;
+        padding: 15px;
+        &:hover{
+            color: #910000;
+          }
+    }
+  
+}
+  
+
+  
+  @media(max-width:768px){
+    .menu-navegacion{
+      display: none;
+    }
+  }

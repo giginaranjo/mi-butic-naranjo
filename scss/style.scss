@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import "reset";
+@import "header";
+@import "carrousel";
+@import "boton";
+@import "ver-mas";
+@import "galeria";
+@import "footer";
+
+
+
+
+/* PRODUCTOS RECOMENDADOS, MÁS VENDIDOS Y "BOTON" LISTA DE DESEOS -------------------------------------------------- */
+
+.seccion-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.productos{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 28%;
+  height: 550px;
+  margin: 40px;
+  padding: 20px;
+  border:#ff6060 solid 3px;
+}
+
+.productos h4{
+  padding: 5px;
+  margin: 5px;
+}
+
+.deseos{
+  width: 95%;
+  position: relative;
+} 
+.deseos img{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+.deseos button{
+  display: none;
+  width: 100%;
+  height: 50px;
+  color: #3a3a3a;
+  background-color: #a3a3a3d0;
+  position: absolute;
+  top: 300px;
+  text-align: center;
+  border: none;
+}
+.deseos button:hover{
+  display: block;
+ 
+}
+.deseos img:hover + button{
+  display: block;
+  
+}
+
+@media(max-width:768px){
+  .productos{
+    width: 90%;
+  }
+}
+
+
+
+/* -------------------------------------------------------- INICIO SESIÓN Y REGISTRO ----------------------------------------------------- */
+
+
+.main-registro {
+  background-color: #ffdbe0 ; 
+  display: flex;
+}
+
+.form {
+  width: 900px;
+  height: 500px;
+  margin: 30px;
+  padding: 20px;
+  border: #ff6060 solid 3px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.form-sesion {
+  margin: 60px;
+
+}
+
+.form-registro {
+  margin-left: 30px;
+}
+
+.form input {
+  border: #910000 solid 1px;
+  width: 210px;
+  height: 25px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.titulo-form {
+  color: #910000;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.check {
+  font-size: 13px;
+}
+
+
+
+
+/* --------------------------------------------------------------- CONTACTO -------------------------------------------------------------------- */
+
+
+
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  background-color: #ffddd173;
+}
+
+.imagen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.imagen img {
+  width: 100%;
+  height: 400px; 
+  padding: 40px;
+  object-fit: cover;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px ;
+  padding: 40px;
+}
+
+.tema{
+  display: flex;
+  align-items: center;
+}
+.tema input{
+  margin: 25px 25px 25px 10px;
+}
+
+.datos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 15px;
+}
+
+.datos input {
+  background-color: #ff60604f;
+  border: none;
+  border-radius: 7px;
+  height: 25px;
+  padding: 15px;
+  margin-left: 15px;
+}
+
+.mensaje{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.mensaje textarea {
+  background-color: #ff60604f;
+  border: none;
+  border-radius: 7px;
+  height: 300px;
+}
+
+
+
+

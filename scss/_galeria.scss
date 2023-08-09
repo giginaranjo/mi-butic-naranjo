@@ -1,0 +1,19 @@
+.galeria{
+    .titulo-galeria{
+        margin: 15px;
+        margin-left: 10vw;
+    }
+
+    .ig-desktop{
+        background-color: #ffddd173;
+        margin-bottom: 60px;
+        img{
+        object-fit: contain;
+        @media(max-width:768px){
+            object-fit: cover;
+            padding: 20px;
+            height: 600px;
+            }
+        }  
+    } 
+}
