@@ -302,91 +302,177 @@
   bottom: 30px;
 }
 
-.form-contact {
+.contactanos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contactanos .form-contact {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: auto;
-  width: 100%;
-  margin-bottom: 50px;
-  border-radius: 15px;
   background-color: rgba(255, 221, 209, 0.4509803922);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  width: 90%;
 }
-
-.imagen {
+.contactanos .form-contact .imagen {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.imagen img {
+.contactanos .form-contact .imagen img {
   width: 100%;
   height: 400px;
   padding: 40px;
   object-fit: cover;
 }
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  gap: 20px;
-  padding: 40px;
-}
-
-.tema {
-  display: flex;
-  align-items: center;
-}
-
-.tema input {
-  margin: 25px 25px 25px 10px;
-}
-
-.datos {
+.contactanos .form-contact .datos-contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 15px;
+  gap: 20px;
+  padding: 40px;
 }
-
-.datos input {
-  background-color: rgba(255, 96, 96, 0.3098039216);
+.contactanos .form-contact .datos-contact .titulo-pages {
+  color: #ff6060;
+  padding: 20px;
+}
+.contactanos .form-contact .datos-contact p {
+  color: #910000;
+}
+.contactanos .form-contact .datos-contact .datos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  color: #910000;
+}
+.contactanos .form-contact .datos-contact .datos input {
+  background-color: #ffddd1;
   border: none;
   border-radius: 7px;
   height: 25px;
   padding: 15px;
   margin-left: 15px;
+  outline: none;
 }
-
-.mensaje {
+.contactanos .form-contact .mensaje {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
   justify-content: center;
-  padding: 20px;
-  margin: 20px;
+  padding: 40px;
+  color: #910000;
 }
-
-.mensaje h5 {
+.contactanos .form-contact .mensaje h5 {
   font-weight: 600;
   margin: 0px;
 }
-
-.mensaje textarea {
-  background-color: rgba(255, 96, 96, 0.3098039216);
+.contactanos .form-contact .mensaje textarea {
+  background-color: #ffddd1;
   border: none;
   border-radius: 7px;
   width: 300px;
-  height: 300px;
+  height: 200px;
+}
+.contactanos .form-contact .info-extra p {
+  color: #910000;
+}
+.contactanos .form-contact .info-extra a {
+  text-decoration: none;
+  color: #910000;
+  font-weight: 600;
 }
 
-.info-extra a {
+.iniciar-sesion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iniciar-sesion .form-inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 221, 209, 0.4509803922);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  width: 40%;
+}
+@media (max-width: 992px) {
+  .iniciar-sesion .form-inicio {
+    width: 80%;
+    margin-bottom: 0px;
+    margin: 20px;
+  }
+}
+.iniciar-sesion .form-inicio .titulo-pages {
+  color: #ff6060;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .iniciar-sesion .form-inicio .titulo-pages {
+    text-align: center;
+  }
+}
+.iniciar-sesion .form-inicio .form-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
+  color: #910000;
+}
+.iniciar-sesion .form-inicio .form-datos .datos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.iniciar-sesion .form-inicio .form-datos .datos input {
+  display: flex;
+  background-color: #ffddd1;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  height: 25px;
+  padding: 15px;
+  margin: 5px;
+}
+@media (max-width: 992px) {
+  .iniciar-sesion .form-inicio .form-datos .datos {
+    flex-direction: column;
+  }
+}
+.iniciar-sesion .form-inicio .check-recuerdame {
+  color: #910000;
+  margin-bottom: 30px;
+}
+.iniciar-sesion .form-inicio .check-recuerdame input {
+  margin: 10px;
+}
+.iniciar-sesion .form-inicio .olvido-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.iniciar-sesion .form-inicio .olvido-registro a {
   text-decoration: none;
-  color: #000;
+  color: #910000;
+}
+.iniciar-sesion .form-inicio .olvido-registro .bold {
+  font-weight: 600;
+  color: #ff6060;
 }
 
 /* PRODUCTOS RECOMENDADOS, MÁS VENDIDOS Y "BOTON" LISTA DE DESEOS -------------------------------------------------- */
@@ -449,49 +535,6 @@
   .productos {
     width: 90%;
   }
-}
-/* -------------------------------------------------------- INICIO SESIÓN Y REGISTRO ----------------------------------------------------- */
-.main-registro {
-  background-color: #ffdbe0;
-  display: flex;
-}
-
-.form {
-  width: 900px;
-  height: 500px;
-  margin: 30px;
-  padding: 20px;
-  border: #ff6060 solid 3px;
-  border-radius: 15px;
-  background-color: #ffffff;
-}
-
-.form-sesion {
-  margin: 60px;
-}
-
-.form-registro {
-  margin-left: 30px;
-}
-
-.form input {
-  border: #910000 solid 1px;
-  width: 210px;
-  height: 25px;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
-}
-
-.titulo-form {
-  color: #910000;
-  padding: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.check {
-  font-size: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */

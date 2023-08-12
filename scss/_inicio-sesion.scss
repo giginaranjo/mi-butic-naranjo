@@ -1,0 +1,80 @@
+.iniciar-sesion{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffddd173;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: 40%;
+    @media(max-width:992px){
+      width: 80%;
+      margin-bottom: 0px;
+      margin: 20px;
+    }
+    .titulo-pages{
+      color: $rosa;
+      padding: 20px;
+      @media(max-width:768px){
+        text-align: center;
+      }
+    }
+    .form-datos{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 20px;
+      color: $vino;
+      .datos{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        input {
+          display: flex;
+          background-color: $bg-color;
+          border: none;
+          outline: none;
+          border-radius: 7px;
+          height: 25px;
+          padding: 15px;
+          margin: 5px;
+        }
+        @media(max-width:992px){
+          flex-direction: column;
+        }
+      }      
+    }
+    .check-recuerdame{
+      color: $vino;
+      margin-bottom: 30px;
+      input{
+        margin: 10px;
+      }
+    }
+    .olvido-registro{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      a{
+        text-decoration: none;
+        color: $vino;
+      }
+      .bold{
+        font-weight: 600;
+        color: $rosa;
+      }
+    }
+  }
+}
+
+  

@@ -1,88 +1,89 @@
-.form-contact {
+.contactanos{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-contact {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: auto;
-    width: 100%;
-    margin-bottom: 50px;
-    border-radius: 15px;
     background-color: #ffddd173;
-  }
-  
-  .imagen{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  
-  .imagen img {
-    width: 100%;
-    height: 400px; 
-    padding: 40px;
-    object-fit: cover;
-  }
-  
-  .contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    gap: 20px ;
-    padding: 40px;
-  }
-  
-  .tema{
-    display: flex;
-    align-items: center;
-  }
-  .tema input{
-    margin: 25px 25px 25px 10px;
-  }
-  
-  .datos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 15px;
-  }
-  
-  .datos input {
-    background-color: #ff60604f;
-    border: none;
-    border-radius: 7px;
-    height: 25px;
-    padding: 15px;
-    margin-left: 15px;
-  }
-  
-  .mensaje{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
+    border-radius: 15px;
+    margin-bottom: 30px;
     padding: 20px;
-    margin: 20px;
-  }
-
-  .mensaje h5{
-    font-weight: 600;
-    margin: 0px;
-  }
-  
-  .mensaje textarea {
-    background-color: #ff60604f;
-    border: none;
-    border-radius: 7px;
-    width: 300px;
-    height: 300px;
-  }
-
-  .info-extra{
-    a{
-        text-decoration: none;
-        color: #000;
+    width: 90%;
+    .imagen{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 400px; 
+        padding: 40px;
+        object-fit: cover;
+      }
     }
-  }
+    .datos-contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 20px ;
+      padding: 40px;
+      .titulo-pages{
+        color: $rosa;
+        padding: 20px;
+      }
+      p{
+        color: $vino;
+      }
+      .datos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+        color: $vino;
+        input {
+          background-color: $bg-color;
+          border: none;
+          border-radius: 7px;
+          height: 25px;
+          padding: 15px;
+          margin-left: 15px;
+          outline: none;
+        }
+      }
+    }
+    .mensaje{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px;
+      color: $vino;
+      h5{
+        font-weight: 600;
+        margin: 0px;
+      }
+      textarea {
+        background-color: $bg-color;
+        border: none;
+        border-radius: 7px;
+        width: 300px;
+        height: 200px;
+      }
+    }
+    .info-extra{
+      p{
+        color: $vino
+      }
+      a{
+        text-decoration: none;
+        color: $vino;
+        font-weight: 600;
+      }
+    }  
+  } 
+}

@@ -9,6 +9,7 @@
 @import "galeria";
 @import "footer";
 @import "contacto";
+@import "inicio-sesion";
 
 
 
@@ -72,53 +73,3 @@
     width: 90%;
   }
 }
-
-
-
-/* -------------------------------------------------------- INICIO SESIÓN Y REGISTRO ----------------------------------------------------- */
-
-
-.main-registro {
-  background-color: #ffdbe0 ; 
-  display: flex;
-}
-
-.form {
-  width: 900px;
-  height: 500px;
-  margin: 30px;
-  padding: 20px;
-  border: #ff6060 solid 3px;
-  border-radius: 15px;
-  background-color: #ffffff;
-}
-
-.form-sesion {
-  margin: 60px;
-
-}
-
-.form-registro {
-  margin-left: 30px;
-}
-
-.form input {
-  border: #910000 solid 1px;
-  width: 210px;
-  height: 25px;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
-}
-
-.titulo-form {
-  color: #910000;
-  padding: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.check {
-  font-size: 13px;
-}
-
