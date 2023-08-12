@@ -1,0 +1,13 @@
+.compras{
+    height: 25vw;
+    display: flex;
+    justify-content: center;    
+    margin: 30px;
+    .detalle{
+        background-color: #ffddd173;
+        width: 90vw;
+        padding: 40px;
+        border-radius: 15px;
+        color: $vino;
+    }
+}

@@ -54,6 +54,28 @@
   color: #ff6060;
 }
 
+.menu-navegacion ul {
+  width: 100%;
+  height: 50px;
+  list-style: none;
+  display: flex;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0px;
+}
+.menu-navegacion ul li a {
+  display: block;
+  text-decoration: none;
+  color: #ff6060;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px;
+}
+.menu-navegacion ul li a:hover {
+  color: #910000;
+}
+
 @media (max-width: 768px) {
   .titulo {
     display: none;
@@ -103,31 +125,6 @@
     display: block;
     transition: 0, 5;
   }
-}
-/*------ NAV DESKTOP --------------------------------------------------------------------- */
-.menu-navegacion ul {
-  width: 100%;
-  height: 50px;
-  list-style: none;
-  display: flex;
-  background-color: #ffffff;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 0px;
-}
-.menu-navegacion ul li a {
-  display: block;
-  text-decoration: none;
-  color: #ff6060;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 15px;
-}
-.menu-navegacion ul li a:hover {
-  color: #910000;
-}
-
-@media (max-width: 768px) {
   .menu-navegacion {
     display: none;
   }
@@ -326,21 +323,25 @@
 }
 .contactanos .form-contact .imagen img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   padding: 40px;
   object-fit: cover;
 }
 .contactanos .form-contact .datos-contact {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: start;
-  gap: 20px;
+  gap: 30px;
   padding: 40px;
 }
+@media (max-width: 1200px) {
+  .contactanos .form-contact .datos-contact {
+    align-items: center;
+  }
+}
 .contactanos .form-contact .datos-contact .titulo-pages {
-  color: #ff6060;
-  padding: 20px;
+  @e;
 }
 .contactanos .form-contact .datos-contact p {
   color: #910000;
@@ -370,9 +371,18 @@
   padding: 40px;
   color: #910000;
 }
+@media (max-width: 1200px) {
+  .contactanos .form-contact .mensaje {
+    align-items: center;
+  }
+}
 .contactanos .form-contact .mensaje h5 {
   font-weight: 600;
   margin: 0px;
+}
+.contactanos .form-contact .mensaje .tema {
+  display: flex;
+  gap: 10px;
 }
 .contactanos .form-contact .mensaje textarea {
   background-color: #ffddd1;
@@ -381,8 +391,12 @@
   width: 300px;
   height: 200px;
 }
+.contactanos .form-contact .info-extra {
+  padding: 20px;
+}
 .contactanos .form-contact .info-extra p {
   color: #910000;
+  margin: 0px;
 }
 .contactanos .form-contact .info-extra a {
   text-decoration: none;
@@ -473,6 +487,20 @@
 .iniciar-sesion .form-inicio .olvido-registro .bold {
   font-weight: 600;
   color: #ff6060;
+}
+
+.compras {
+  height: 25vw;
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+.compras .detalle {
+  background-color: rgba(255, 221, 209, 0.4509803922);
+  width: 90vw;
+  padding: 40px;
+  border-radius: 15px;
+  color: #910000;
 }
 
 /* PRODUCTOS RECOMENDADOS, MÁS VENDIDOS Y "BOTON" LISTA DE DESEOS -------------------------------------------------- */

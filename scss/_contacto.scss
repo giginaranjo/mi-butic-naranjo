@@ -19,7 +19,7 @@
       align-items: center;
       img {
         width: 100%;
-        height: 400px; 
+        height: 500px; 
         padding: 40px;
         object-fit: cover;
       }
@@ -27,13 +27,15 @@
     .datos-contact {
       display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items: start;
-      gap: 20px ;
+      @media(max-width:1200px){
+        align-items: center;
+      }
+      gap: 30px ;
       padding: 40px;
       .titulo-pages{
-        color: $rosa;
-        padding: 20px;
+        @extend .titulo-pages;
       }
       p{
         color: $vino;
@@ -61,11 +63,18 @@
       flex-direction: column;
       gap: 20px;
       justify-content: center;
+      @media(max-width:1200px){
+        align-items: center;
+      }
       padding: 40px;
       color: $vino;
       h5{
         font-weight: 600;
         margin: 0px;
+      }
+      .tema{
+        display: flex;
+        gap: 10px;
       }
       textarea {
         background-color: $bg-color;
@@ -76,8 +85,10 @@
       }
     }
     .info-extra{
+      padding: 20px;
       p{
-        color: $vino
+        color: $vino;
+        margin: 0px;
       }
       a{
         text-decoration: none;
