@@ -213,9 +213,10 @@
   color: #910000;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
 }
 @media (max-width: 768px) {
   .pie-de-pagina {
@@ -226,16 +227,11 @@
     align-items: center;
   }
 }
-.pie-de-pagina .info-compras {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
 .pie-de-pagina .info-contacto {
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  padding: 20px;
 }
 .pie-de-pagina .info-contacto a {
   text-decoration: none;
@@ -244,16 +240,21 @@
 }
 .pie-de-pagina .redes {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15px;
 }
-.pie-de-pagina .redes i {
+.pie-de-pagina .redes a {
+  text-decoration: none;
+}
+.pie-de-pagina .redes a i {
   font-size: 32px;
   color: #910000;
   margin: 0px 10px;
   transition: 0.5s;
 }
-.pie-de-pagina .redes i:hover {
+.pie-de-pagina .redes a i:hover {
   background-color: #facebe;
   font-size: 40px;
   border-radius: 10px;
@@ -265,7 +266,7 @@
   align-items: center;
 }
 .pie-de-pagina .mapa iframe {
-  width: 400px;
+  width: 100%;
   height: 300px;
 }
 
@@ -381,6 +382,11 @@
   border-radius: 7px;
   width: 300px;
   height: 300px;
+}
+
+.info-extra a {
+  text-decoration: none;
+  color: #000;
 }
 
 /* PRODUCTOS RECOMENDADOS, MÁS VENDIDOS Y "BOTON" LISTA DE DESEOS -------------------------------------------------- */

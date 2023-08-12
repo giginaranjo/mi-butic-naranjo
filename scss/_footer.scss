@@ -1,49 +1,52 @@
 .pie-de-pagina {
-    background-color: #ffddd1;
+    background-color: $bg-color;
     width: 100%;
-    color: #910000;
+    color: $vino;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     @media(max-width:768px){
         grid-template-columns: 1fr;
         grid-template-rows: 3fr;
         gap: 10px;
         justify-content: center;
         align-items: center;
-      }
-    .info-compras{
-        display: grid;
-        justify-content: center;
-        align-items: center;
     }
+
     .info-contacto{
-        display: grid;
-        grid-template-rows: 2fr 1fr ;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        padding: 20px;
         a{ 
             text-decoration: none;
-            color: #910000;
+            color: $vino;
             font-weight: 1000;
         }
     }
+
     .redes{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        i{
-            font-size: 32px;
-            color: #910000;
-            margin: 0px 10px;
-            transition: 0.5s;
-            &:hover{
-                background-color: #facebe;
-                font-size: 40px;
-                border-radius: 10px;
-                padding: 5px;
+        gap: 15px;
+        a{
+            text-decoration: none;
+            i{
+                font-size: 32px;
+                color: $vino;
+                margin: 0px 10px;
+                transition: 0.5s;
+                &:hover{
+                    background-color: #facebe;
+                    font-size: 40px;
+                    border-radius: 10px;
+                    padding: 5px;
+                }
             }
         }
     }
@@ -52,8 +55,9 @@
         justify-content: center;
         align-items: center;
         iframe{
-            width: 400px;
+            width: 100%;
             height: 300px;
+    
         }
     }
 }
@@ -76,11 +80,11 @@
     }
     i {
         font-size: 32px;
-        color: #910000;
+        color: $vino;
         margin: 20px;
         &:hover{
             font-size: 35px;
-            color: #ff6060;
+            color: $rosa;
         }
     }
 }

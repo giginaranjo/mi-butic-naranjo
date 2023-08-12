@@ -1,6 +1,6 @@
 .barra-principal{
     width: 100%;
-    background-color: #ffddd1;
+    background-color: $bg-color;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,29 +21,29 @@
         display: flex;
         font-family: 'Concert One', cursive;
         font-weight: normal;
-        color: #910000;
+        color: $vino;
         font-size: 64px;
-        background-color: #ffddd1;
+        background-color: $bg-color;
         text-align: center;
         text-decoration: none;
         span{
             font-family: 'Concert One', cursive;
             font-weight: normal;
-            color: #910000;
+            color: $vino;
         }
         span:hover{
-            color: #ff6060;
+            color: $rosa;
         }
     }
   
   
     .acceso-iconos a i{
-        color: #910000;
+        color: $vino;
         font-size: 32px;
         padding: 10px;
         margin-right: 15px;
         &:hover{
-            color: #ff6060;
+            color: $rosa;
         }
     }
 }
@@ -67,7 +67,7 @@
       display: flex;
       font-size: 25px;
       padding: 25px;
-      color: #910000;
+      color: $vino;
     }
   
     .navegacion-mobile{
@@ -123,12 +123,12 @@
     li a{
         display: block;
         text-decoration: none;
-        color: #ff6060;
+        color: $rosa;
         font-size: 20px;
         font-weight:600;
         padding: 15px;
         &:hover{
-            color: #910000;
+            color: $vino;
           }
     }
   
