@@ -1,13 +1,16 @@
 .compras{
     height: 25vw;
-    display: flex;
-    justify-content: center;    
-    margin: 30px;
+    @include flex(center, center, row);
     .detalle{
-        background-color: #ffddd173;
-        width: 90vw;
-        padding: 40px;
-        border-radius: 15px;
-        color: $vino;
+        @extend .fondo;
+        width: 90%;
+        height: 90%;
+        h1{
+            @extend .titulo;
+        }
+        p{
+            padding: 20px;
+            color: $vino;
+        }
     }
 }

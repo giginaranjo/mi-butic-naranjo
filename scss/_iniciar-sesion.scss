@@ -1,26 +1,17 @@
 .iniciar-sesion{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, row);
   .form-inicio {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffddd173;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    padding: 20px;
     width: 40%;
+    @include flex(center, center, column);
+    @extend .fondo;
     @media(max-width:992px){
       width: 80%;
       margin-bottom: 0px;
       margin: 20px;
     }
     .titulo-pages{
-      color: $rosa;
-      padding: 20px;
+      @extend .titulo;
       @media(max-width:768px){
         text-align: center;
       }

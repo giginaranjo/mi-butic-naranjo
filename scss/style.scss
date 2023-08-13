@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import "variables";
-@import "extends";
 @import "reset";
+@import "mixin";
+@import "extend";
 @import "header";
 @import "carrousel";
 @import "boton";
@@ -11,7 +12,9 @@
 @import "footer";
 @import "contacto";
 @import "iniciar-sesion";
+@import "registrarse";
 @import "bolsa-de-compras";
+
 
 
 

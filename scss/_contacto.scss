@@ -1,22 +1,12 @@
 .contactanos{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, row);
   .form-contact {
-    display: flex;
+    @include flex(center, center, row);
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffddd173;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    padding: 20px;
+    @extend .fondo;
     width: 90%;
     .imagen{
-      display: flex;
-      justify-content: center;
-      align-items: center;
       img {
         width: 100%;
         height: 500px; 
@@ -25,26 +15,21 @@
       }
     }
     .datos-contact {
-      display: flex;
-      flex-direction: column;
+      @include flex(center, stretch, column);
       flex-wrap: wrap;
-      justify-content: center;
+      gap: 30px ;
+      padding: 40px;
       @media(max-width:1200px){
         align-items: center;
       }
-      gap: 30px ;
-      padding: 40px;
       .titulo-pages{
-        @extend .titulo-pages;
+        @extend .titulo;
       }
       p{
         color: $vino;
       }
       .datos{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: start;
+        @include flex(center, stretch, column);
         gap: 20px;
         color: $vino;
         input {
@@ -59,10 +44,8 @@
       }
     }
     .mensaje{
-      display: flex;
-      flex-direction: column;
+      @include flex(center, stretch, column);
       gap: 20px;
-      justify-content: center;
       @media(max-width:1200px){
         align-items: center;
       }
