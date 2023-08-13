@@ -1,11 +1,13 @@
+/* REGISTRARSE --------------------------------------------------- */
+
 .registrarse{
     width: 100%;
     @include flex (center, center, row);
     .form-registro{
-        @media (max-width){
-            margin:10px;
+        @media (max-width:768px){
+            margin:10px 0px;
         }
-        width: 70%;
+        width: 90%;
         @include flex (center, center, column);
         @extend .fondo;
         .titulo-pages{
@@ -15,11 +17,11 @@
         .datos-registro{
             @include flex (center, center, row);
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 50px;
             padding: 30px;
             color: $vino;
             input{
-                @include input (400px);
+                @include input (300px);
             }
             .datos-personales{
                 @include flex (center, end, column);

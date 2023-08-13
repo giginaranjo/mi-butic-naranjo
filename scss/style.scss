@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Varela+Round&display=swap');
 @import "variables";
 @import "reset";
 @import "mixin";
 @import "extend";
 @import "header";
 @import "carrousel";
+@import "productos";
 @import "ver-mas";
 @import "galeria";
 @import "footer";
@@ -13,67 +14,3 @@
 @import "iniciar-sesion";
 @import "registrarse";
 @import "bolsa-de-compras";
-
-
-
-
-/* PRODUCTOS RECOMENDADOS, MÁS VENDIDOS Y "BOTON" LISTA DE DESEOS -------------------------------------------------- */
-
-.seccion-productos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.productos{
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 28%;
-  height: 550px;
-  margin: 40px;
-  padding: 20px;
-  border:#ff6060 solid 3px;
-}
-
-.productos h4{
-  padding: 5px;
-  margin: 5px;
-}
-
-.deseos{
-  width: 95%;
-  position: relative;
-} 
-.deseos img{
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-.deseos button{
-  display: none;
-  width: 100%;
-  height: 50px;
-  color: #3a3a3a;
-  background-color: #a3a3a3d0;
-  position: absolute;
-  top: 300px;
-  text-align: center;
-  border: none;
-}
-.deseos button:hover{
-  display: block;
- 
-}
-.deseos img:hover + button{
-  display: block;
-  
-}
-
-@media(max-width:768px){
-  .productos{
-    width: 90%;
-  }
-}

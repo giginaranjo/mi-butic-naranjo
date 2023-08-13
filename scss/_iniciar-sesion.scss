@@ -1,8 +1,10 @@
+/* INICIAR SESIÓN ------------------------------------------------ */
+
 .iniciar-sesion{
   width: 100%;
   @include flex(center, center, row);
   .form-inicio {
-    width: 40%;
+    width: 50%;
     @include flex(center, center, column);
     @extend .fondo;
     @media(max-width:992px){
@@ -25,7 +27,7 @@
       .datos{
         @include flex (center, center, row);
         input {
-          @include input (300px)
+          @include input (250px);
         }
         @media(max-width:992px){
           flex-direction: column;

@@ -1,6 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Varela+Round&display=swap");
 * {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-.titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contact .datos-contact .titulo-pages {
+.titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contact .datos-contact .titulo-pages, .titulo-pages {
   color: #ff6060;
   font-size: 40px;
   padding: 20px;
@@ -30,33 +30,86 @@
   justify-content: space-between;
   padding: 5px;
 }
+.barra-principal .navegacion-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .barra-principal .navegacion-mobile {
+    display: flex;
+    position: relative;
+  }
+  .barra-principal .navegacion-mobile .fa-bars {
+    display: block;
+    font-size: 25px;
+    padding: 25px;
+    color: #910000;
+    transition: 0, 5;
+  }
+  .barra-principal .navegacion-mobile .fa-bars:hover + ul {
+    display: block;
+  }
+  .barra-principal .navegacion-mobile ul {
+    display: none;
+    text-decoration: none;
+    list-style: none;
+    padding: 20px;
+    position: fixed;
+    top: 80px;
+    width: 200px;
+    height: 320px;
+    z-index: 3;
+    background-color: rgba(145, 0, 0, 0.8470588235);
+    border-radius: 5px;
+  }
+  .barra-principal .navegacion-mobile ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: #ffddd1;
+    font-size: 16px;
+    padding: 15px;
+    transition: 0, 5;
+  }
+  .barra-principal .navegacion-mobile ul:hover {
+    display: block;
+  }
+}
 .barra-principal img {
   display: flex;
   width: 100px;
 }
+@media (max-width: 768px) {
+  .barra-principal img {
+    margin-left: 50px;
+  }
+}
 .barra-principal a {
   text-decoration: none;
 }
-.barra-principal .navegacion-mobile {
-  display: none;
-}
-.barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .registrarse .form-registro .titulo-pages, .registrarse .form-registro .barra-principal .titulo-pages, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages {
+.barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .registrarse .form-registro .titulo-pages, .registrarse .form-registro .barra-principal .titulo-pages, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages, .barra-principal .titulo-pages {
   display: flex;
-  font-family: "Concert One", cursive;
+  font-family: "Varela Round", sans-serif;
   font-weight: normal;
-  color: #910000;
+  color: #ff6060;
   font-size: 64px;
   background-color: #ffddd1;
   text-align: center;
   text-decoration: none;
 }
-.barra-principal .titulo span, .barra-principal .compras .detalle h1 span, .compras .detalle .barra-principal h1 span, .barra-principal .registrarse .form-registro .titulo-pages span, .registrarse .form-registro .barra-principal .titulo-pages span, .barra-principal .iniciar-sesion .form-inicio .titulo-pages span, .iniciar-sesion .form-inicio .barra-principal .titulo-pages span, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span {
-  font-family: "Concert One", cursive;
+.barra-principal .titulo span, .barra-principal .compras .detalle h1 span, .compras .detalle .barra-principal h1 span, .barra-principal .registrarse .form-registro .titulo-pages span, .registrarse .form-registro .barra-principal .titulo-pages span, .barra-principal .iniciar-sesion .form-inicio .titulo-pages span, .iniciar-sesion .form-inicio .barra-principal .titulo-pages span, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span, .barra-principal .titulo-pages span {
+  font-family: "Varela Round", sans-serif;
   font-weight: normal;
+  color: #ff6060;
+}
+.barra-principal .titulo span:hover, .barra-principal .compras .detalle h1 span:hover, .compras .detalle .barra-principal h1 span:hover, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span:hover, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span:hover, .barra-principal .titulo-pages span:hover {
   color: #910000;
 }
-.barra-principal .titulo span:hover, .barra-principal .compras .detalle h1 span:hover, .compras .detalle .barra-principal h1 span:hover, .barra-principal .registrarse .form-registro .titulo-pages span:hover, .registrarse .form-registro .barra-principal .titulo-pages span:hover, .barra-principal .iniciar-sesion .form-inicio .titulo-pages span:hover, .iniciar-sesion .form-inicio .barra-principal .titulo-pages span:hover, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span:hover, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span:hover {
-  color: #ff6060;
+@media (max-width: 768px) {
+  .barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .registrarse .form-registro .titulo-pages, .registrarse .form-registro .barra-principal .titulo-pages, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages, .barra-principal .titulo-pages {
+    display: none;
+  }
 }
 .barra-principal .acceso-iconos a i {
   color: #910000;
@@ -66,6 +119,11 @@
 }
 .barra-principal .acceso-iconos a i:hover {
   color: #ff6060;
+}
+@media (max-width: 768px) {
+  .barra-principal .acceso-iconos a i {
+    font-size: 25px;
+  }
 }
 
 .menu-navegacion ul {
@@ -78,71 +136,24 @@
   justify-content: space-evenly;
   margin: 0px;
 }
+@media (max-width: 768px) {
+  .menu-navegacion ul {
+    display: none;
+  }
+}
 .menu-navegacion ul li a {
   display: block;
   text-decoration: none;
-  color: #ff6060;
+  color: #910000;
   font-size: 20px;
   font-weight: 600;
   padding: 15px;
 }
 .menu-navegacion ul li a:hover {
-  color: #910000;
+  color: #ff6060;
 }
 
-@media (max-width: 768px) {
-  .titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contact .datos-contact .titulo-pages {
-    display: none;
-  }
-  .barra-principal img {
-    margin-left: 50px;
-  }
-  .acceso-iconos a i {
-    font-size: 25px;
-  }
-  .navegacion-mobile .fa-bars {
-    display: flex;
-    font-size: 25px;
-    padding: 25px;
-    color: #910000;
-  }
-  .navegacion-mobile {
-    display: flex;
-    position: relative;
-    width: 100px;
-  }
-  .navegacion-mobile ul {
-    text-decoration: none;
-    list-style: none;
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    position: fixed;
-    top: 50px;
-    width: 200px;
-    z-index: 3;
-    background-color: rgba(145, 0, 0, 0.8470588235);
-    border-radius: 5px;
-  }
-  .navegacion-mobile ul li a {
-    text-decoration: none;
-    color: #ffddd1;
-    font-size: 16px;
-    padding: 15px;
-  }
-  .navegacion-mobile ul:hover {
-    display: block;
-    transition: 0, 5;
-  }
-  .navegacion-mobile .fa-bars:hover + ul {
-    display: block;
-    transition: 0, 5;
-  }
-  .menu-navegacion {
-    display: none;
-  }
-}
+/* Carrousel ------------------------------------------------------------*/
 .carousel-item img {
   width: 100%;
   height: 750px;
@@ -154,6 +165,89 @@
   }
 }
 
+/* PÁGINA PRODUCTOS, sección productos y botón "lo quiero" -------------------------------------------------- */
+.titulo-pages {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.seccion-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.seccion-productos .productos {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 28%;
+  height: 650px;
+  margin: 40px;
+  padding: 20px;
+  border: #ff6060 solid 1px;
+}
+@media (max-width: 992px) {
+  .seccion-productos .productos {
+    width: 90%;
+  }
+}
+.seccion-productos .productos .boton-lo-quiero {
+  width: 95%;
+  position: relative;
+}
+.seccion-productos .productos .boton-lo-quiero img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+.seccion-productos .productos .boton-lo-quiero img:hover + button {
+  display: block;
+}
+.seccion-productos .productos .boton-lo-quiero button {
+  display: none;
+  width: 100%;
+  height: 50px;
+  color: #383838;
+  background-color: rgba(197, 197, 197, 0.8156862745);
+  position: absolute;
+  top: 400px;
+  text-align: center;
+  border: none;
+}
+.seccion-productos .productos .boton-lo-quiero button:hover {
+  display: block;
+}
+.seccion-productos .productos h4 {
+  padding: 5px;
+  margin: 5px;
+  color: #910000;
+}
+.seccion-productos .productos h5 {
+  color: #910000;
+}
+.seccion-productos .productos .boton {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+}
+.seccion-productos .productos .boton:hover {
+  width: 105px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
+}
+
+/* Ver más ------------------------------------------------------------- */
 .seccion-ver-mas {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -180,9 +274,11 @@
   }
 }
 
+/* Galería de instagram -----------------------------------------------------*/
 .galeria .titulo-galeria {
-  margin: 15px;
-  margin-left: 10vw;
+  font-size: 40px;
+  color: #910000;
+  padding: 40px;
 }
 .galeria .ig-desktop {
   background-color: rgba(255, 221, 209, 0.4509803922);
@@ -198,7 +294,16 @@
     height: 600px;
   }
 }
+.galeria .carousel-control-next-icon {
+  background-color: rgba(145, 0, 0, 0.8470588235);
+  border-radius: 10px;
+}
+.galeria .carousel-control-prev-icon {
+  background-color: rgba(145, 0, 0, 0.8470588235);
+  border-radius: 10px;
+}
 
+/* Pie de página ------------------------------------------------------ */
 .pie-de-pagina {
   background-color: #ffddd1;
   width: 100%;
@@ -294,6 +399,7 @@
   bottom: 30px;
 }
 
+/* PÁGINA CONTACTO --------------------------------------------------------- */
 .contactanos {
   width: 100%;
   display: flex;
@@ -410,6 +516,7 @@
   font-weight: 600;
 }
 
+/* INICIAR SESIÓN ------------------------------------------------ */
 .iniciar-sesion {
   width: 100%;
   display: flex;
@@ -418,7 +525,7 @@
   flex-direction: row;
 }
 .iniciar-sesion .form-inicio {
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -457,7 +564,7 @@
   height: 25px;
   padding: 15px;
   margin: 5px;
-  width: 300px;
+  width: 250px;
 }
 @media (max-width: 992px) {
   .iniciar-sesion .form-inicio .form-datos .datos {
@@ -506,6 +613,7 @@
   color: #ff6060;
 }
 
+/* REGISTRARSE --------------------------------------------------- */
 .registrarse {
   width: 100%;
   display: flex;
@@ -514,15 +622,15 @@
   flex-direction: row;
 }
 .registrarse .form-registro {
-  width: 70%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-@media (max-width) {
+@media (max-width: 768px) {
   .registrarse .form-registro {
-    margin: 10px;
+    margin: 10px 0px;
   }
 }
 .registrarse .form-registro .titulo-pages {
@@ -534,7 +642,7 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 50px;
   padding: 30px;
   color: #910000;
 }
@@ -546,7 +654,7 @@
   height: 25px;
   padding: 15px;
   margin: 5px;
-  width: 400px;
+  width: 300px;
 }
 .registrarse .form-registro .datos-registro .datos-personales {
   display: flex;
@@ -588,8 +696,9 @@
   background-color: #facebe;
 }
 
+/* Bolsa de compras ------------------------------------------------------- */
 .compras {
-  height: 25vw;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -602,68 +711,6 @@
 .compras .detalle p {
   padding: 20px;
   color: #910000;
-}
-
-/* PRODUCTOS RECOMENDADOS, MÁS VENDIDOS Y "BOTON" LISTA DE DESEOS -------------------------------------------------- */
-.seccion-productos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.productos {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 28%;
-  height: 550px;
-  margin: 40px;
-  padding: 20px;
-  border: #ff6060 solid 3px;
-}
-
-.productos h4 {
-  padding: 5px;
-  margin: 5px;
-}
-
-.deseos {
-  width: 95%;
-  position: relative;
-}
-
-.deseos img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-
-.deseos button {
-  display: none;
-  width: 100%;
-  height: 50px;
-  color: #3a3a3a;
-  background-color: rgba(163, 163, 163, 0.8156862745);
-  position: absolute;
-  top: 300px;
-  text-align: center;
-  border: none;
-}
-
-.deseos button:hover {
-  display: block;
-}
-
-.deseos img:hover + button {
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .productos {
-    width: 90%;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

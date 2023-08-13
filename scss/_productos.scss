@@ -1,0 +1,65 @@
+ /* PÁGINA PRODUCTOS, sección productos y botón "lo quiero" -------------------------------------------------- */
+
+.titulo-pages{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    @extend .titulo;
+} 
+.seccion-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .productos{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 28%;
+        height: 650px;
+        margin: 40px;
+        padding: 20px;
+        border:$rosa solid 1px;
+        @media(max-width:992px){
+            width: 90%;
+        }
+        .boton-lo-quiero{
+            width: 95%;
+            position: relative;
+            img{
+                width: 100%;
+                height: 450px;
+                object-fit: cover;
+                &:hover + button{
+                    display: block;
+                }
+            }
+            button{
+                display: none;
+                width: 100%;
+                height: 50px;
+                color: #383838;
+                background-color: #c5c5c5d0;
+                position: absolute;
+                top: 400px;
+                text-align: center;
+                border: none;
+                &:hover{
+                    display: block;
+                }
+            }
+        }
+        h4{
+            padding: 5px;
+            margin: 5px;
+            color: $vino;
+        } 
+        h5{
+            color: $vino;
+        }
+        .boton{
+            @include boton (100px, 105px);
+        }
+    }
+}

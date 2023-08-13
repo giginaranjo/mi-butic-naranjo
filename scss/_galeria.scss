@@ -1,7 +1,10 @@
+/* Galería de instagram -----------------------------------------------------*/
+
 .galeria{
     .titulo-galeria{
-        margin: 15px;
-        margin-left: 10vw;
+        font-size: 40px;
+        color: $vino;
+        padding: 40px;
     }
 
     .ig-desktop{
@@ -15,5 +18,16 @@
             height: 600px;
             }
         }  
-    } 
+    }
+
+    .carousel-control-next-icon{
+        background-color: #910000d8;
+        border-radius: 10px;
+    }
+
+    .carousel-control-prev-icon{
+        background-color: #910000d8;
+        border-radius: 10px;
+    }
+    
 }

@@ -1,5 +1,7 @@
+/* Bolsa de compras ------------------------------------------------------- */
+
 .compras{
-    height: 25vw;
+    height: 500px;
     @include flex(center, center, row);
     .detalle{
         @extend .fondo;
