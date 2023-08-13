@@ -4,3 +4,33 @@
     align-items: $align;
     flex-direction: $direction;
 }
+
+@mixin input ($width){
+    background-color: $bg-color;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    height: 25px;
+    padding: 15px;
+    margin: 5px;
+    width: $width;
+}
+
+@mixin boton ($width, $width-hover){
+    background-color: $bg-color;
+    color: $rosa;
+    font-weight: 600;
+    width: $width;
+    height: 40px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.5s;
+    &:hover{
+    width: $width-hover;
+    height: 45px;
+    color: #fd3838;
+    background-color: #facebe;
+  }
+}

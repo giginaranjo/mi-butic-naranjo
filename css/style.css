@@ -8,14 +8,14 @@
   box-sizing: border-box;
 }
 
-.titulo, .compras .detalle h1, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contact .datos-contact .titulo-pages {
+.titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contact .datos-contact .titulo-pages {
   color: #ff6060;
   font-size: 40px;
   padding: 20px;
   margin: 0px;
 }
 
-.fondo, .compras .detalle, .iniciar-sesion .form-inicio, .contactanos .form-contact {
+.fondo, .compras .detalle, .registrarse .form-registro, .iniciar-sesion .form-inicio, .contactanos .form-contact {
   background-color: rgba(255, 221, 209, 0.4509803922);
   border-radius: 15px;
   margin-bottom: 30px;
@@ -40,7 +40,7 @@
 .barra-principal .navegacion-mobile {
   display: none;
 }
-.barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages {
+.barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .registrarse .form-registro .titulo-pages, .registrarse .form-registro .barra-principal .titulo-pages, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages {
   display: flex;
   font-family: "Concert One", cursive;
   font-weight: normal;
@@ -50,12 +50,12 @@
   text-align: center;
   text-decoration: none;
 }
-.barra-principal .titulo span, .barra-principal .compras .detalle h1 span, .compras .detalle .barra-principal h1 span, .barra-principal .iniciar-sesion .form-inicio .titulo-pages span, .iniciar-sesion .form-inicio .barra-principal .titulo-pages span, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span {
+.barra-principal .titulo span, .barra-principal .compras .detalle h1 span, .compras .detalle .barra-principal h1 span, .barra-principal .registrarse .form-registro .titulo-pages span, .registrarse .form-registro .barra-principal .titulo-pages span, .barra-principal .iniciar-sesion .form-inicio .titulo-pages span, .iniciar-sesion .form-inicio .barra-principal .titulo-pages span, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span {
   font-family: "Concert One", cursive;
   font-weight: normal;
   color: #910000;
 }
-.barra-principal .titulo span:hover, .barra-principal .compras .detalle h1 span:hover, .compras .detalle .barra-principal h1 span:hover, .barra-principal .iniciar-sesion .form-inicio .titulo-pages span:hover, .iniciar-sesion .form-inicio .barra-principal .titulo-pages span:hover, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span:hover, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span:hover {
+.barra-principal .titulo span:hover, .barra-principal .compras .detalle h1 span:hover, .compras .detalle .barra-principal h1 span:hover, .barra-principal .registrarse .form-registro .titulo-pages span:hover, .registrarse .form-registro .barra-principal .titulo-pages span:hover, .barra-principal .iniciar-sesion .form-inicio .titulo-pages span:hover, .iniciar-sesion .form-inicio .barra-principal .titulo-pages span:hover, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span:hover, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span:hover {
   color: #ff6060;
 }
 .barra-principal .acceso-iconos a i {
@@ -91,7 +91,7 @@
 }
 
 @media (max-width: 768px) {
-  .titulo, .compras .detalle h1, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contact .datos-contact .titulo-pages {
+  .titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contact .datos-contact .titulo-pages {
     display: none;
   }
   .barra-principal img {
@@ -152,25 +152,6 @@
   .carousel-item img {
     height: auto;
   }
-}
-
-.boton {
-  background-color: #ffddd1;
-  color: #ff6060;
-  font-weight: 600;
-  width: 100px;
-  height: 40px;
-  margin: 10px;
-  padding: 5px;
-  border-radius: 15px;
-  border: none;
-  transition: 0.5s;
-}
-.boton:hover {
-  width: 105px;
-  height: 45px;
-  color: #fd3838;
-  background-color: #facebe;
 }
 
 .seccion-ver-mas {
@@ -321,12 +302,12 @@
   flex-direction: row;
 }
 .contactanos .form-contact {
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 90%;
 }
 .contactanos .form-contact .imagen img {
   width: 100%;
@@ -362,11 +343,12 @@
 .contactanos .form-contact .datos-contact .datos input {
   background-color: #ffddd1;
   border: none;
+  outline: none;
   border-radius: 7px;
   height: 25px;
   padding: 15px;
-  margin-left: 15px;
-  outline: none;
+  margin: 5px;
+  width: 400px;
 }
 .contactanos .form-contact .mensaje {
   display: flex;
@@ -396,6 +378,24 @@
   border-radius: 7px;
   width: 300px;
   height: 200px;
+}
+.contactanos .form-contact .mensaje .boton {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+}
+.contactanos .form-contact .mensaje .boton:hover {
+  width: 105px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
 }
 .contactanos .form-contact .info-extra {
   padding: 20px;
@@ -445,12 +445,11 @@
 }
 .iniciar-sesion .form-inicio .form-datos .datos {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 .iniciar-sesion .form-inicio .form-datos .datos input {
-  display: flex;
   background-color: #ffddd1;
   border: none;
   outline: none;
@@ -458,11 +457,30 @@
   height: 25px;
   padding: 15px;
   margin: 5px;
+  width: 300px;
 }
 @media (max-width: 992px) {
   .iniciar-sesion .form-inicio .form-datos .datos {
     flex-direction: column;
   }
+}
+.iniciar-sesion .form-inicio .boton {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+}
+.iniciar-sesion .form-inicio .boton:hover {
+  width: 105px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
 }
 .iniciar-sesion .form-inicio .check-recuerdame {
   color: #910000;
@@ -486,6 +504,88 @@
 .iniciar-sesion .form-inicio .olvido-registro .bold {
   font-weight: 600;
   color: #ff6060;
+}
+
+.registrarse {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.registrarse .form-registro {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width) {
+  .registrarse .form-registro {
+    margin: 10px;
+  }
+}
+.registrarse .form-registro .titulo-pages {
+  margin: 10px;
+}
+.registrarse .form-registro .datos-registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 30px;
+  color: #910000;
+}
+.registrarse .form-registro .datos-registro input {
+  background-color: #ffddd1;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  height: 25px;
+  padding: 15px;
+  margin: 5px;
+  width: 400px;
+}
+.registrarse .form-registro .datos-registro .datos-personales {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+}
+.registrarse .form-registro .datos-registro .datos-acceso {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+}
+.registrarse .form-registro .terminos-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+  color: #910000;
+}
+.registrarse .form-registro .boton {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+}
+.registrarse .form-registro .boton:hover {
+  width: 155px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
 }
 
 .compras {

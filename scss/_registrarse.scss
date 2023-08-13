@@ -1,0 +1,41 @@
+.registrarse{
+    width: 100%;
+    @include flex (center, center, row);
+    .form-registro{
+        @media (max-width){
+            margin:10px;
+        }
+        width: 70%;
+        @include flex (center, center, column);
+        @extend .fondo;
+        .titulo-pages{
+            @extend .titulo;
+            margin: 10px
+        }
+        .datos-registro{
+            @include flex (center, center, row);
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 30px;
+            color: $vino;
+            input{
+                @include input (400px);
+            }
+            .datos-personales{
+                @include flex (center, end, column);
+            }
+            .datos-acceso{
+                @include flex (center, end, column);
+            }
+        }
+        .terminos-info{
+            @include flex (center, center, column);
+            padding: 30px;
+            gap: 10px;
+            color: $vino;
+        }
+        .boton{
+            @include boton (150px, 155px);
+        }         
+    }
+}
