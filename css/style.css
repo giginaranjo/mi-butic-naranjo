@@ -421,6 +421,13 @@
   padding: 40px;
   object-fit: cover;
 }
+@media (max-width: 576px) {
+  .contactanos .form-contact .imagen img {
+    align-items: center;
+    height: 300px;
+    padding: 20px;
+  }
+}
 .contactanos .form-contact .datos-contact {
   display: flex;
   justify-content: center;
@@ -456,6 +463,12 @@
   margin: 5px;
   width: 400px;
 }
+@media (max-width: 576px) {
+  .contactanos .form-contact .datos-contact .datos input {
+    align-items: center;
+    width: 250px;
+  }
+}
 .contactanos .form-contact .mensaje {
   display: flex;
   justify-content: center;
@@ -478,12 +491,24 @@
   display: flex;
   gap: 10px;
 }
+@media (max-width: 576px) {
+  .contactanos .form-contact .mensaje .tema {
+    align-items: center;
+    flex-direction: column;
+  }
+}
 .contactanos .form-contact .mensaje textarea {
   background-color: #ffddd1;
   border: none;
   border-radius: 7px;
   width: 300px;
   height: 200px;
+}
+@media (max-width: 576px) {
+  .contactanos .form-contact .mensaje textarea {
+    align-items: center;
+    width: 250px;
+  }
 }
 .contactanos .form-contact .mensaje .boton {
   background-color: #ffddd1;
