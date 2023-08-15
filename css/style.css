@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 * {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
@@ -22,6 +22,17 @@
   padding: 20px;
 }
 
+@keyframes cambioColor {
+  0% {
+    color: #ff6060;
+  }
+  50% {
+    color: #910000;
+  }
+  100% {
+    color: #ff6060;
+  }
+}
 .barra-principal {
   width: 100%;
   background-color: #ffddd1;
@@ -90,7 +101,7 @@
 }
 .barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .registrarse .form-registro .titulo-pages, .registrarse .form-registro .barra-principal .titulo-pages, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages, .barra-principal .titulo-pages {
   display: flex;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Concert One", cursive;
   font-weight: normal;
   color: #ff6060;
   font-size: 64px;
@@ -98,13 +109,11 @@
   text-align: center;
   text-decoration: none;
 }
-.barra-principal .titulo span, .barra-principal .compras .detalle h1 span, .compras .detalle .barra-principal h1 span, .barra-principal .registrarse .form-registro .titulo-pages span, .registrarse .form-registro .barra-principal .titulo-pages span, .barra-principal .iniciar-sesion .form-inicio .titulo-pages span, .iniciar-sesion .form-inicio .barra-principal .titulo-pages span, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span, .barra-principal .titulo-pages span {
-  font-family: "Varela Round", sans-serif;
+.barra-principal .titulo .titulo-dos, .barra-principal .compras .detalle h1 .titulo-dos, .compras .detalle .barra-principal h1 .titulo-dos, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages .titulo-dos, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages .titulo-dos, .barra-principal .titulo-pages .titulo-dos {
+  font-family: "Concert One", cursive;
   font-weight: normal;
   color: #ff6060;
-}
-.barra-principal .titulo span:hover, .barra-principal .compras .detalle h1 span:hover, .compras .detalle .barra-principal h1 span:hover, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages span:hover, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages span:hover, .barra-principal .titulo-pages span:hover {
-  color: #910000;
+  animation: cambioColor 3s infinite;
 }
 @media (max-width: 768px) {
   .barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .registrarse .form-registro .titulo-pages, .registrarse .form-registro .barra-principal .titulo-pages, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages, .barra-principal .titulo-pages {
