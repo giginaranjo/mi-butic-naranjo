@@ -18,11 +18,14 @@
         justify-content: space-evenly;
         width: 28%;
         height: 650px;
-        margin: 40px;
-        padding: 20px;
+        margin: 30px;
+        padding: 15px;
         border:$rosa solid 1px;
         @media(max-width:992px){
             width: 90%;
+        }
+        @media(max-width:576px){
+            height: 450px;
         }
         .boton-lo-quiero{
             width: 95%;
@@ -33,6 +36,9 @@
                 object-fit: cover;
                 &:hover + button{
                     display: block;
+                }
+                @media(max-width:576px){
+                    height: 250px;
                 }
             }
             button{
@@ -48,15 +54,24 @@
                 &:hover{
                     display: block;
                 }
+                @media(max-width:576px){
+                    top: 200px;
+                }
             }
         }
         h4{
             padding: 5px;
             margin: 5px;
             color: $vino;
+            @media(max-width:576px){
+                font-size: 18px;
+            }
         } 
         h5{
             color: $vino;
+            @media(max-width:576px){
+                font-size: 16px;
+            }
         }
         .boton{
             @include boton (100px, 105px);

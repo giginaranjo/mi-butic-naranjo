@@ -60,9 +60,6 @@
   img{
     display: flex;
     width: 100px;
-    @media(max-width:768px){
-      margin-left: 50px;
-    }
   }
 
   a{
@@ -90,16 +87,21 @@
     }
   }
 
-  .acceso-iconos a i{
-    color: $vino;
-    font-size: 32px;
+  .acceso-iconos{
     padding: 10px;
-    margin-right: 15px;
-    &:hover{
-      color: $rosa;
-    }
-    @media(max-width:768px){
-      font-size: 25px;
+    a{
+      i{
+        color: $vino;
+        font-size: 32px;
+        padding: 10px;
+        &:hover{
+          color: $rosa;
+        }
+        @media(max-width:768px){
+          font-size: 25px;
+          padding: 5px;
+        }
+      }
     }
   }
 }
