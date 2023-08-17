@@ -68,11 +68,12 @@
   
 .flotantes{
     position: fixed;
-    bottom: 80px;
-    right: 15px;
-    width: 32px;
-    height: 32px;
+    bottom: 20px;
+    right: 20px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
+    background-color: #910000e6;
     z-index: 3;
     display: flex;
     align-items: center;
@@ -81,20 +82,15 @@
         right: 30px;
     }
     i {
-        font-size: 32px;
-        color: $vino;
-        margin: 20px;
+        font-size: 40px;
+        color: $bg-color;
         &:hover{
-            font-size: 35px;
-            color: $rosa;
+            font-size: 42px;
         }
     }
 }
   
-.ws{
-    bottom: 30px;
-}
-   
+
    
   
   

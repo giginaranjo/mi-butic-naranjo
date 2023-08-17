@@ -402,11 +402,12 @@
 /* ICONOS FLOTANTES (VOLVER AL INICIO Y WHATSAPP) ----------------------------------------------- */
 .flotantes {
   position: fixed;
-  bottom: 80px;
-  right: 15px;
-  width: 32px;
-  height: 32px;
+  bottom: 20px;
+  right: 20px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
+  background-color: rgba(145, 0, 0, 0.9019607843);
   z-index: 3;
   display: flex;
   align-items: center;
@@ -418,17 +419,11 @@
   }
 }
 .flotantes i {
-  font-size: 32px;
-  color: #910000;
-  margin: 20px;
+  font-size: 40px;
+  color: #ffddd1;
 }
 .flotantes i:hover {
-  font-size: 35px;
-  color: #ff6060;
-}
-
-.ws {
-  bottom: 30px;
+  font-size: 42px;
 }
 
 /* PÁGINA CONTACTO --------------------------------------------------------- */
