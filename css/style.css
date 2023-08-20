@@ -244,6 +244,7 @@
   }
 }
 .seccion-productos .productos h4 {
+  font-size: 22px;
   padding: 5px;
   margin: 5px;
   color: #910000;
@@ -254,6 +255,7 @@
   }
 }
 .seccion-productos .productos h5 {
+  font-size: 20px;
   color: #910000;
 }
 @media (max-width: 576px) {
