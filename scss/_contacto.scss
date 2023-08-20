@@ -3,15 +3,15 @@
 .contactanos{
   width: 100%;
   @include flex(center, center, row);
-  .form-contact {
-    width: 90%;
+  .form-contacto{
     @include flex(center, center, row);
-    flex-wrap: wrap;
     @extend .fondo;
+    width: 90%;
+    flex-wrap: wrap;
     .imagen{
       img {
         width: 100%;
-        height: 500px; 
+        height: 700px; 
         padding: 40px;
         object-fit: cover;
         @media(max-width:576px){
@@ -21,11 +21,12 @@
         }
       }
     }
-    .datos-contact {
+    .datos-contacto {
       @include flex(center, stretch, column);
       flex-wrap: wrap;
       gap: 30px ;
       padding: 40px;
+      color: $vino;
       @media(max-width:1200px){
         align-items: center;
       }
@@ -36,9 +37,8 @@
         color: $vino;
       }
       .datos{
-        @include flex(center, stretch, column);
+        @include flex(center, end, column);
         gap: 20px;
-        color: $vino;
         input {
           @include input (400px);
           @media(max-width:576px){
@@ -47,42 +47,42 @@
           }
         }
       }
-    }
-    .mensaje{
-      @include flex(center, stretch, column);
-      gap: 20px;
-      @media(max-width:1200px){
-        align-items: center;
-      }
-      padding: 40px;
-      color: $vino;
       h5{
+        @include flex(center, center, column);
         font-weight: 600;
         margin: 0px;
       }
       .tema{
-        display: flex;
+        @include flex(center, center, row);
+        flex-wrap: wrap;
         gap: 10px;
         @media(max-width:576px){
           align-items: center;
           flex-direction: column;
         }
       }
-      textarea {
-        background-color: $bg-color;
-        border: none;
-        border-radius: 7px;
-        width: 300px;
-        height: 200px;
-        @media(max-width:576px){
-          align-items: center;
-          width: 250px;
+      .mensaje{
+        @include flex(end, center, row);
+        gap: 20px;
+        flex-wrap: wrap;
+        textarea{
+          @include input (400px);
+          height: 200px;
+          @media(max-width:576px){
+            align-items: center;
+            width: 250px;
+          }
         }
       }
-      .boton{
-        @include boton (100px, 105px);
-      } 
+      .alineado-boton{
+        @include flex(end, center, row);
+        .boton{
+          @include boton (100px, 105px);
+        }
+      }
+       
     }
+    
     .info-extra{
       padding: 20px;
       p{

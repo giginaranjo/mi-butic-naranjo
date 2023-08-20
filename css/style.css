@@ -8,14 +8,14 @@
   box-sizing: border-box;
 }
 
-.titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contact .datos-contact .titulo-pages, .titulo-pages {
+.titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
   color: #ff6060;
   font-size: 40px;
   padding: 20px;
   margin: 0px;
 }
 
-.fondo, .compras .detalle, .registrarse .form-registro, .iniciar-sesion .form-inicio, .contactanos .form-contact {
+.fondo, .compras .detalle, .registrarse .form-registro, .iniciar-sesion .form-inicio, .contactanos .form-contacto {
   background-color: rgba(255, 221, 209, 0.4509803922);
   border-radius: 15px;
   margin-bottom: 30px;
@@ -37,8 +37,9 @@
   width: 100%;
   background-color: #ffddd1;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
   padding: 5px;
 }
 .barra-principal .navegacion-mobile {
@@ -94,7 +95,7 @@
 .barra-principal a {
   text-decoration: none;
 }
-.barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .registrarse .form-registro .titulo-pages, .registrarse .form-registro .barra-principal .titulo-pages, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages, .barra-principal .titulo-pages {
+.barra-principal .link-titulo .titulo, .barra-principal .link-titulo .compras .detalle h1, .compras .detalle .barra-principal .link-titulo h1, .barra-principal .link-titulo .contactanos .form-contacto .datos-contacto .titulo-pages, .contactanos .form-contacto .datos-contacto .barra-principal .link-titulo .titulo-pages, .barra-principal .link-titulo .titulo-pages {
   display: flex;
   font-family: "Concert One", cursive;
   font-weight: normal;
@@ -104,14 +105,14 @@
   text-align: center;
   text-decoration: none;
 }
-.barra-principal .titulo .titulo-dos, .barra-principal .compras .detalle h1 .titulo-dos, .compras .detalle .barra-principal h1 .titulo-dos, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages .titulo-dos, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages .titulo-dos, .barra-principal .titulo-pages .titulo-dos {
+.barra-principal .link-titulo .titulo .titulo-dos, .barra-principal .link-titulo .compras .detalle h1 .titulo-dos, .compras .detalle .barra-principal .link-titulo h1 .titulo-dos, .barra-principal .link-titulo .titulo-pages .titulo-dos {
   font-family: "Concert One", cursive;
   font-weight: normal;
   color: #ff6060;
   animation: cambioColor 3s infinite;
 }
 @media (max-width: 768px) {
-  .barra-principal .titulo, .barra-principal .compras .detalle h1, .compras .detalle .barra-principal h1, .barra-principal .registrarse .form-registro .titulo-pages, .registrarse .form-registro .barra-principal .titulo-pages, .barra-principal .iniciar-sesion .form-inicio .titulo-pages, .iniciar-sesion .form-inicio .barra-principal .titulo-pages, .barra-principal .contactanos .form-contact .datos-contact .titulo-pages, .contactanos .form-contact .datos-contact .barra-principal .titulo-pages, .barra-principal .titulo-pages {
+  .barra-principal .link-titulo {
     display: none;
   }
 }
@@ -434,28 +435,28 @@
   align-items: center;
   flex-direction: row;
 }
-.contactanos .form-contact {
-  width: 90%;
+.contactanos .form-contacto {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  width: 90%;
   flex-wrap: wrap;
 }
-.contactanos .form-contact .imagen img {
+.contactanos .form-contacto .imagen img {
   width: 100%;
-  height: 500px;
+  height: 700px;
   padding: 40px;
   object-fit: cover;
 }
 @media (max-width: 576px) {
-  .contactanos .form-contact .imagen img {
+  .contactanos .form-contacto .imagen img {
     align-items: center;
     height: 300px;
     padding: 20px;
   }
 }
-.contactanos .form-contact .datos-contact {
+.contactanos .form-contacto .datos-contacto {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -463,24 +464,24 @@
   flex-wrap: wrap;
   gap: 30px;
   padding: 40px;
+  color: #910000;
 }
 @media (max-width: 1200px) {
-  .contactanos .form-contact .datos-contact {
+  .contactanos .form-contacto .datos-contacto {
     align-items: center;
   }
 }
-.contactanos .form-contact .datos-contact p {
+.contactanos .form-contacto .datos-contacto p {
   color: #910000;
 }
-.contactanos .form-contact .datos-contact .datos {
+.contactanos .form-contacto .datos-contacto .datos {
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: end;
   flex-direction: column;
   gap: 20px;
-  color: #910000;
 }
-.contactanos .form-contact .datos-contact .datos input {
+.contactanos .form-contacto .datos-contacto .datos input {
   background-color: #ffddd1;
   border: none;
   outline: none;
@@ -491,53 +492,65 @@
   width: 400px;
 }
 @media (max-width: 576px) {
-  .contactanos .form-contact .datos-contact .datos input {
+  .contactanos .form-contacto .datos-contacto .datos input {
     align-items: center;
     width: 250px;
   }
 }
-.contactanos .form-contact .mensaje {
+.contactanos .form-contacto .datos-contacto h5 {
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   flex-direction: column;
-  gap: 20px;
-  padding: 40px;
-  color: #910000;
-}
-@media (max-width: 1200px) {
-  .contactanos .form-contact .mensaje {
-    align-items: center;
-  }
-}
-.contactanos .form-contact .mensaje h5 {
   font-weight: 600;
   margin: 0px;
 }
-.contactanos .form-contact .mensaje .tema {
+.contactanos .form-contacto .datos-contacto .tema {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
 }
 @media (max-width: 576px) {
-  .contactanos .form-contact .mensaje .tema {
+  .contactanos .form-contacto .datos-contacto .tema {
     align-items: center;
     flex-direction: column;
   }
 }
-.contactanos .form-contact .mensaje textarea {
+.contactanos .form-contacto .datos-contacto .mensaje {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.contactanos .form-contacto .datos-contacto .mensaje textarea {
   background-color: #ffddd1;
   border: none;
+  outline: none;
   border-radius: 7px;
-  width: 300px;
+  height: 25px;
+  padding: 15px;
+  margin: 5px;
+  width: 400px;
   height: 200px;
 }
 @media (max-width: 576px) {
-  .contactanos .form-contact .mensaje textarea {
+  .contactanos .form-contacto .datos-contacto .mensaje textarea {
     align-items: center;
     width: 250px;
   }
 }
-.contactanos .form-contact .mensaje .boton {
+.contactanos .form-contacto .datos-contacto .alineado-boton {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+}
+.contactanos .form-contacto .datos-contacto .alineado-boton .boton {
   background-color: #ffddd1;
   color: #ff6060;
   font-weight: 600;
@@ -549,20 +562,20 @@
   border: none;
   transition: 0.5s;
 }
-.contactanos .form-contact .mensaje .boton:hover {
+.contactanos .form-contacto .datos-contacto .alineado-boton .boton:hover {
   width: 105px;
   height: 45px;
   color: #fd3838;
   background-color: #facebe;
 }
-.contactanos .form-contact .info-extra {
+.contactanos .form-contacto .info-extra {
   padding: 20px;
 }
-.contactanos .form-contact .info-extra p {
+.contactanos .form-contacto .info-extra p {
   color: #910000;
   margin: 0px;
 }
-.contactanos .form-contact .info-extra a {
+.contactanos .form-contacto .info-extra a {
   text-decoration: none;
   color: #910000;
   font-weight: 600;

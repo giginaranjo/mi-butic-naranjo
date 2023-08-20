@@ -9,9 +9,7 @@
 .barra-principal{
   width: 100%;
   background-color: $bg-color;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex(space-between, center, row);
   padding: 5px;
 
   .navegacion-mobile{
@@ -65,21 +63,22 @@
   a{
     text-decoration: none;
   }
-  
-  .titulo{
-    display: flex;
-    font-family: 'Concert One', cursive;
-    font-weight: normal;
-    color: $rosa;
-    font-size: 64px;
-    background-color: $bg-color;
-    text-align: center;
-    text-decoration: none;
-    .titulo-dos{
+  .link-titulo{
+    .titulo{
+      display: flex;
       font-family: 'Concert One', cursive;
       font-weight: normal;
       color: $rosa;
-      animation: cambioColor 3s infinite;
+      font-size: 64px;
+      background-color: $bg-color;
+      text-align: center;
+      text-decoration: none;
+      .titulo-dos{
+        font-family: 'Concert One', cursive;
+        font-weight: normal;
+        color: $rosa;
+        animation: cambioColor 3s infinite;
+      }
     }
     
     @media(max-width:768px){
