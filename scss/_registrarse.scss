@@ -17,18 +17,29 @@
         .datos-registro{
             @include flex (center, center, row);
             flex-wrap: wrap;
-            gap: 50px;
+            gap: 100px;
             padding: 30px;
             color: $vino;
             input{
+                @include flex (center, stretch, row);
                 @include input (300px);
+                @media (max-width: 576px){
+                    @include input (250px);
+                }
             }
-            .datos-personales{
-                @include flex (center, end, column);
+            .tarjeta-datos-acceso{
+                @include flex (center, stretch, column);
+                gap: 20px;
+                .titulo-datos{
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                .datos-acceso{
+                    @include flex (center, end, column);
+                    gap: 20px;
+                }
             }
-            .datos-acceso{
-                @include flex (center, end, column);
-            }
+            
         }
         .terminos-info{
             @include flex (center, center, column);

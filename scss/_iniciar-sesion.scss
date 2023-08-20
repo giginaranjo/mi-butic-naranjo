@@ -4,11 +4,13 @@
   width: 100%;
   @include flex(center, center, row);
   .form-inicio {
-    width: 50%;
     @include flex(center, center, column);
     @extend .fondo;
+    width: 40%;
+    height: 600px;
     @media(max-width:992px){
-      width: 80%;
+      width: 90%;
+      height: auto;
       margin-bottom: 0px;
       margin: 20px;
     }
@@ -19,13 +21,12 @@
       }
     }
     .form-datos{
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      @include flex (center, center, column);
+      gap: 15px;
       margin: 20px;
       color: $vino;
       .datos{
-        @include flex (center, center, row);
+        @include flex (center, start, column);
         input {
           @include input (250px);
         }
@@ -47,11 +48,8 @@
       }
     }
     .olvido-registro{
-      display: flex;
-      flex-direction: column;
+      @include flex (center, center, column);
       gap: 10px;
-      justify-content: center;
-      align-items: center;
       padding: 20px;
       a{
         text-decoration: none;
