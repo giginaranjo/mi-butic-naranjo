@@ -363,7 +363,7 @@
   .pie-de-pagina {
     grid-template-columns: 1fr;
     grid-template-rows: 3fr;
-    gap: 10px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
   }
