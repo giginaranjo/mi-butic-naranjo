@@ -14,6 +14,11 @@
   padding: 20px;
   margin: 0px;
 }
+@media (max-width: 576px) {
+  .titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
+    font-size: 28px;
+  }
+}
 
 .fondo, .compras .detalle, .registrarse .form-registro, .iniciar-sesion .form-inicio, .contactanos .form-contacto {
   background-color: rgba(255, 221, 209, 0.4509803922);
@@ -90,7 +95,7 @@
 }
 .barra-principal img {
   display: flex;
-  width: 100px;
+  width: 70px;
 }
 .barra-principal a {
   text-decoration: none;
@@ -100,7 +105,7 @@
   font-family: "Concert One", cursive;
   font-weight: normal;
   color: #ff6060;
-  font-size: 64px;
+  font-size: 50px;
   background-color: #ffddd1;
   text-align: center;
   text-decoration: none;
@@ -164,12 +169,12 @@
 /* Carrousel ------------------------------------------------------------*/
 .carousel-item img {
   width: 100%;
-  height: 750px;
+  height: 600px;
   object-fit: cover;
 }
 @media (max-width: 768px) {
   .carousel-item img {
-    height: auto;
+    height: 250px;
   }
 }
 
@@ -177,7 +182,7 @@
 .titulo-pages {
   display: flex;
   justify-content: center;
-  margin: 10px;
+  margin-top: 10px;
 }
 
 .seccion-productos {
@@ -205,6 +210,7 @@
 @media (max-width: 576px) {
   .seccion-productos .productos {
     height: 450px;
+    margin: 20px;
   }
 }
 .seccion-productos .productos .boton-lo-quiero {
@@ -221,7 +227,7 @@
 }
 @media (max-width: 576px) {
   .seccion-productos .productos .boton-lo-quiero img {
-    height: 250px;
+    height: 270px;
   }
 }
 .seccion-productos .productos .boton-lo-quiero button {
@@ -240,7 +246,7 @@
 }
 @media (max-width: 576px) {
   .seccion-productos .productos .boton-lo-quiero button {
-    top: 200px;
+    top: 220px;
   }
 }
 .seccion-productos .productos h4 {
@@ -252,6 +258,8 @@
 @media (max-width: 576px) {
   .seccion-productos .productos h4 {
     font-size: 18px;
+    margin-bottom: 0px;
+    margin-top: 5px;
   }
 }
 .seccion-productos .productos h5 {
@@ -261,6 +269,7 @@
 @media (max-width: 576px) {
   .seccion-productos .productos h5 {
     font-size: 16px;
+    margin: 0px;
   }
 }
 .seccion-productos .productos .boton {
@@ -372,9 +381,10 @@
 }
 .pie-de-pagina .redes {
   display: flex;
-  flex-direction: column;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 15px;
 }
 .pie-de-pagina .redes a {
@@ -405,10 +415,10 @@
 /* ICONOS FLOTANTES (VOLVER AL INICIO Y WHATSAPP) ----------------------------------------------- */
 .flotantes {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 64px;
-  height: 64px;
+  bottom: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: rgba(145, 0, 0, 0.9019607843);
   z-index: 3;
@@ -418,15 +428,26 @@
 }
 @media (max-width: 768px) {
   .flotantes {
-    right: 30px;
+    width: 54px;
+    height: 54px;
+    bottom: 10px;
+    right: 10px;
   }
 }
 .flotantes i {
-  font-size: 40px;
+  font-size: 38px;
   color: #ffddd1;
 }
 .flotantes i:hover {
-  font-size: 42px;
+  font-size: 40px;
+}
+@media (max-width: 768px) {
+  .flotantes i {
+    font-size: 30px;
+  }
+  .flotantes i:hover {
+    font-size: 32px;
+  }
 }
 
 /* PÁGINA CONTACTO --------------------------------------------------------- */
@@ -465,7 +486,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 40px;
+  padding: 20px;
   color: #910000;
 }
 @media (max-width: 1200px) {
@@ -529,6 +550,11 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+@media (max-width: 576px) {
+  .contactanos .form-contacto .datos-contacto .mensaje {
+    justify-content: start;
+  }
+}
 .contactanos .form-contacto .datos-contacto .mensaje textarea {
   background-color: #ffddd1;
   border: none;
@@ -542,7 +568,6 @@
 }
 @media (max-width: 576px) {
   .contactanos .form-contacto .datos-contacto .mensaje textarea {
-    align-items: center;
     width: 250px;
   }
 }

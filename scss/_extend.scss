@@ -3,6 +3,9 @@
     font-size: 40px;
     padding: 20px;
     margin: 0px;
+    @media (max-width:576px){
+        font-size: 28px;
+    }
 }
 
 .fondo{
