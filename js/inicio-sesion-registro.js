@@ -1,7 +1,8 @@
 // Inicio sesión o registro para realizar la compra
 
 let opcionCuenta = (prompt("Para continuar con la compra, elige una opción: (Ingrese solo el número que corresponde a la opción deseada). \n 1. Iniciar Sesión \n 2. Crear una cuenta"));
-
+let nombreUsuario = "";
+let clave = "";
 switch (opcionCuenta.trim()) {
     case "1":
         let nombreUsuario = prompt("Ingrese su nombre de usuario o correo electrónico.");
@@ -16,7 +17,7 @@ switch (opcionCuenta.trim()) {
         alert("Has ingresado con éxito a tu cuenta.")
         break;
     case "2":
-        let correo = prompt("Ingrese su correo electrónico.");;
+        let correo = prompt("Ingrese su correo electrónico.");
         while (correo == "") {
             correo = prompt("El correo electrónico no es válido, intenta nuevamente.")
         }
