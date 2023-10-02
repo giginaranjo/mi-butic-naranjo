@@ -1,28 +1,24 @@
 
 # Project Title
 
-Primera pre-entrega.
+Segunda pre-entrega.
 Simulador interactivo de la tienda MIBUTIC.
-
-Este es un simulador interactivo desarrollado en JavaScript que utiliza funciones, condicionales, bucles y métodos de entrada y salida estándar para proporcionar una experiencia de compra ficticia. 
-
 
 ## Authors
 
 - Naranjo, Gilary
 
-
 ## Context
 
-Este es un simulador interactivo de la tienda MIBUTIC desarrollado en JavaScript que utiliza funciones, condicionales, bucles y métodos de entrada y salida estándar para proporcionar una experiencia de compra ficticia. 
+Este es un simulador interactivo desarrollado en JavaScript que utiliza funciones, condicionales, bucles, métodos de entrada y salida estándar, objetos, array y métodos de búsqueda y filtrado sobre el array para proporcionar una experiencia de compra ficticia.  
 
 ## Characteristics
 
 Inicio de sesión y registro
 
-Al ingresar a la página "Inicio de sesión", se le informa al usuario que, para continuar con la compra, debe ingresar a su cuenta o crear una en caso de que no tenga. 
+Al ingresar a la página "Inicio de sesión", se le informa al usuario que, para continuar con la compra, debe ingresar a su cuenta o crear una (en caso de que no tenga). 
 
-"Inicio de sesión" le solicitará su email o nombre de usuario y contraseña para ingresar a su cuenta; mientras que para "Registrarse" se le solicitará su email, un nuevo nombre de usuario y una nueva contraseña.
+"Inicio de sesión" le solicitará su email o nombre de usuario y contraseña para ingresar a su cuenta; mientras que para "Registrarse" se le solicitará su correo electrónico, un nuevo nombre de usuario y una nueva contraseña.
 
 
 Bolsa de compras
