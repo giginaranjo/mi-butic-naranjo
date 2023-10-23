@@ -8,14 +8,14 @@
   box-sizing: border-box;
 }
 
-.titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
+.titulo, .compras .detalle .titulo-pages, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
   color: #ff6060;
   font-size: 40px;
   padding: 20px;
   margin: 0px;
 }
 @media (max-width: 576px) {
-  .titulo, .compras .detalle h1, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
+  .titulo, .compras .detalle .titulo-pages, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
     font-size: 28px;
   }
 }
@@ -100,7 +100,7 @@
 .barra-principal a {
   text-decoration: none;
 }
-.barra-principal .link-titulo .titulo, .barra-principal .link-titulo .compras .detalle h1, .compras .detalle .barra-principal .link-titulo h1, .barra-principal .link-titulo .contactanos .form-contacto .datos-contacto .titulo-pages, .contactanos .form-contacto .datos-contacto .barra-principal .link-titulo .titulo-pages, .barra-principal .link-titulo .titulo-pages {
+.barra-principal .link-titulo .titulo, .barra-principal .link-titulo .contactanos .form-contacto .datos-contacto .titulo-pages, .contactanos .form-contacto .datos-contacto .barra-principal .link-titulo .titulo-pages, .barra-principal .link-titulo .titulo-pages {
   display: flex;
   font-family: "Concert One", cursive;
   font-weight: normal;
@@ -110,7 +110,7 @@
   text-align: center;
   text-decoration: none;
 }
-.barra-principal .link-titulo .titulo .titulo-dos, .barra-principal .link-titulo .compras .detalle h1 .titulo-dos, .compras .detalle .barra-principal .link-titulo h1 .titulo-dos, .barra-principal .link-titulo .titulo-pages .titulo-dos {
+.barra-principal .link-titulo .titulo .titulo-dos, .barra-principal .link-titulo .titulo-pages .titulo-dos {
   font-family: "Concert One", cursive;
   font-weight: normal;
   color: #ff6060;
@@ -825,40 +825,38 @@
   width: 90%;
   height: 90%;
 }
+.compras .detalle .titulo-pages {
+  margin-top: 20px;
+}
 .compras .detalle .no-seleccionado {
   display: none;
   padding: 20px;
   color: #910000;
 }
-.compras .carrito-productos .productos-agregados {
+.compras .detalle .carrito-productos .productos-agregados {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px;
   border-bottom: #910000 1px solid;
 }
-.compras .carrito-productos .productos-agregados small {
+.compras .detalle .carrito-productos .productos-agregados small {
   color: #ff6060;
 }
-.compras .carrito-productos .productos-agregados h4 {
+.compras .detalle .carrito-productos .productos-agregados h4 {
+  font-size: 20px;
   color: #910000;
 }
-.compras .carrito-productos .productos-agregados h5 {
-  color: #910000;
-}
-.compras .carrito-productos .productos-agregados .detalle-producto {
+.compras .detalle .carrito-productos .productos-agregados .detalle-producto {
   display: flex;
   align-items: center;
 }
-.compras .carrito-productos .productos-agregados .detalle-producto img {
+.compras .detalle .carrito-productos .productos-agregados .detalle-producto img {
   width: 150px;
   margin: 10px;
   padding: 15px;
 }
-.compras .carrito-productos .productos-agregados .detalle-producto h4 {
-  font-size: 20px;
-}
-.compras .carrito-productos .productos-agregados .eliminar-producto button {
+.compras .detalle .carrito-productos .productos-agregados .eliminar-producto button {
   background-color: #ffddd1;
   color: #ff6060;
   font-weight: 600;
@@ -870,17 +868,17 @@
   border: none;
   transition: 0.5s;
 }
-.compras .carrito-productos .productos-agregados .eliminar-producto button:hover {
+.compras .detalle .carrito-productos .productos-agregados .eliminar-producto button:hover {
   width: 55px;
   height: 45px;
   color: #fd3838;
   background-color: #facebe;
 }
-.compras .carrito-acciones {
+.compras .detalle .carrito-acciones {
   display: flex;
   justify-content: space-between;
 }
-.compras .carrito-acciones .accion-vaciar button {
+.compras .detalle .carrito-acciones .accion-vaciar button {
   background-color: #ffddd1;
   color: #ff6060;
   font-weight: 600;
@@ -895,33 +893,33 @@
   margin: 20px;
   background-color: #ffefe9;
 }
-.compras .carrito-acciones .accion-vaciar button:hover {
+.compras .detalle .carrito-acciones .accion-vaciar button:hover {
   width: 155px;
   height: 45px;
   color: #fd3838;
   background-color: #facebe;
 }
-.compras .carrito-acciones .accion-vaciar button:hover {
+.compras .detalle .carrito-acciones .accion-vaciar button:hover {
   background-color: rgba(158, 0, 0, 0.6980392157);
   color: white;
 }
-.compras .carrito-acciones .accion-comprar {
+.compras .detalle .carrito-acciones .accion-comprar {
   display: flex;
   gap: 20px;
   align-items: center;
   margin: 20px;
 }
-.compras .carrito-acciones .accion-comprar .total-compra {
+.compras .detalle .carrito-acciones .accion-comprar .total-compra {
   display: flex;
   gap: 15px;
   border-bottom: 1px solid #910000;
 }
-.compras .carrito-acciones .accion-comprar .total-compra p {
+.compras .detalle .carrito-acciones .accion-comprar .total-compra p {
   font-size: 24px;
   margin: 0px;
   color: #910000;
 }
-.compras .carrito-acciones .accion-comprar button {
+.compras .detalle .carrito-acciones .accion-comprar button {
   background-color: #ffddd1;
   color: #ff6060;
   font-weight: 600;
@@ -936,21 +934,20 @@
   margin: 20px;
   background-color: #ffefe9;
 }
-.compras .carrito-acciones .accion-comprar button:hover {
+.compras .detalle .carrito-acciones .accion-comprar button:hover {
   width: 155px;
   height: 45px;
   color: #fd3838;
   background-color: #facebe;
 }
-.compras .carrito-acciones .accion-comprar button:hover {
+.compras .detalle .carrito-acciones .accion-comprar button:hover {
   background-color: rgba(158, 0, 0, 0.6980392157);
   color: white;
 }
-
-.seguir-comprando {
+.compras .detalle .seguir-comprando {
   display: flex;
 }
-.seguir-comprando a {
+.compras .detalle .seguir-comprando a {
   text-decoration: none;
   background-color: #ffefe9;
   color: #ff6060;
@@ -959,9 +956,19 @@
   border-radius: 10px;
   transition: 0.5s;
 }
-.seguir-comprando a:hover {
+.compras .detalle .seguir-comprando a:hover {
   color: #fd3838;
   background-color: #ffddd1;
+}
+.compras .detalle .mensaje-final {
+  display: none;
+  flex-direction: column;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+.compras .detalle .mensaje-final .compra-realizada {
+  color: #910000;
+  font-size: 22px;
 }
 
 /*# sourceMappingURL=style.css.map */

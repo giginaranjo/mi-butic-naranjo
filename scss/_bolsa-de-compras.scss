@@ -8,124 +8,135 @@
         width: 90%;
         height: 90%;
 
-        h1 {
+        .titulo-pages {
             @extend .titulo;
+            margin-top: 20px;
         }
 
-        .no-seleccionado{
+        .no-seleccionado {
             display: none;
             padding: 20px;
             color: $vino;
         }
-    }
 
-    .carrito-productos {
-        .productos-agregados {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px;
-            border-bottom: $vino 1px solid;
-
-            small {
-                color: $rosa;
-            }
-
-            h4 {
-                color: $vino;
-            }
-
-            h5 {
-                color: $vino;
-            }
-
-            .detalle-producto {
+        .carrito-productos {
+            .productos-agregados {
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
+                margin: 20px;
+                border-bottom: $vino 1px solid;
 
-                img {
-                    width: 150px;
-                    margin: 10px;
-                    padding: 15px;
+                small {
+                    color: $rosa;
                 }
 
                 h4 {
                     font-size: 20px;
-                }
-            }
-
-            .eliminar-producto {
-                button {
-                    @include boton (50px, 55px);
-                }
-            }
-        }
-    }
-
-    .carrito-acciones {
-        display: flex;
-        justify-content: space-between;
-        .accion-vaciar{
-            button {
-                @include boton (150px, 155px);
-                font-weight: normal;
-                margin: 20px;
-                background-color: #ffefe9;
-                &:hover{
-                    background-color: #9e0000b2;
-                    color: white;
-                }
-            }
-        }
-        .accion-comprar{
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            margin: 20px;
-            .total-compra{
-                display: flex;
-                gap: 15px;
-                border-bottom: 1px solid $vino;
-                p{
-                    font-size: 24px;
-                    margin: 0px;
                     color: $vino;
                 }
-            }
-            button {
-                @include boton (150px, 155px);
-                font-weight: normal;
-                margin: 20px;
-                background-color: #ffefe9;
-                &:hover{
-                    background-color: #9e0000b2;
-                    color: white;
+
+                .detalle-producto {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 150px;
+                        margin: 10px;
+                        padding: 15px;
+                    }
+
+                }
+
+                .eliminar-producto {
+                    button {
+                        @include boton (50px, 55px);
+                    }
                 }
             }
         }
 
-    }
-}
+        .carrito-acciones {
+            display: flex;
+            justify-content: space-between;
 
+            .accion-vaciar {
+                button {
+                    @include boton (150px, 155px);
+                    font-weight: normal;
+                    margin: 20px;
+                    background-color: #ffefe9;
 
+                    &:hover {
+                        background-color: #9e0000b2;
+                        color: white;
+                    }
+                }
+            }
 
+            .accion-comprar {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                margin: 20px;
 
+                .total-compra {
+                    display: flex;
+                    gap: 15px;
+                    border-bottom: 1px solid $vino;
 
-.seguir-comprando {
-    display: flex;
+                    p {
+                        font-size: 24px;
+                        margin: 0px;
+                        color: $vino;
+                    }
+                }
 
-    a {
-        text-decoration: none;
-        background-color: #ffefe9;
-        color: $rosa;
-        margin: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        transition: 0.5s;
+                button {
+                    @include boton (150px, 155px);
+                    font-weight: normal;
+                    margin: 20px;
+                    background-color: #ffefe9;
 
-        &:hover {
-            color: #fd3838;
-            background-color: $bg-color;
+                    &:hover {
+                        background-color: #9e0000b2;
+                        color: white;
+                    }
+                }
+            }
+
         }
+
+
+        .seguir-comprando {
+            display: flex;
+
+            a {
+                text-decoration: none;
+                background-color: #ffefe9;
+                color: $rosa;
+                margin: 20px;
+                padding: 10px;
+                border-radius: 10px;
+                transition: 0.5s;
+
+                &:hover {
+                    color: #fd3838;
+                    background-color: $bg-color;
+                }
+            }
+        }
+
+        .mensaje-final {
+            display: none;
+            flex-direction: column;
+            margin: 20px;
+            margin-bottom: 100px;
+            .compra-realizada{
+                color: $vino;
+                font-size: 22px;
+            }
+        }
+
     }
 }
