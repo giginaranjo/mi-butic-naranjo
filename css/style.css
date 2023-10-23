@@ -20,7 +20,7 @@
   }
 }
 
-.fondo, .compras .detalle, .registrarse .form-registro, .iniciar-sesion .form-inicio, .contactanos .form-contacto {
+.fondo, .registrarse .form-registro, .iniciar-sesion .form-inicio, .contactanos .form-contacto {
   background-color: rgba(255, 221, 209, 0.4509803922);
   border-radius: 15px;
   margin-bottom: 30px;
@@ -816,7 +816,6 @@
 
 /* Bolsa de compras ------------------------------------------------------- */
 .compras {
-  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -826,9 +825,143 @@
   width: 90%;
   height: 90%;
 }
-.compras .detalle p {
+.compras .detalle .no-seleccionado {
+  display: none;
   padding: 20px;
   color: #910000;
+}
+.compras .carrito-productos .productos-agregados {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  border-bottom: #910000 1px solid;
+}
+.compras .carrito-productos .productos-agregados small {
+  color: #ff6060;
+}
+.compras .carrito-productos .productos-agregados h4 {
+  color: #910000;
+}
+.compras .carrito-productos .productos-agregados h5 {
+  color: #910000;
+}
+.compras .carrito-productos .productos-agregados .detalle-producto {
+  display: flex;
+  align-items: center;
+}
+.compras .carrito-productos .productos-agregados .detalle-producto img {
+  width: 150px;
+  margin: 10px;
+  padding: 15px;
+}
+.compras .carrito-productos .productos-agregados .detalle-producto h4 {
+  font-size: 20px;
+}
+.compras .carrito-productos .productos-agregados .eliminar-producto button {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 50px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+}
+.compras .carrito-productos .productos-agregados .eliminar-producto button:hover {
+  width: 55px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
+}
+.compras .carrito-acciones {
+  display: flex;
+  justify-content: space-between;
+}
+.compras .carrito-acciones .accion-vaciar button {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+  font-weight: normal;
+  margin: 20px;
+  background-color: #ffefe9;
+}
+.compras .carrito-acciones .accion-vaciar button:hover {
+  width: 155px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
+}
+.compras .carrito-acciones .accion-vaciar button:hover {
+  background-color: rgba(158, 0, 0, 0.6980392157);
+  color: white;
+}
+.compras .carrito-acciones .accion-comprar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 20px;
+}
+.compras .carrito-acciones .accion-comprar .total-compra {
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid #910000;
+}
+.compras .carrito-acciones .accion-comprar .total-compra p {
+  font-size: 24px;
+  margin: 0px;
+  color: #910000;
+}
+.compras .carrito-acciones .accion-comprar button {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+  font-weight: normal;
+  margin: 20px;
+  background-color: #ffefe9;
+}
+.compras .carrito-acciones .accion-comprar button:hover {
+  width: 155px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
+}
+.compras .carrito-acciones .accion-comprar button:hover {
+  background-color: rgba(158, 0, 0, 0.6980392157);
+  color: white;
+}
+
+.seguir-comprando {
+  display: flex;
+}
+.seguir-comprando a {
+  text-decoration: none;
+  background-color: #ffefe9;
+  color: #ff6060;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.seguir-comprando a:hover {
+  color: #fd3838;
+  background-color: #ffddd1;
 }
 
 /*# sourceMappingURL=style.css.map */

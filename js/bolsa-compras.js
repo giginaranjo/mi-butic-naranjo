@@ -1,4 +1,4 @@
-let agregarProducto = "";
+/* let agregarProducto = "";
 let cantidadProducto = 0;
 let subtotal = 0;
 let contador = 0;
@@ -66,4 +66,4 @@ if (subtotal <= 0 || isNaN(subtotal)) {
 
     console.log("La compra ha sido registrada en el sistema.")
     alert("Tu compra ha sido efectuada con éxito. Recibirás en tu correo electrónico el detalle de la compra. \nTe contactaremos para coordinar la entrega de los productos. \nGracias por elegirnos <3 ")
-}
+} */
