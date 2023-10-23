@@ -877,6 +877,7 @@
 .compras .detalle .carrito-acciones {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .compras .detalle .carrito-acciones .accion-vaciar button {
   background-color: #ffddd1;
