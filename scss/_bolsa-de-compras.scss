@@ -14,9 +14,10 @@
         }
 
         .no-seleccionado {
-            display: none;
-            padding: 20px;
+            margin: 20px;
+            margin-bottom: 100px;
             color: $vino;
+            font-size: 22px;
         }
 
         .carrito-productos {
@@ -39,6 +40,7 @@
                 .detalle-producto {
                     display: flex;
                     align-items: center;
+                    width: 350px;
 
                     img {
                         width: 150px;
@@ -59,7 +61,8 @@
         .carrito-acciones {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: center
+            ;
 
             .accion-vaciar {
                 button {
@@ -129,7 +132,6 @@
         }
 
         .mensaje-final {
-            display: none;
             flex-direction: column;
             margin: 20px;
             margin-bottom: 100px;

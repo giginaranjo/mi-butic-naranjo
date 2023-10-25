@@ -829,9 +829,10 @@
   margin-top: 20px;
 }
 .compras .detalle .no-seleccionado {
-  display: none;
-  padding: 20px;
+  margin: 20px;
+  margin-bottom: 100px;
   color: #910000;
+  font-size: 22px;
 }
 .compras .detalle .carrito-productos .productos-agregados {
   display: flex;
@@ -850,6 +851,7 @@
 .compras .detalle .carrito-productos .productos-agregados .detalle-producto {
   display: flex;
   align-items: center;
+  width: 350px;
 }
 .compras .detalle .carrito-productos .productos-agregados .detalle-producto img {
   width: 150px;
@@ -962,7 +964,6 @@
   background-color: #ffddd1;
 }
 .compras .detalle .mensaje-final {
-  display: none;
   flex-direction: column;
   margin: 20px;
   margin-bottom: 100px;
@@ -970,6 +971,9 @@
 .compras .detalle .mensaje-final .compra-realizada {
   color: #910000;
   font-size: 22px;
+}
+.compras .detalle .deshabilitado {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

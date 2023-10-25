@@ -1,8 +1,7 @@
 
 # Project Title
 
-Segunda pre-entrega.
-Simulador interactivo de la tienda MIBUTIC.
+Tienda MIBÜTIC.
 
 ## Authors
 
@@ -10,7 +9,7 @@ Simulador interactivo de la tienda MIBUTIC.
 
 ## Context
 
-Este es un simulador interactivo desarrollado en JavaScript que utiliza funciones, condicionales, bucles, métodos de entrada y salida estándar, objetos, array y métodos de búsqueda y filtrado sobre el array para proporcionar una experiencia de compra ficticia.  
+Este es un simulador interactivo desarrollado en JavaScript que utiliza funciones, condicionales, bucles, objetos, array y métodos de búsqueda y filtrado sobre el array, almacenamiento de datos (localStorage), modificación del DOM y detección de eventos del usuario para proporcionar una experiencia de compra ficticia.  
 
 ## Characteristics
 
@@ -24,3 +23,7 @@ Al ingresar a la página "Inicio de sesión", se le informa al usuario que, para
 Bolsa de compras
 
 Al ingresar a la página "Bolsa de compras", se muestra al usuario los productos disponibles con su precio, teniendo este que elegir de forma numérica, se le consulta la cantidad de productos que desea comprar y se muestra el subtotal, cuando el usuario desee finalizar la compra deberá escribir "COMPRAR" para que finalmente se muestre el subtotal, IVA y total de la compra, seguido de un mensaje de agradecimiento por la compra.
+
+Productos
+
+Al ingresar a la página "Productos" se puede apreciar una variedad de artículos, los cuales se encuentran disponibles para su compra. Presionando el botón "Comprar" de los productos deseados, éstos serán almacenados en la bolsa de compras, donde podrá finalizar su compra.
