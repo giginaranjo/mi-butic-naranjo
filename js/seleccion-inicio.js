@@ -2,17 +2,18 @@
 
 // Acceso a los elementos del DOM
 
-const listadoProductos = document.getElementById("seccion-productos");
+const listadoProductos = document.getElementById("seccion-inicio-uno");
+const listadoProductosDos = document.getElementById("seccion-inicio-dos");
 let btnComprar = document.getElementsByClassName("btn-comprar");
-
 
 // Función para mostrar en pantalla los productos disponibles
 // Info de los productos en archivo productos-disponibles.js
 
-const mostrarProductos = () => {
+const mostrarProductos = (numeroInicio, numeroLimite,listado) => {
 
-    productosDisponibles.forEach(producto => {
+    for (let i = numeroInicio; i < numeroLimite && i < productosDisponibles.length; i++) {
 
+        const producto = productosDisponibles[i];        
         const div = document.createElement("div");
         div.classList.add("productos");
         div.innerHTML = `
@@ -24,29 +25,28 @@ const mostrarProductos = () => {
         <h5>$ ${producto.precio}</h5>
         <button class="btn-comprar boton" id="${producto.id}">Comprar</button> `;
 
-        listadoProductos.append(div);
-
-    });
+        listado.append(div);
+    }
 
 }
 
-mostrarProductos();
+mostrarProductos(0, 3, listadoProductos);
+mostrarProductos(3, 6, listadoProductosDos);
 
 //Función para cargar los productos a la bolsa de compras por medio de localStorage
 
 let bolsaDeCompras;
 let bolsaDeComprasLS = localStorage.getItem("productos-agregados-a-bolsa");
 
-if (bolsaDeComprasLS) {
+if (bolsaDeComprasLS){
     bolsaDeCompras = JSON.parse(bolsaDeComprasLS);
-} else {
+} else{ 
     bolsaDeCompras = [];
 }
 
 for (let i = 0; i < btnComprar.length; i++) {
     btnComprar[i].addEventListener("click", agregarABolsa);
 }
-
 
 function agregarABolsa(e) {
     const idProductoBoton = e.currentTarget.id;
@@ -78,4 +78,3 @@ function agregarABolsa(e) {
     }).showToast();
 
 }
-
