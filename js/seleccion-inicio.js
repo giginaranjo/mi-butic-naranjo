@@ -6,17 +6,26 @@ const listadoProductos = document.getElementById("seccion-inicio-uno");
 const listadoProductosDos = document.getElementById("seccion-inicio-dos");
 let btnComprar = document.getElementsByClassName("btn-comprar");
 
-// Función para mostrar en pantalla los productos disponibles
-// Info de los productos en archivo productos-disponibles.js
+// Mostrar en pantalla los productos disponibles
 
-const mostrarProductos = (numeroInicio, numeroLimite,listado) => {
+productosDisponibles = [];
 
-    for (let i = numeroInicio; i < numeroLimite && i < productosDisponibles.length; i++) {
+const importarData = async () => {
+    const resp = await fetch("https://654c5fcf77200d6ba858c8d5.mockapi.io/productosDisponibles/producto");
+    const data = await resp.json();
+    productosDisponibles = data;
+}
 
-        const producto = productosDisponibles[i];        
-        const div = document.createElement("div");
-        div.classList.add("productos");
-        div.innerHTML = `
+
+const mostrarProductos = (productos) => {
+    const mostrarProductosInicio = (numeroInicio, numeroLimite, listado) => {
+
+        for (let i = numeroInicio; i < numeroLimite && i < productos.length; i++) {
+
+            const producto = productos[i];
+            const div = document.createElement("div");
+            div.classList.add("productos");
+            div.innerHTML = `
         <div class="boton-lo-quiero">
         <img src="${producto.imagen}" alt="${producto.producto}">
             <button>¡Lo quiero!</button>
@@ -25,56 +34,65 @@ const mostrarProductos = (numeroInicio, numeroLimite,listado) => {
         <h5>$ ${producto.precio}</h5>
         <button class="btn-comprar boton" id="${producto.id}">Comprar</button> `;
 
-        listado.append(div);
+            listado.append(div);
+        }
+
     }
-
+    mostrarProductosInicio(0, 3, listadoProductos);
+    mostrarProductosInicio(3, 6, listadoProductosDos);
 }
 
-mostrarProductos(0, 3, listadoProductos);
-mostrarProductos(3, 6, listadoProductosDos);
 
-//Función para cargar los productos a la bolsa de compras por medio de localStorage
+const cargaPagina = async () => {
+    await importarData();
+    mostrarProductos(productosDisponibles);
 
-let bolsaDeCompras;
-let bolsaDeComprasLS = localStorage.getItem("productos-agregados-a-bolsa");
+    //Función para cargar los productos a la bolsa de compras por medio de localStorage
 
-if (bolsaDeComprasLS){
-    bolsaDeCompras = JSON.parse(bolsaDeComprasLS);
-} else{ 
-    bolsaDeCompras = [];
-}
+    let bolsaDeCompras;
+    let bolsaDeComprasLS = localStorage.getItem("productos-agregados-a-bolsa");
 
-for (let i = 0; i < btnComprar.length; i++) {
-    btnComprar[i].addEventListener("click", agregarABolsa);
-}
-
-function agregarABolsa(e) {
-    const idProductoBoton = e.currentTarget.id;
-    const productoAgregado = productosDisponibles.find(producto => producto.id === idProductoBoton);
-
-    if (bolsaDeCompras.some(producto => producto.id === idProductoBoton)) {
-        const i = bolsaDeCompras.findIndex(producto => producto.id === idProductoBoton);
-        bolsaDeCompras[i].cantidad++;
+    if (bolsaDeComprasLS) {
+        bolsaDeCompras = JSON.parse(bolsaDeComprasLS);
     } else {
-        productoAgregado.cantidad = 1;
-        bolsaDeCompras.push(productoAgregado);
+        bolsaDeCompras = [];
     }
 
-    localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
+    for (let i = 0; i < btnComprar.length; i++) {
+        btnComprar[i].addEventListener("click", agregarABolsa);
+    }
 
-    Toastify({
-        text: "El producto fue agregado a la bolsa de compras.",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top", 
-        position: "right", 
-        stopOnFocus: true,
-        style: {
-            background: "#910000e6"
-        },
-        onClick: function () { }
-    }).showToast();
 
+    function agregarABolsa(e) {
+        const idProductoBoton = e.currentTarget.id;
+        const productoAgregado = productosDisponibles.find(producto => producto.id === idProductoBoton);
+
+        if (bolsaDeCompras.some(producto => producto.id === idProductoBoton)) {
+            const i = bolsaDeCompras.findIndex(producto => producto.id === idProductoBoton);
+            bolsaDeCompras[i].cantidad++;
+        } else {
+            productoAgregado.cantidad = 1;
+            bolsaDeCompras.push(productoAgregado);
+        }
+
+        localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
+
+        Toastify({
+            text: "El producto fue agregado a la bolsa de compras.",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "#910000e6"
+            },
+            onClick: function () { }
+        }).showToast();
+
+    }
 }
+
+cargaPagina();

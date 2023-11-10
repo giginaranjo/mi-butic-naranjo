@@ -1,4 +1,4 @@
-// Inicio sesión o registro para realizar la compra
+/* // Inicio sesión o registro para realizar la compra
 
 let correo = "";
 let nombreUsuario = "";
@@ -63,4 +63,4 @@ if (opcionCuenta == "1") {
 } else {
     alert("La opción seleccionada es inválida.")
 
-}
+} */

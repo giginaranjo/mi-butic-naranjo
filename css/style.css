@@ -824,6 +824,7 @@
 .compras .detalle {
   width: 90%;
   height: 90%;
+  margin-bottom: 100px;
 }
 .compras .detalle .titulo-pages {
   margin-top: 20px;

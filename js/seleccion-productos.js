@@ -5,13 +5,19 @@
 const listadoProductos = document.getElementById("seccion-productos");
 let btnComprar = document.getElementsByClassName("btn-comprar");
 
+// Mostrar en pantalla los productos disponibles
 
-// Función para mostrar en pantalla los productos disponibles
-// Info de los productos en archivo productos-disponibles.js
+productosDisponibles = [];
 
-const mostrarProductos = () => {
+const importarData = async () => {
+    const resp = await fetch("https://654c5fcf77200d6ba858c8d5.mockapi.io/productosDisponibles/producto");
+    const data = await resp.json();
+    productosDisponibles = data;
+}
 
-    productosDisponibles.forEach(producto => {
+const mostrarProductos = (productos = []) => {
+
+    productos.forEach(producto => {
 
         const div = document.createElement("div");
         div.classList.add("productos");
@@ -25,57 +31,59 @@ const mostrarProductos = () => {
         <button class="btn-comprar boton" id="${producto.id}">Comprar</button> `;
 
         listadoProductos.append(div);
-
     });
-
 }
 
-mostrarProductos();
+const cargaPagina = async () => {
+    await importarData();
+    mostrarProductos(productosDisponibles);
 
-//Función para cargar los productos a la bolsa de compras por medio de localStorage
+    //Función para cargar los productos a la bolsa de compras por medio de localStorage
 
-let bolsaDeCompras;
-let bolsaDeComprasLS = localStorage.getItem("productos-agregados-a-bolsa");
+    let bolsaDeCompras;
+    let bolsaDeComprasLS = localStorage.getItem("productos-agregados-a-bolsa");
 
-if (bolsaDeComprasLS) {
-    bolsaDeCompras = JSON.parse(bolsaDeComprasLS);
-} else {
-    bolsaDeCompras = [];
-}
-
-for (let i = 0; i < btnComprar.length; i++) {
-    btnComprar[i].addEventListener("click", agregarABolsa);
-}
-
-
-function agregarABolsa(e) {
-    const idProductoBoton = e.currentTarget.id;
-    const productoAgregado = productosDisponibles.find(producto => producto.id === idProductoBoton);
-
-    if (bolsaDeCompras.some(producto => producto.id === idProductoBoton)) {
-        const i = bolsaDeCompras.findIndex(producto => producto.id === idProductoBoton);
-        bolsaDeCompras[i].cantidad++;
+    if (bolsaDeComprasLS) {
+        bolsaDeCompras = JSON.parse(bolsaDeComprasLS);
     } else {
-        productoAgregado.cantidad = 1;
-        bolsaDeCompras.push(productoAgregado);
+        bolsaDeCompras = [];
     }
 
-    localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
+    for (let i = 0; i < btnComprar.length; i++) {
+        btnComprar[i].addEventListener("click", agregarABolsa);
+    }
 
-    Toastify({
-        text: "El producto fue agregado a la bolsa de compras.",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top", 
-        position: "right", 
-        stopOnFocus: true,
-        style: {
-            background: "#910000e6"
-        },
-        onClick: function () { }
-    }).showToast();
 
+    function agregarABolsa(e) {
+        const idProductoBoton = e.currentTarget.id;
+        const productoAgregado = productosDisponibles.find(producto => producto.id === idProductoBoton);
+
+        if (bolsaDeCompras.some(producto => producto.id === idProductoBoton)) {
+            const i = bolsaDeCompras.findIndex(producto => producto.id === idProductoBoton);
+            bolsaDeCompras[i].cantidad++;
+        } else {
+            productoAgregado.cantidad = 1;
+            bolsaDeCompras.push(productoAgregado);
+        }
+
+        localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
+
+        Toastify({
+            text: "El producto fue agregado a la bolsa de compras.",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "#910000e6"
+            },
+            onClick: function () { }
+        }).showToast();
+
+    }
 }
 
+cargaPagina();
