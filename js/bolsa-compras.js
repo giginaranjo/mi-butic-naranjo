@@ -92,9 +92,7 @@ function eliminarProducto(e) {
 
     const idEliminarProducto = e.currentTarget.id;
     const index = bolsaDeCompras.findIndex(producto => producto.id === idEliminarProducto)
-    console.log(bolsaDeCompras);
     bolsaDeCompras.splice(index, 1);
-    console.log(bolsaDeCompras);
 
     mostrarProductosEnBolsa();
 

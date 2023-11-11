@@ -9,21 +9,14 @@ Tienda MIBÜTIC.
 
 ## Context
 
-Este es un simulador interactivo desarrollado en JavaScript que utiliza funciones, condicionales, bucles, objetos, array y métodos de búsqueda y filtrado sobre el array, almacenamiento de datos (localStorage), modificación del DOM y detección de eventos del usuario para proporcionar una experiencia de compra ficticia.  
+Este es un simulador interactivo desarrollado en JavaScript que utiliza conjuntos de funciones, manipulación del DOM, gestión de eventos, comunicación con el servidor,  entre otras herramientas que dan funcionalidad al sitio web, con el fin de proporcionar una experiencia de compra ficticia.  
 
 ## Characteristics
 
-Inicio de sesión y registro
+Inicio y Productos
 
-Al ingresar a la página "Inicio de sesión", se le informa al usuario que, para continuar con la compra, debe ingresar a su cuenta o crear una (en caso de que no tenga). 
-
-"Inicio de sesión" le solicitará su email o nombre de usuario y contraseña para ingresar a su cuenta; mientras que para "Registrarse" se le solicitará su correo electrónico, un nuevo nombre de usuario y una nueva contraseña.
-
+En las páginas "Inicio" y "Productos" se puede apreciar una variedad de artículos, los cuales se encuentran disponibles para su compra. Presionando el botón "Comprar" de los productos deseados, éstos serán almacenados en la bolsa de compras, donde podrá finalizar su compra.
 
 Bolsa de compras
 
-Al ingresar a la página "Bolsa de compras", se muestra al usuario los productos disponibles con su precio, teniendo este que elegir de forma numérica, se le consulta la cantidad de productos que desea comprar y se muestra el subtotal, cuando el usuario desee finalizar la compra deberá escribir "COMPRAR" para que finalmente se muestre el subtotal, IVA y total de la compra, seguido de un mensaje de agradecimiento por la compra.
-
-Productos
-
-Al ingresar a la página "Productos" se puede apreciar una variedad de artículos, los cuales se encuentran disponibles para su compra. Presionando el botón "Comprar" de los productos deseados, éstos serán almacenados en la bolsa de compras, donde podrá finalizar su compra.
+Al ingresar a la página "Bolsa de compras", se muestra al usuario los productos y la cantidad seleccionada, el subtotal por producto y un botón para eliminar el producto. Además, en la zona inferior contamos con un botón que nos envía a la página "Productos" para seguir agregando más productos a nuestra bolsa, un botón para vaciar completamente nuestra bolsa de compra y el total de nuestra compra junto con un botón para finalizar la compra. 

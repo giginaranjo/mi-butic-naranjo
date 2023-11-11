@@ -80,8 +80,7 @@ const cargaPagina = async () => {
         Toastify({
             text: "El producto fue agregado a la bolsa de compras.",
             duration: 3000,
-            destination: "https://github.com/apvarun/toastify-js",
-            newWindow: true,
+            destination: "../paginas/bolsa-de-compras.html",
             close: true,
             gravity: "top",
             position: "right",
