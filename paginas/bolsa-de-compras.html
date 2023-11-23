@@ -71,42 +71,40 @@
 
             <h2 class="titulo-pages">Bolsa de compras</h2>
 
-            <h3 id="vacio" class="no-seleccionado">No hay productos seleccionados.</h3>
+            <ul class="titulo-producto">
+                <li>Producto</li>
+                <li>Precio</li>
+                <li>Cantidad</li>
+                <li>Subtotal</li>
+                <li></li>
+            </ul>
 
-            <div id="bolsa" class="carrito-productos">
+            <h3 id="bolsa-vacia" class="no-seleccionado">No hay productos seleccionados.</h3>
+
+            <div id="bolsa-productos" class="carrito-productos">
 
                 <!-- Los productos seleccionados se muestran en pantalla con JS -->
 
             </div>
 
-
-            <div class="seguir-comprando">
-                <a href="./productos.html"> <i class="fa-solid fa-arrow-left"></i> Seguir comprando</a>
-            </div>
-
-            <div id="acciones" class="carrito-acciones">
-                <div class="accion-vaciar">
-                    <button id="vaciar" class="vaciar-carrito">Vaciar carrito</button>
+            <div class="opciones">
+                <div class="seguir-comprando">
+                    <a href="./productos.html"> <i class="fa-solid fa-arrow-left"></i> Seguir comprando</a>
                 </div>
-                <div class="accion-comprar">
+
+
+                <div class="accion-comprar" id="bolsa-comprar">
                     <div class="total-compra">
                         <p>Total:</p>
-                        <p id="total">$6.000</p>
+                        <p id="total">$ 0</p>
                     </div>
                     <button id="comprar" class="finalizar-compra boton"> Finalizar compra</button>
                 </div>
             </div>
 
-            <div id="comprada" class="mensaje-final">
-                <h3 class="compra-realizada">Tu compra ha sido efectuada con éxito. </h3>
-                <h3 class="compra-realizada">Recibirás en tu correo electrónico el detalle de la compra. Te
-                    contactaremos para coordinar la entrega
-                    de los productos. </h3>
-                <h3 class="compra-realizada"> Gracias por elegirnos. <i class="fa-regular fa-face-kiss-wink-heart"></i>
-                </h3>
-            </div>
 
         </div>
+
     </main>
 
     <footer>
@@ -163,6 +161,7 @@
 
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/bolsa-compras.js"></script>
 
 </body>

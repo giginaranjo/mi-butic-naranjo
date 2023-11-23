@@ -7,54 +7,44 @@ bolsaDeCompras = JSON.parse(bolsaDeCompras);
 
 // Acceso a los elementos del DOM
 
-const bolsaVacia = document.getElementById("vacio");
-const bolsaProductos = document.getElementById("bolsa");
-const bolsaAcciones = document.getElementById("acciones");
-const bolsaComprada = document.getElementById("comprada");
-let btnEliminarProducto = document.getElementsByClassName("btn-eliminar-producto");
+const bolsaVacia = document.getElementById("bolsa-vacia");
+const bolsaProductos = document.getElementById("bolsa-productos");
+const bolsaComprar = document.getElementById("bolsa-comprar")
 const total = document.getElementById("total");
-const botonVaciar = document.getElementById("vaciar");
+
+let btnEliminarProducto = document.getElementsByClassName("btn-eliminar-producto");
 const botonComprar = document.getElementById("comprar");
+
 
 // Función para mostrar en pantalla los productos seleccionados para comprar
 
 const mostrarProductosEnBolsa = () => {
 
-    if (bolsaDeCompras && bolsaDeCompras.length > 0) {
-        bolsaVacia.classList.add("deshabilitado");
-        bolsaProductos.classList.remove("deshabilitado");
-        bolsaAcciones.classList.remove("deshabilitado");
-        bolsaComprada.classList.add("deshabilitado");
+    bolsaProductos.innerHTML = "";
 
-        bolsaProductos.innerHTML = "";
+    bolsaDeCompras.forEach(producto => {
 
-        bolsaDeCompras.forEach(producto => {
-
-            const div = document.createElement("div");
-            div.classList.add("productos-agregados");
-            div.innerHTML = `
+        const div = document.createElement("div");
+        div.classList.add("productos-agregados");
+        div.innerHTML = `
         <div class="detalle-producto">
             <img src="${producto.imagen}" alt="${producto.id}">
-            <div class="titulo-producto">
-                <small>Producto</small>
+            <div>
                 <h4>${producto.producto}</h4>
             </div>
         </div>
         <div class="precio-producto">
-            <div class="titulo-precio-producto">
-                <small>Precio</small>
+            <div>
                 <h4>$${producto.precio}</h4>
             </div>
         </div>
         <div class="cantidad-producto">
-            <div class="titulo-cantidad-producto">
-                <small>Cantidad</small>
+            <div>
                 <h4>${producto.cantidad}</h4>
             </div>
         </div>
         <div class="subtotal-producto">
-            <div class="titulo-subtotal-producto">
-                <small>Subtotal</small>
+            <div>
                 <h4>$ ${producto.precio * producto.cantidad}</h4>
             </div>
         </div>
@@ -63,22 +53,26 @@ const mostrarProductosEnBolsa = () => {
         </div>
         `;
 
-            bolsaProductos.append(div);
+        bolsaProductos.append(div);
 
-        });
+    });
 
-    } else {
-        bolsaVacia.classList.remove("deshabilitado");
-        bolsaProductos.classList.add("deshabilitado");
-        bolsaAcciones.classList.add("deshabilitado");
-        bolsaComprada.classList.add("deshabilitado");
-    }
 
     recargarBtn();
     montoTotal();
 }
 
-mostrarProductosEnBolsa();
+// Determinación de qué se mostrará en pantalla
+
+if (bolsaDeCompras && bolsaDeCompras.length > 0) {
+    bolsaVacia.classList.add("deshabilitado")
+    bolsaProductos.classList.remove("deshabilitado")
+    mostrarProductosEnBolsa();
+} else {
+    bolsaVacia.classList.remove("deshabilitado")
+    bolsaProductos.classList.add("deshabilitado")
+}
+
 
 // Función para eliminar de la bolsa productos seleccionados (individual)
 
@@ -101,32 +95,48 @@ function eliminarProducto(e) {
 
 // Función para mostrar el monto total de la compra
 
+
 function montoTotal() {
+
     const totalidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)
     total.innerText = `$ ${totalidad}`
 
 }
 
-// Función para eliminar de la bolsa productos seleccionados (elimina todos los productos)
-
-botonVaciar.addEventListener("click", vaciarBolsa)
-
-function vaciarBolsa() {
-    bolsaDeCompras.length = 0;
-    localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
-    mostrarProductosEnBolsa();
-}
 
 // Función para finalizar compra (Muestra mensaje de despedida)
 
 botonComprar.addEventListener("click", comprarProductos)
 
 function comprarProductos() {
-    bolsaDeCompras.length = 0;
-    localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
 
-    bolsaVacia.classList.add("deshabilitado");
-    bolsaProductos.classList.add("deshabilitado");
-    bolsaAcciones.classList.add("deshabilitado");
-    bolsaComprada.classList.remove("deshabilitado");
+    if (bolsaDeCompras && bolsaDeCompras.length > 0) {
+        bolsaDeCompras.length = 0;
+        localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
+
+        Swal.fire({
+            title: "Tu compra ha sido efectuada con éxito.",
+            text: "Recibirás en tu correo electrónico el detalle de la compra. Te contactaremos para coordinar la entrega de los productos. \n Gracias por elegirnos :).",
+            imageUrl: "../multimedia/imagenes/icono-carrito-de-compras.png",
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: "compra-finalizada"
+        });
+
+        bolsaVacia.classList.remove("deshabilitado")
+        bolsaProductos.classList.add("deshabilitado")
+        total.innerText = "$ 0"
+        
+    } else {
+        Swal.fire({
+            title: "Oops... Tu bolsa se encuentra vacía.",
+            text: "Te invitamos a revisar nuestro listado de productos :)",
+            imageUrl: "../multimedia/imagenes/bolsa-de-la-compra-vacia.png",
+            imageWidth: 100,
+            imageHeight: 100,
+            imageAlt: "bolsa-vacia",
+            footer: '<a href="../paginas/productos.html">Productos</a>'
+        });
+    }
+
 }

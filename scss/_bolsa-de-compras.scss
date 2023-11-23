@@ -13,6 +13,21 @@
             margin-top: 20px;
         }
 
+        .titulo-producto {
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            justify-content: space-evenly;
+            background-color: #ffddd150;
+            margin: 5px;
+            padding: 10px;
+            li {
+                color: $rosa;
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+
         .no-seleccionado {
             margin: 20px;
             margin-bottom: 100px;
@@ -27,10 +42,6 @@
                 align-items: center;
                 margin: 20px;
                 border-bottom: $vino 1px solid;
-
-                small {
-                    color: $rosa;
-                }
 
                 h4 {
                     font-size: 20px;
@@ -58,25 +69,10 @@
             }
         }
 
-        .carrito-acciones {
+        .opciones {
             display: flex;
             justify-content: space-between;
-            align-items: center
-            ;
-
-            .accion-vaciar {
-                button {
-                    @include boton (150px, 155px);
-                    font-weight: normal;
-                    margin: 20px;
-                    background-color: #ffefe9;
-
-                    &:hover {
-                        background-color: #9e0000b2;
-                        color: white;
-                    }
-                }
-            }
+            align-items: center;
 
             .accion-comprar {
                 display: flex;
@@ -131,15 +127,9 @@
             }
         }
 
-        .mensaje-final {
-            flex-direction: column;
-            margin: 20px;
-            margin-bottom: 100px;
-            .compra-realizada{
-                color: $vino;
-                font-size: 22px;
-            }
+        
+        .deshabilitado{
+            display: none;
         }
-
     }
 }
