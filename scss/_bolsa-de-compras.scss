@@ -1,134 +1,187 @@
 /* Bolsa de compras ------------------------------------------------------- */
 
 .compras {
+    @include flex(center, center, column);
+    margin-bottom: 50px;
 
-    @include flex(center, center, row);
+    .titulo-pages {
+        @extend .titulo;
+        margin: 20px 0px;
+    }
 
     .detalle {
+        display: flex;
+        justify-content: space-between;
         width: 90%;
         height: 90%;
 
-        .titulo-pages {
-            @extend .titulo;
-            margin-top: 20px;
-        }
+        .listado-productos {
+            width: 75%;
 
-        .titulo-producto {
-            display: flex;
-            text-decoration: none;
-            list-style: none;
-            justify-content: space-evenly;
-            background-color: #ffddd150;
-            margin: 5px;
-            padding: 10px;
-            li {
-                color: $rosa;
-                font-size: 24px;
-                font-weight: 600;
-            }
-        }
-
-        .no-seleccionado {
-            margin: 20px;
-            margin-bottom: 100px;
-            color: $vino;
-            font-size: 22px;
-        }
-
-        .carrito-productos {
-            .productos-agregados {
+            .titulo-producto {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin: 20px;
-                border-bottom: $vino 1px solid;
+                text-decoration: none;
+                list-style: none;
+                justify-content: space-around;
+                background-color: #ffddd150;
+                margin: 5px;
+                padding: 10px;
 
-                h4 {
-                    font-size: 20px;
-                    color: $vino;
+                li {
+                    color: $rosa;
+                    font-size: 24px;
+                    font-weight: 600;
                 }
+            }
 
-                .detalle-producto {
+            .no-seleccionado {
+                margin: 20px;
+                margin-bottom: 100px;
+                color: $vino;
+                font-size: 22px;
+            }
+
+            .carrito-productos {
+                .productos-agregados {
                     display: flex;
+                    justify-content: space-between;
                     align-items: center;
-                    width: 350px;
+                    margin: 20px;
+                    border-bottom: $vino 1px solid;
 
-                    img {
-                        width: 150px;
-                        margin: 10px;
-                        padding: 15px;
-                    }
-
-                }
-
-                .eliminar-producto {
-                    button {
-                        @include boton (50px, 55px);
-                    }
-                }
-            }
-        }
-
-        .opciones {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .accion-comprar {
-                display: flex;
-                gap: 20px;
-                align-items: center;
-                margin: 20px;
-
-                .total-compra {
-                    display: flex;
-                    gap: 15px;
-                    border-bottom: 1px solid $vino;
-
-                    p {
-                        font-size: 24px;
-                        margin: 0px;
+                    h4 {
+                        font-size: 20px;
                         color: $vino;
                     }
-                }
 
-                button {
-                    @include boton (150px, 155px);
-                    font-weight: normal;
-                    margin: 20px;
-                    background-color: #ffefe9;
+                    .detalle-producto {
+                        display: flex;
+                        align-items: center;
+                        width: 350px;
 
-                    &:hover {
-                        background-color: #9e0000b2;
-                        color: white;
+                        img {
+                            width: 150px;
+                            margin: 10px;
+                            padding: 15px;
+                        }
+
+                    }
+
+                    .eliminar-producto {
+                        button {
+                            @include boton (50px, 55px);
+                        }
                     }
                 }
             }
 
-        }
+            .seguir-comprando {
+                display: flex;
 
+                a {
+                    text-decoration: none;
+                    background-color: #ffefe9;
+                    color: $rosa;
+                    margin: 20px;
+                    padding: 10px;
+                    border-radius: 10px;
+                    transition: 0.5s;
+                    border: #9e000018 1px solid;
 
-        .seguir-comprando {
-            display: flex;
-
-            a {
-                text-decoration: none;
-                background-color: #ffefe9;
-                color: $rosa;
-                margin: 20px;
-                padding: 10px;
-                border-radius: 10px;
-                transition: 0.5s;
-
-                &:hover {
-                    color: #fd3838;
-                    background-color: $bg-color;
+                    &:hover {
+                        color: #fd3838;
+                        background-color: $bg-color;
+                    }
                 }
             }
         }
 
-        
-        .deshabilitado{
+
+        .resumen {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 400PX;
+
+            .opciones {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #ffddd173;
+                border-radius: 5px;
+                padding: 30px;
+                gap: 20px;
+                position: sticky;
+                top: 50px;
+                
+
+                .accion-comprar {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    align-items: center;
+
+                    .total-compra {
+                        display: flex;
+                        border-bottom: 1px solid $rosa;
+
+                        p {
+                            font-size: 24px;
+                            margin: 5px;
+                            color: $vino;
+                        }
+                    }
+                    .extras-compra {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+
+                        p {
+                            font-size: 20px;
+                            margin: 5px;
+                            color: $vino;
+                        }
+                        .subtotal-compra{
+                            display: flex;
+                        }
+                        .envio-compra{
+                            display: flex;
+                            flex-direction: column;
+                            .envio-costo{
+                                display: flex;
+                            }
+                            small{
+                                color: $rosa;
+                                font-weight: 600
+                                
+                            }
+                        }
+                    }
+                    button {
+                        @include boton (150px, 155px);
+                        font-weight: normal;
+                        margin: 20px;
+                        background-color: #ffefe9;
+                        border: #9e000018 1px solid;
+
+                        &:hover {
+                            background-color: #9e0000b2;
+                            color: white;
+                        }
+                    }
+                }
+
+            }
+
+            .titulo-resumen {
+                color: $rosa;
+                font-weight: 600;
+            }
+
+        }
+
+        .deshabilitado {
             display: none;
         }
     }

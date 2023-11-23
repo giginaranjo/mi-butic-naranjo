@@ -67,43 +67,70 @@
     <!-- BOLSA DE COMPRAS------------------------------------------------------------------------------  -->
 
     <main class="compras">
+        <h2 class="titulo-pages">Bolsa de compras</h2>
+
         <div class="detalle">
 
-            <h2 class="titulo-pages">Bolsa de compras</h2>
+            <div class="listado-productos">
+                <ul class="titulo-producto">
+                    <li></li> <!-- para centrar -->
+                    <li>Producto</li>
+                    <li>Precio</li>
+                    <li>Cantidad</li>
+                    <li>Subtotal</li>
+                    <li></li> <!-- para centrar -->
+                </ul>
 
-            <ul class="titulo-producto">
-                <li>Producto</li>
-                <li>Precio</li>
-                <li>Cantidad</li>
-                <li>Subtotal</li>
-                <li></li>
-            </ul>
+                <h3 id="bolsa-vacia" class="no-seleccionado">No hay productos seleccionados.</h3>
 
-            <h3 id="bolsa-vacia" class="no-seleccionado">No hay productos seleccionados.</h3>
+                <div id="bolsa-productos" class="carrito-productos">
 
-            <div id="bolsa-productos" class="carrito-productos">
+                    <!-- Los productos seleccionados se muestran en pantalla con JS -->
 
-                <!-- Los productos seleccionados se muestran en pantalla con JS -->
+                </div>
 
-            </div>
-
-            <div class="opciones">
                 <div class="seguir-comprando">
                     <a href="./productos.html"> <i class="fa-solid fa-arrow-left"></i> Seguir comprando</a>
                 </div>
-
-
-                <div class="accion-comprar" id="bolsa-comprar">
-                    <div class="total-compra">
-                        <p>Total:</p>
-                        <p id="total">$ 0</p>
-                    </div>
-                    <button id="comprar" class="finalizar-compra boton"> Finalizar compra</button>
-                </div>
             </div>
 
 
+            <div class="resumen">
+
+                <div class="opciones">
+
+
+                    <h3 class="titulo-resumen">RESUMEN DE COMPRA</h3>
+
+                    <div class="accion-comprar" id="bolsa-comprar">
+                        <div class="extras-compra">
+                            <div class="subtotal-compra">
+                                <p>Subtotal:</p>
+                                <p id="subtotal-compra">$ 0</p>
+                            </div>
+                            <div class="envio-compra">
+                                <div class="envio-costo">
+                                    <p>Envío:</p>
+                                    <p id="envio">$ 0</p>
+                                </div>
+                                <small>Compras online sólo con envío a domicilio.</small>
+                            </div>
+                        </div>
+
+                        <div class="total-compra">
+                            <p>Total:</p>
+                            <p id="total">$ 0</p>
+                        </div>
+
+                        <button id="comprar" class="finalizar-compra boton"> Finalizar compra</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+
+
 
     </main>
 

@@ -10,7 +10,11 @@ bolsaDeCompras = JSON.parse(bolsaDeCompras);
 const bolsaVacia = document.getElementById("bolsa-vacia");
 const bolsaProductos = document.getElementById("bolsa-productos");
 const bolsaComprar = document.getElementById("bolsa-comprar")
+
 const total = document.getElementById("total");
+const subtotal = document.getElementById("subtotal-compra");
+const envio = document.getElementById("envio");
+
 
 let btnEliminarProducto = document.getElementsByClassName("btn-eliminar-producto");
 const botonComprar = document.getElementById("comprar");
@@ -62,17 +66,6 @@ const mostrarProductosEnBolsa = () => {
     montoTotal();
 }
 
-// Determinación de qué se mostrará en pantalla
-
-if (bolsaDeCompras && bolsaDeCompras.length > 0) {
-    bolsaVacia.classList.add("deshabilitado")
-    bolsaProductos.classList.remove("deshabilitado")
-    mostrarProductosEnBolsa();
-} else {
-    bolsaVacia.classList.remove("deshabilitado")
-    bolsaProductos.classList.add("deshabilitado")
-}
-
 
 // Función para eliminar de la bolsa productos seleccionados (individual)
 
@@ -99,8 +92,24 @@ function eliminarProducto(e) {
 function montoTotal() {
 
     const totalidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)
-    total.innerText = `$ ${totalidad}`
+    subtotal.innerText = `$ ${totalidad}`
 
+    envio.innerText = `$ 500`
+
+    const totalCompra = totalidad + 500
+    total.innerText = `$ ${totalCompra}`
+
+}
+
+// Determinación de qué se mostrará en pantalla
+
+if (bolsaDeCompras && bolsaDeCompras.length > 0) {
+    bolsaVacia.classList.add("deshabilitado")
+    bolsaProductos.classList.remove("deshabilitado")
+    mostrarProductosEnBolsa();
+} else {
+    bolsaVacia.classList.remove("deshabilitado")
+    bolsaProductos.classList.add("deshabilitado")
 }
 
 
@@ -125,8 +134,10 @@ function comprarProductos() {
 
         bolsaVacia.classList.remove("deshabilitado")
         bolsaProductos.classList.add("deshabilitado")
-        total.innerText = "$ 0"
-        
+        subtotal.innerText = `$ 0`
+        envio.innerText = `$ 0`
+        total.innerText = `$ 0`
+
     } else {
         Swal.fire({
             title: "Oops... Tu bolsa se encuentra vacía.",
