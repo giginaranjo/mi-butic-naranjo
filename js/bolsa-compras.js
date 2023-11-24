@@ -90,10 +90,35 @@ function eliminarProducto(e) {
     localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
 }
 
-// Función para mostrar el monto total de la compra
+//
 
+let datosCompra;
+
+if (localStorage.getItem("datos-comprador")) {
+    datosCompra = JSON.parse(localStorage.getItem("datos-comprador"));
+} else {
+    datosCompra = [];
+}
+
+
+// Función para mostrar el monto total de la compra y almacenar cantidad y monto total
+
+class Totales {
+    constructor(cantidad, monto) {
+        this.cantidad = cantidad;
+        this.monto = monto;
+    }
+}
+
+function guardarTotales(cantidad, monto) {
+    let guardarTotal = new Totales(cantidad, monto)
+    datosCompra.push(guardarTotal)
+
+}
 
 function montoTotal() {
+
+    const cantidadComprada = bolsaDeCompras.reduce((acc, producto) => acc + (producto.cantidad), 0)
 
     const totalidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)
     subtotal.innerText = `$ ${totalidad}`
@@ -102,6 +127,9 @@ function montoTotal() {
 
     const totalCompra = totalidad + 500
     total.innerText = `$ ${totalCompra}`
+
+    guardarTotales(cantidadComprada, totalCompra)
+    localStorage.setItem("datos-comprador", JSON.stringify(datosCompra));
 
 }
 
@@ -117,17 +145,15 @@ class Comprador {
     }
 }
 
-let datosCompra;
-
-if (localStorage.getItem("datos-comprador")) {
-    datosCompra = JSON.parse(localStorage.getItem("datos-comprador"));
-} else {
-    datosCompra = [];
+function guardarDatos(nombre, apellido, correo, celular, metodo) {
+    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo)
+    datosCompra.push(datosComprador)
 }
 
 btnContinuar.addEventListener("click", pedirDatos)
 
 function pedirDatos() {
+    
     formPago.addEventListener("submit", (e) => {
         e.preventDefault()
 
@@ -135,7 +161,7 @@ function pedirDatos() {
 
         adicional.classList.remove("deshabilitado")
         adicional.classList.add("adicional")
-
+        btnContinuar.classList.add("deshabilitado")
         formCompra.addEventListener("submit", (e) => {
             e.preventDefault()
 
@@ -149,8 +175,6 @@ function pedirDatos() {
 
             formCompra.classList.remove("form-compra")
             formCompra.classList.add("deshabilitado")
-            btnContinuar.classList.add("deshabilitado")
-
 
             const p = document.createElement("p");
             p.classList.add("guardado");
@@ -162,12 +186,6 @@ function pedirDatos() {
         })
 
     })
-
-}
-
-function guardarDatos(nombre, apellido, correo, celular, metodo) {
-    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo)
-    datosCompra.push(datosComprador)
 
 }
 
