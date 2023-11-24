@@ -1,0 +1,143 @@
+/* HISTORIAL DE COMPRAS */
+
+.historial {
+    @include flex(center, center, column);
+    margin-bottom: 50px;
+
+    .pedidos {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 90%;
+        gap: 30px;
+
+
+        .titulo-pages {
+            margin: 30px 0px;
+        }
+
+        .text-filter {
+            display: flex;
+            justify-content: space-between;
+
+            .subtitulo {
+                color: $vino;
+                font-size: 22px;
+                margin-top: 15px;
+            }
+
+            .buscador {
+                .busqueda {
+                    @include input (300px);
+                    height: 40px;
+                }
+
+                .btn-filter {
+                    @include boton (50px, 50px);
+                    margin: 0px;
+                }
+
+                small {
+                    color: $vino;
+                }
+            }
+        }
+
+        .tarjeta-pedido {
+            @include flex (center, center, column);
+            margin: 20px;
+            border: 1px solid $bg-color;
+            border-radius: 50px;
+
+            .info-compra {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 90%;
+                border-bottom: 1px solid $bg-color;
+
+                .pares {
+                    display: flex;
+
+                    h3 {
+                        color: $rosa;
+                        font-size: 22px;
+                        font-weight: 600;
+                        padding: 15px;
+                        margin-top: 10px;
+                    }
+
+                    h4 {
+                        color: $vino;
+                        font-size: 22px;
+                        padding: 15px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .datos-del-pedido{
+                display: flex;
+                justify-content: space-around;
+                width: 90%;
+                padding: 20px;
+                margin-bottom: 10px;
+                h3 {
+                    color: $rosa;
+                    font-size: 22px;
+                    font-weight: 600;
+                    padding: 15px;
+                }
+
+                .datos-comprador{
+                    @include flex (center,start,column);
+                    .data{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    small {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: end;
+                        color: $vino;
+                        font-weight: 600;
+                    }
+                    
+                }
+
+                .datos-compra{
+                    @include flex (center,start,column);
+                    .data{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    small {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: end;
+                        color: $vino;
+                        font-weight: 600;
+                    }
+
+                    .mostrar-pedido{
+                        @include boton (150px, 150px);
+                    }
+                }
+
+
+            }
+
+
+
+
+
+        }
+    }
+
+
+
+}

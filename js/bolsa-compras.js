@@ -90,7 +90,7 @@ function eliminarProducto(e) {
     localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
 }
 
-//
+// Datos del formulario de compra y totales al localStorage
 
 let datosCompra;
 

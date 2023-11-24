@@ -64,46 +64,51 @@
     </header>
 
     <!-- TABLA CON HISTORIAL DE COMPRAS ----------------------------------------------------------------  -->
-    <main>
-        <div>
-            <h2>Historial de compras</h2>
-            <div>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, quisquam.</p>
-                <div>
+    <main class="historial">
+
+        <h2 class="titulo-pages">Historial de compras</h2>
+        <div class="pedidos">
+            <div class="text-filter">
+                <h3 class="subtitulo">Consulta la información de los pedidos recientes.</h3>
+                <div class="buscador">
                     <form role="search" id="search">
-                        <input type="search" name="busqueda" id="busqueda">
-                        <button type="submit" id="filter"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <button type="reset" id="cancel-filter"><i class="fa-solid fa-filter-circle-xmark"></i></button>
+                        <input type="search" name="busqueda" id="busqueda" class="busqueda">
+                        <button type="submit" id="filter" class="btn-filter"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                        <button type="reset" id="cancel-filter" class="btn-filter"><i
+                                class="fa-solid fa-filter-circle-xmark"></i></button>
                     </form>
 
                     <small>Busca el pedido por N° de orden, nombre o apellido del comprador.</small>
                 </div>
             </div>
 
-            <div id="tarjeta-pedido">
-                <div id="info-compra">
-                    <div>
-                        <h3>N° de órden: </h3>
+            <div id="tarjeta-pedido" class="tarjeta-pedido">
+
+                <div id="info-compra" class="info-compra">
+                    <div class="pares">
+                        <h3>N° de órden </h3>
                         <h4 id="orden"></h4>
                     </div>
-                    <div>
-                        <h3>Fecha:</h3>
+                    <div class="pares">
+                        <h3>Fecha</h3>
                         <h4 id="fecha"></h4>
                     </div>
                 </div>
 
-                <div id="datos-del-pedido">
-                    <div id="datos-comprador">
-                        <h3>
-                            Datos del comprador
-                        </h3>
-                        <div>
+                <div id="datos-del-pedido" class="datos-del-pedido">
+
+                    <div id="datos-comprador" class="datos-comprador">
+                        <h3>Datos del comprador</h3>
+                        <div class="data">
                             <div>
                                 <small>Nombre</small>
                                 <h4 id="nombre-comprador"></h4>
                             </div>
-                            <small>Apellido</small>
-                            <h4 id="apellido-comprador"></h4>
+                            <div>
+                                <small>Apellido</small>
+                                <h4 id="apellido-comprador"></h4>
+                            </div>
                             <div>
                                 <small>Correo electrónico</small>
                                 <h4 id="correo-comprador"></h4>
@@ -115,11 +120,9 @@
                         </div>
                     </div>
 
-                    <div id="datos-compra">
-                        <h3>
-                            Datos del comprador
-                        </h3>
-                        <div>
+                    <div id="datos-compra" class="datos-compra">
+                        <h3>Datos de la compra</h3>
+                        <div class="data">
                             <div>
                                 <small>Cantidad de productos</small>
                                 <h4 id="cantidad-compra"></h4>
@@ -132,7 +135,7 @@
                                 <small>Monto total</small>
                                 <h4 id="monto-compra"></h4>
                             </div>
-                            <button id="mostrar-pedido">Mostrar pedido</button>
+                            <button id="mostrar-pedido" class="mostrar-pedido" >Mostrar pedido</button>
                         </div>
                     </div>
 

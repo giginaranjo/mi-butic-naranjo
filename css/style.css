@@ -8,14 +8,14 @@
   box-sizing: border-box;
 }
 
-.titulo, .compras .titulo-pages, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
+.titulo, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
   color: #ff6060;
   font-size: 40px;
   padding: 20px;
   margin: 0px;
 }
 @media (max-width: 576px) {
-  .titulo, .compras .titulo-pages, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
+  .titulo, .registrarse .form-registro .titulo-pages, .iniciar-sesion .form-inicio .titulo-pages, .contactanos .form-contacto .datos-contacto .titulo-pages, .titulo-pages {
     font-size: 28px;
   }
 }
@@ -1104,6 +1104,166 @@
 }
 .compras .detalle .deshabilitado {
   display: none;
+}
+
+/* HISTORIAL DE COMPRAS */
+.historial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.historial .pedidos {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  gap: 30px;
+}
+.historial .pedidos .titulo-pages {
+  margin: 30px 0px;
+}
+.historial .pedidos .text-filter {
+  display: flex;
+  justify-content: space-between;
+}
+.historial .pedidos .text-filter .subtitulo {
+  color: #910000;
+  font-size: 22px;
+  margin-top: 15px;
+}
+.historial .pedidos .text-filter .buscador .busqueda {
+  background-color: #ffddd1;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  height: 25px;
+  padding: 15px;
+  margin: 5px;
+  width: 300px;
+  height: 40px;
+}
+.historial .pedidos .text-filter .buscador .btn-filter {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 50px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+  margin: 0px;
+}
+.historial .pedidos .text-filter .buscador .btn-filter:hover {
+  width: 50px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
+}
+.historial .pedidos .text-filter .buscador small {
+  color: #910000;
+}
+.historial .pedidos .tarjeta-pedido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  border: 1px solid #ffddd1;
+  border-radius: 50px;
+}
+.historial .pedidos .tarjeta-pedido .info-compra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  border-bottom: 1px solid #ffddd1;
+}
+.historial .pedidos .tarjeta-pedido .info-compra .pares {
+  display: flex;
+}
+.historial .pedidos .tarjeta-pedido .info-compra .pares h3 {
+  color: #ff6060;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 15px;
+  margin-top: 10px;
+}
+.historial .pedidos .tarjeta-pedido .info-compra .pares h4 {
+  color: #910000;
+  font-size: 22px;
+  padding: 15px;
+  margin-top: 10px;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido h3 {
+  color: #ff6060;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 15px;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-comprador {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-comprador .data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-comprador small {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  color: #910000;
+  font-weight: 600;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra .data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra small {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  color: #910000;
+  font-weight: 600;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra .mostrar-pedido {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra .mostrar-pedido:hover {
+  width: 150px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
 }
 
 /*# sourceMappingURL=style.css.map */
