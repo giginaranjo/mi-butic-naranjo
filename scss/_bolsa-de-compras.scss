@@ -11,12 +11,12 @@
 
     .detalle {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 95%;
         height: 90%;
 
         .listado-productos {
-            width: 75%;
+            width: 70%;
 
             .titulo-producto {
                 display: grid;
@@ -181,12 +181,6 @@
                                 color: $vino;
                             }
 
-                            small {
-                                color: $rosa;
-                                font-weight: 600;
-                                margin-bottom: 5px;
-                            }
-
                             select {
                                 color: white;
                                 background-color: $rosa;
@@ -225,8 +219,15 @@
                 }
 
                 .adicional {
-                    @include flex (center,center,column);
+                    @include flex (center, center, column);
                     gap: 30px;
+
+                    .guardado {
+                        color: $rosa;
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                    }
+
                     .form-compra {
                         @include flex (center, center, column);
                         gap: 20px;

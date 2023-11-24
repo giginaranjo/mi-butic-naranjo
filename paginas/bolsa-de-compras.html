@@ -128,9 +128,7 @@
                         <form id="form-pago" class="form-pago">
                             <div class="metodo-pago">
                                 <label for="metodo" class="label-metodo">Método de pago:</label>
-                                <small>(Con transferencia obtendrás un 5% de descuento)</small>
                                 <select name="metodo" id="metodo" class="metodo">
-                                    <option value="">Selecciona un método de pago</option>
                                     <option value="1">Tarjeta de débito</option>
                                     <option value="2">Tarjeta de crédito</option>
                                     <option value="3">Transferencia</option>
@@ -142,34 +140,34 @@
                                 <p id="total">$ 0</p>
                             </div>
 
-                            <button id="continuar" class="btn">Continuar</button>
+                            <button id="continuar">Continuar</button>
                         </form>
 
 
                     </div>
-                    <div class="adicional">
+                    <div id="adicional" class="deshabilitado">
                         <form id="form-compra" class="form-compra">
                             <h3 class="titulo-datos-contacto">DATOS DE CONTACTO</h3>
                             <div class="form-data">
                                 <div>
                                     <label for="nombre" class="label-comprador">Nombre:</label>
-                                    <input type="text" id="nombre" class="input-comprador">
+                                    <input type="text" id="nombre" class="input-comprador" autocomplete="off" required>
                                 </div>
                                 <div>
                                     <label for="apellido" class="label-comprador">Apellido:</label>
-                                    <input type="text" id="apellido" class="input-comprador">
+                                    <input type="text" id="apellido" class="input-comprador" autocomplete="off" required>
                                 </div>
                                 <div>
                                     <label for="correo" class="label-comprador">Correo electrónico:</label>
-                                    <input type="email" id="correo" class="input-comprador">
+                                    <input type="email" id="correo" class="input-comprador" autocomplete="off" required>
                                 </div>
                                 <div>
                                     <label for="celular" class="label-comprador">Celular:</label>
-                                    <input type="tel" id="celular" class="input-comprador">
+                                    <input type="number"  id="celular" class="input-comprador" autocomplete="off" required>
                                 </div>
                             </div>
 
-                            <button class="btn-guardar">Guardar información</button>
+                            <button type="submit" class="btn-guardar">Guardar información</button>
 
 
                         </form>
@@ -243,7 +241,7 @@
 
 
     </footer>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/bolsa-compras.js"></script>
 

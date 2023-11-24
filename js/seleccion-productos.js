@@ -41,10 +41,9 @@ const cargaPagina = async () => {
     //Función para cargar los productos a la bolsa de compras por medio de localStorage
 
     let bolsaDeCompras;
-    let bolsaDeComprasLS = localStorage.getItem("productos-agregados-a-bolsa");
 
-    if (bolsaDeComprasLS) {
-        bolsaDeCompras = JSON.parse(bolsaDeComprasLS);
+    if (localStorage.getItem("productos-agregados-a-bolsa")) {
+        bolsaDeCompras = JSON.parse(localStorage.getItem("productos-agregados-a-bolsa"));
     } else {
         bolsaDeCompras = [];
     }

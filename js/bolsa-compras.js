@@ -15,9 +15,13 @@ const total = document.getElementById("total");
 const subtotal = document.getElementById("subtotal-compra");
 const envio = document.getElementById("envio");
 
+const formPago = document.getElementById("form-pago");
+const formCompra = document.getElementById("form-compra");
+const adicional = document.getElementById("adicional");
 
 let btnEliminarProducto = document.getElementsByClassName("btn-eliminar-producto");
-const botonComprar = document.getElementById("comprar");
+const btnContinuar = document.getElementById("continuar");
+const btnComprar = document.getElementById("comprar");
 
 
 // Función para mostrar en pantalla los productos seleccionados para comprar
@@ -101,6 +105,73 @@ function montoTotal() {
 
 }
 
+// Solicitar y guardar los datos de la compra
+
+class Comprador {
+    constructor(nombre, apellido, correo, celular, metodo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.celular = celular;
+        this.metodo = metodo;
+    }
+}
+
+let datosCompra;
+
+if (localStorage.getItem("datos-comprador")) {
+    datosCompra = JSON.parse(localStorage.getItem("datos-comprador"));
+} else {
+    datosCompra = [];
+}
+
+btnContinuar.addEventListener("click", pedirDatos)
+
+function pedirDatos() {
+    formPago.addEventListener("submit", (e) => {
+        e.preventDefault()
+
+        let metodo = document.getElementById("metodo").value
+
+        adicional.classList.remove("deshabilitado")
+        adicional.classList.add("adicional")
+
+        formCompra.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            let nombre = document.getElementById("nombre").value.trim().toLowerCase()
+            let apellido = document.getElementById("apellido").value.trim().toLowerCase()
+            let correo = document.getElementById("correo").value.trim().toLowerCase()
+            let celular = document.getElementById("celular").value
+
+            guardarDatos(nombre, apellido, correo, celular, metodo)
+            localStorage.setItem("datos-comprador", JSON.stringify(datosCompra));
+
+            formCompra.classList.remove("form-compra")
+            formCompra.classList.add("deshabilitado")
+            btnContinuar.classList.add("deshabilitado")
+
+
+            const p = document.createElement("p");
+            p.classList.add("guardado");
+            p.innerText = "La información ha sido guardada."
+            adicional.append(p);
+
+            formCompra.reset()
+
+        })
+
+    })
+
+}
+
+function guardarDatos(nombre, apellido, correo, celular, metodo) {
+    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo)
+    datosCompra.push(datosComprador)
+
+}
+
+
 // Determinación de qué se mostrará en pantalla
 
 if (bolsaDeCompras && bolsaDeCompras.length > 0) {
@@ -115,9 +186,11 @@ if (bolsaDeCompras && bolsaDeCompras.length > 0) {
 
 // Función para finalizar compra (Muestra mensaje de despedida)
 
-botonComprar.addEventListener("click", comprarProductos)
+btnComprar.addEventListener("click", comprarProductos)
+
 
 function comprarProductos() {
+
 
     if (bolsaDeCompras && bolsaDeCompras.length > 0) {
         bolsaDeCompras.length = 0;
@@ -137,6 +210,11 @@ function comprarProductos() {
         subtotal.innerText = `$ 0`
         envio.innerText = `$ 0`
         total.innerText = `$ 0`
+        adicional.classList.add("deshabilitado")
+        adicional.classList.remove("adicional")
+        formCompra.classList.add("form-compra")
+        formCompra.classList.remove("deshabilitado")
+        btnContinuar.classList.remove("deshabilitado")
 
     } else {
         Swal.fire({
