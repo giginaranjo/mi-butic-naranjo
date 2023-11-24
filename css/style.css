@@ -938,9 +938,9 @@
   background-color: rgba(255, 221, 209, 0.4862745098);
   border-radius: 5px;
   padding: 30px;
-  gap: 20px;
+  gap: 30px;
   position: sticky;
-  top: 10px;
+  top: 50px;
 }
 .compras .detalle .resumen .opciones .accion-comprar {
   display: flex;
@@ -1010,55 +1010,46 @@
   color: #910000;
 }
 .compras .detalle .resumen .opciones .accion-comprar .form-pago button {
-  background-color: #ffddd1;
+  background-color: #fce5dc;
   color: #ff6060;
   font-weight: 600;
-  width: 150px;
-  height: 40px;
+  width: 180px;
+  height: 45px;
   margin: 10px;
   padding: 5px;
   border-radius: 15px;
-  border: none;
-  transition: 0.5s;
-  font-weight: normal;
-  margin: 20px;
-  background-color: #ffefe9;
   border: rgba(158, 0, 0, 0.0941176471) 1px solid;
-  font-weight: 600;
 }
-.compras .detalle .resumen .opciones .accion-comprar .form-pago button:hover {
-  width: 155px;
-  height: 45px;
-  color: #fd3838;
-  background-color: #facebe;
+.compras .detalle .resumen .opciones .adicional {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
 }
-.compras .detalle .resumen .opciones .accion-comprar .form-pago button:hover {
-  background-color: rgba(158, 0, 0, 0.6980392157);
-  color: white;
-}
-.compras .detalle .resumen .opciones .form-compra {
+.compras .detalle .resumen .opciones .adicional .form-compra {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 20px;
 }
-.compras .detalle .resumen .opciones .form-compra .titulo-datos-contacto {
+.compras .detalle .resumen .opciones .adicional .form-compra .titulo-datos-contacto {
   color: #ff6060;
   font-weight: 600;
 }
-.compras .detalle .resumen .opciones .form-compra .form-data {
+.compras .detalle .resumen .opciones .adicional .form-compra .form-data {
   display: flex;
   justify-content: center;
   align-items: end;
   flex-direction: column;
   gap: 5px;
 }
-.compras .detalle .resumen .opciones .form-compra .form-data .label-comprador {
+.compras .detalle .resumen .opciones .adicional .form-compra .form-data .label-comprador {
   font-size: 16px;
   color: #910000;
 }
-.compras .detalle .resumen .opciones .form-compra .form-data .input-comprador {
+.compras .detalle .resumen .opciones .adicional .form-compra .form-data .input-comprador {
   background-color: #ffddd1;
   border: none;
   outline: none;
@@ -1070,7 +1061,18 @@
   background-color: rgba(255, 96, 96, 0.3215686275);
   padding: 17px;
 }
-.compras .detalle .resumen .opciones .form-compra button {
+.compras .detalle .resumen .opciones .adicional .form-compra .btn-guardar {
+  background-color: #fce5dc;
+  color: #ff6060;
+  font-weight: 600;
+  width: 180px;
+  height: 45px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: rgba(158, 0, 0, 0.0941176471) 1px solid;
+}
+.compras .detalle .resumen .opciones .adicional button {
   background-color: #ffddd1;
   color: #ff6060;
   font-weight: 600;
@@ -1083,19 +1085,22 @@
   transition: 0.5s;
   font-weight: normal;
   margin: 20px;
-  background-color: #ffefe9;
+  background-color: rgba(158, 0, 0, 0.6980392157);
   border: rgba(158, 0, 0, 0.0941176471) 1px solid;
   font-weight: 600;
+  color: white;
+  height: 45px;
 }
-.compras .detalle .resumen .opciones .form-compra button:hover {
-  width: 185px;
+.compras .detalle .resumen .opciones .adicional button:hover {
+  width: 190px;
   height: 45px;
   color: #fd3838;
   background-color: #facebe;
 }
-.compras .detalle .resumen .opciones .form-compra button:hover {
+.compras .detalle .resumen .opciones .adicional button:hover {
   background-color: rgba(158, 0, 0, 0.6980392157);
   color: white;
+  height: 50px;
 }
 .compras .detalle .deshabilitado {
   display: none;
