@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Agrega tus prendas favoritas y disfruta de una experiencia de compra conveniente y cómoda en nuestra tienda de ropa.">
+        content="Consulta tu historial de compras fácilmente. Controla gastos, revisa transacciones y simplifica tu experiencia de compra en un solo lugar.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,9 +13,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../multimedia/imagenes/logo-tienda.png">
-    <title>Bolsa de compras - MI BÜTIC</title>
+    <title>Mis compras - MI BÜTIC</title>
 </head>
-
 
 <body>
 
@@ -64,125 +63,108 @@
 
     </header>
 
-    <!-- BOLSA DE COMPRAS------------------------------------------------------------------------------  -->
+    <!-- TABLA CON HISTORIAL DE COMPRAS ----------------------------------------------------------------  -->
+    <main>
+        <div>
+            <h2>Historial de compras</h2>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, quisquam.</p>
+                <div>
+                    <form role="search" id="search">
+                        <input type="search" name="busqueda" id="busqueda">
+                        <button type="submit" id="filter"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button type="reset" id="cancel-filter"><i class="fa-solid fa-filter-circle-xmark"></i></button>
+                    </form>
 
-    <main class="compras">
-        <h2 class="titulo-pages">Bolsa de compras</h2>
-
-        <div class="detalle">
-
-            <div class="listado-productos">
-
-                <div class="titulo-producto">
-                    <div class="t-producto">
-                        <h3 class="title">Producto</h3>
-                    </div>
-                    <div class="t-precio">
-                        <h3 class="title">Precio</h3>
-                    </div>
-                    <div class="t-cantidad">
-                        <h3 class="title">Cantidad</h3>
-                    </div>
-                    <div class="t-subtotal">
-                        <h3 class="title">Subtotal</h3>
-                    </div>
-                    <div class="t-btn-eliminar"></div><!-- para centrar -->
-                </div>
-
-                <h3 id="bolsa-vacia" class="no-seleccionado">No hay productos seleccionados.</h3>
-
-                <div id="bolsa-productos" class="carrito-productos">
-
-                    <!-- Los productos seleccionados se muestran en pantalla con JS -->
-
-                </div>
-
-                <div class="btns-inferiores">
-                    <a href="./productos.html"> <i class="fa-solid fa-arrow-left"></i> Seguir comprando</a>
-                    <a href="./historial-compras.html"> <i class="fa-solid fa-receipt"></i> Historial del compras</a>
+                    <small>Busca el pedido por N° de orden, nombre o apellido del comprador.</small>
                 </div>
             </div>
 
+            <div id="tarjeta-pedido">
+                <div id="info-compra">
+                    <div>
+                        <h3>N° de órden: </h3>
+                        <h4 id="orden"></h4>
+                    </div>
+                    <div>
+                        <h3>Fecha:</h3>
+                        <h4 id="fecha"></h4>
+                    </div>
+                </div>
 
-            <div class="resumen">
-
-                <div class="opciones">
-
-                    <h3 class="titulo-resumen">RESUMEN DE COMPRA</h3>
-
-                    <div class="accion-comprar" id="bolsa-comprar">
-                        <div class="extras-compra">
-                            <div class="subtotal-compra">
-                                <p>Subtotal:</p>
-                                <p id="subtotal-compra">$ 0</p>
+                <div id="datos-del-pedido">
+                    <div id="datos-comprador">
+                        <h3>
+                            Datos del comprador
+                        </h3>
+                        <div>
+                            <div>
+                                <small>Nombre</small>
+                                <h4 id="nombre-comprador"></h4>
                             </div>
-                            <div class="envio-compra">
-                                <div class="envio-costo">
-                                    <p>Envío:</p>
-                                    <p id="envio">$ 0</p>
-                                </div>
-                                <small>Compras online sólo con envío a domicilio.</small>
+                            <small>Apellido</small>
+                            <h4 id="apellido-comprador"></h4>
+                            <div>
+                                <small>Correo electrónico</small>
+                                <h4 id="correo-comprador"></h4>
+                            </div>
+                            <div>
+                                <small>Celular</small>
+                                <h4 id="celular-comprador"></h4>
                             </div>
                         </div>
-
-                        <form id="form-pago" class="form-pago">
-                            <div class="metodo-pago">
-                                <label for="metodo" class="label-metodo">Método de pago:</label>
-                                <small>(Con transferencia obtendrás un 5% de descuento)</small>
-                                <select name="metodo" id="metodo" class="metodo">
-                                    <option value="">Selecciona un método de pago</option>
-                                    <option value="1">Tarjeta de débito</option>
-                                    <option value="2">Tarjeta de crédito</option>
-                                    <option value="3">Transferencia</option>
-                                </select>
-                            </div>
-
-                            <div class="total-compra">
-                                <p>Total:</p>
-                                <p id="total">$ 0</p>
-                            </div>
-
-                            <button type="submit" id="continuar" class="btn">Continuar</button>
-                        </form>
-
-
                     </div>
 
-                    <form id="form-compra" class="form-compra">
-                        <h3 class="titulo-datos-contacto">DATOS DE CONTACTO</h3>
-                        <div class="form-data">
+                    <div id="datos-compra">
+                        <h3>
+                            Datos del comprador
+                        </h3>
+                        <div>
                             <div>
-                                <label for="nombre" class="label-comprador">Nombre:</label>
-                                <input type="text" id="nombre" class="input-comprador">
+                                <small>Cantidad de productos</small>
+                                <h4 id="cantidad-compra"></h4>
                             </div>
                             <div>
-                                <label for="apellido" class="label-comprador">Apellido:</label>
-                                <input type="text" id="apellido" class="input-comprador">
+                                <small>Método de pago</small>
+                                <h4 id="metodo-compra"></h4>
                             </div>
                             <div>
-                                <label for="correo" class="label-comprador">Correo electrónico:</label>
-                                <input type="email" id="correo" class="input-comprador">
+                                <small>Monto total</small>
+                                <h4 id="monto-compra"></h4>
                             </div>
-                            <div>
-                                <label for="celular" class="label-comprador">Celular:</label>
-                                <input type="tel" id="celular" class="input-comprador">
-                            </div>
+                            <button id="mostrar-pedido">Mostrar pedido</button>
                         </div>
+                    </div>
 
+                    <div id="productos-compra" style=" display: none;">
+                        <h3>Productos comprados</h3>
+                        <div>
+                            <div class="detalle-producto">
+                                <img src="" alt="">
+                                <div>
+                                    <div>
+                                        <small>Producto</small>
+                                        <h4></h4>
+                                    </div>
+                                    <div>
+                                        <small>Precio unitario</small>
+                                        <h4>$</h4>
+                                    </div>
+                                    <div>
+                                        <small>Cantidad</small>
+                                        <h4>$</h4>
+                                    </div>
+                                </div>
 
-                        <button type="submit" id="comprar" class="boton">Finalizar compra</button>
-                    </form>
+                            </div>
 
+                        </div>
+                    </div>
 
                 </div>
             </div>
 
         </div>
-
-
-
-
-
 
     </main>
 
@@ -241,7 +223,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/bolsa-compras.js"></script>
+    <script src="../js/historial-compras.js"></script>
 
 </body>
 

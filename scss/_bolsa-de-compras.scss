@@ -12,26 +12,34 @@
     .detalle {
         display: flex;
         justify-content: space-between;
-        width: 90%;
+        width: 95%;
         height: 90%;
 
         .listado-productos {
             width: 75%;
 
             .titulo-producto {
-                display: flex;
-                text-decoration: none;
-                list-style: none;
-                justify-content: space-around;
-                background-color: #ffddd150;
-                margin: 5px;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: 1fr;
+                justify-items: end;
+                background-color: #ffddd17c;
                 padding: 10px;
+                border-radius: 5px;
 
-                li {
+                .title {
                     color: $rosa;
                     font-size: 24px;
                     font-weight: 600;
+                    margin-top: 5px;
                 }
+
+                .t-producto {
+                    display: flex;
+                    justify-content: center;
+                    width: 350px;
+                }
+
             }
 
             .no-seleccionado {
@@ -75,8 +83,9 @@
                 }
             }
 
-            .seguir-comprando {
+            .btns-inferiores {
                 display: flex;
+                justify-content: space-between;
 
                 a {
                     text-decoration: none;
@@ -92,78 +101,165 @@
                         color: #fd3838;
                         background-color: $bg-color;
                     }
+
+                    i {
+                        margin-right: 5px;
+                    }
                 }
+
             }
         }
 
 
         .resumen {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            width: 400PX;
+            @include flex (space-between, center, column);
+            width: 25%;
+
+            .titulo-resumen {
+                color: $rosa;
+                font-weight: 600;
+            }
 
             .opciones {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                background-color: #ffddd173;
+                background-color: #ffddd17c;
                 border-radius: 5px;
                 padding: 30px;
                 gap: 20px;
                 position: sticky;
-                top: 50px;
-                
+                top: 10px;
+
 
                 .accion-comprar {
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
-                    align-items: center;
 
-                    .total-compra {
-                        display: flex;
-                        border-bottom: 1px solid $rosa;
-
-                        p {
-                            font-size: 24px;
-                            margin: 5px;
-                            color: $vino;
-                        }
-                    }
                     .extras-compra {
                         display: flex;
                         flex-direction: column;
-                        gap: 15px;
+                        gap: 10px;
 
                         p {
                             font-size: 20px;
                             margin: 5px;
                             color: $vino;
                         }
-                        .subtotal-compra{
+
+                        .subtotal-compra {
                             display: flex;
                         }
-                        .envio-compra{
+
+                        .envio-compra {
                             display: flex;
                             flex-direction: column;
-                            .envio-costo{
+
+                            .envio-costo {
                                 display: flex;
                             }
-                            small{
+
+                            small {
                                 color: $rosa;
                                 font-weight: 600
-                                
                             }
                         }
                     }
+
+                    .form-pago {
+                        @include flex (center, center, column);
+                        gap: 10px;
+
+                        .metodo-pago {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+
+                            .label-metodo {
+                                font-size: 20px;
+                                color: $vino;
+                            }
+
+                            small {
+                                color: $rosa;
+                                font-weight: 600;
+                                margin-bottom: 5px;
+                            }
+
+                            select {
+                                color: white;
+                                background-color: $rosa;
+                                padding: 5px;
+                                border: none;
+                                border-radius: 5px;
+                            }
+                        }
+
+                        .total-compra {
+                            display: flex;
+                            border-bottom: 1px solid $rosa;
+                            margin: 20px 0px;
+
+                            p {
+                                font-size: 24px;
+                                margin: 5px;
+                                color: $vino;
+                            }
+                        }
+
+                        button {
+                            @include boton (150px, 155px);
+                            font-weight: normal;
+                            margin: 20px;
+                            background-color: #ffefe9;
+                            border: #9e000018 1px solid;
+                            font-weight: 600;
+
+                            &:hover {
+                                background-color: #9e0000b2;
+                                color: white;
+                            }
+                        }
+
+                    }
+
+                }
+
+                .form-compra {
+                    @include flex (center, center, column);
+                    gap: 20px;
+
+                    .titulo-datos-contacto {
+                        color: $rosa;
+                        font-weight: 600;
+                    }
+
+                    .form-data {
+                        @include flex (center, end, column);
+                        gap: 5px;
+
+                        .label-comprador {
+                            font-size: 16px;
+                            color: $vino;
+                        }
+
+                        .input-comprador{
+                            @include input (200px);
+                            background-color: #ff606052;
+                            padding: 17px;
+                        }
+
+                        
+                    }
+
                     button {
-                        @include boton (150px, 155px);
+                        @include boton (180px, 185px);
                         font-weight: normal;
                         margin: 20px;
                         background-color: #ffefe9;
                         border: #9e000018 1px solid;
+                        font-weight: 600;
 
                         &:hover {
                             background-color: #9e0000b2;
@@ -172,12 +268,11 @@
                     }
                 }
 
+
+
             }
 
-            .titulo-resumen {
-                color: $rosa;
-                font-weight: 600;
-            }
+
 
         }
 

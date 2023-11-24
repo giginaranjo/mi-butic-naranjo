@@ -828,25 +828,31 @@
 .compras .detalle {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 95%;
   height: 90%;
 }
 .compras .detalle .listado-productos {
   width: 75%;
 }
 .compras .detalle .listado-productos .titulo-producto {
-  display: flex;
-  text-decoration: none;
-  list-style: none;
-  justify-content: space-around;
-  background-color: rgba(255, 221, 209, 0.3137254902);
-  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  justify-items: end;
+  background-color: rgba(255, 221, 209, 0.4862745098);
   padding: 10px;
+  border-radius: 5px;
 }
-.compras .detalle .listado-productos .titulo-producto li {
+.compras .detalle .listado-productos .titulo-producto .title {
   color: #ff6060;
   font-size: 24px;
   font-weight: 600;
+  margin-top: 5px;
+}
+.compras .detalle .listado-productos .titulo-producto .t-producto {
+  display: flex;
+  justify-content: center;
+  width: 350px;
 }
 .compras .detalle .listado-productos .no-seleccionado {
   margin: 20px;
@@ -893,10 +899,11 @@
   color: #fd3838;
   background-color: #facebe;
 }
-.compras .detalle .listado-productos .seguir-comprando {
+.compras .detalle .listado-productos .btns-inferiores {
   display: flex;
+  justify-content: space-between;
 }
-.compras .detalle .listado-productos .seguir-comprando a {
+.compras .detalle .listado-productos .btns-inferiores a {
   text-decoration: none;
   background-color: #ffefe9;
   color: #ff6060;
@@ -906,47 +913,44 @@
   transition: 0.5s;
   border: rgba(158, 0, 0, 0.0941176471) 1px solid;
 }
-.compras .detalle .listado-productos .seguir-comprando a:hover {
+.compras .detalle .listado-productos .btns-inferiores a:hover {
   color: #fd3838;
   background-color: #ffddd1;
 }
+.compras .detalle .listado-productos .btns-inferiores a i {
+  margin-right: 5px;
+}
 .compras .detalle .resumen {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 400PX;
+  flex-direction: column;
+  width: 25%;
+}
+.compras .detalle .resumen .titulo-resumen {
+  color: #ff6060;
+  font-weight: 600;
 }
 .compras .detalle .resumen .opciones {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 221, 209, 0.4509803922);
+  background-color: rgba(255, 221, 209, 0.4862745098);
   border-radius: 5px;
   padding: 30px;
   gap: 20px;
   position: sticky;
-  top: 50px;
+  top: 10px;
 }
 .compras .detalle .resumen .opciones .accion-comprar {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center;
-}
-.compras .detalle .resumen .opciones .accion-comprar .total-compra {
-  display: flex;
-  border-bottom: 1px solid #ff6060;
-}
-.compras .detalle .resumen .opciones .accion-comprar .total-compra p {
-  font-size: 24px;
-  margin: 5px;
-  color: #910000;
 }
 .compras .detalle .resumen .opciones .accion-comprar .extras-compra {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 .compras .detalle .resumen .opciones .accion-comprar .extras-compra p {
   font-size: 20px;
@@ -967,7 +971,45 @@
   color: #ff6060;
   font-weight: 600;
 }
-.compras .detalle .resumen .opciones .accion-comprar button {
+.compras .detalle .resumen .opciones .accion-comprar .form-pago {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.compras .detalle .resumen .opciones .accion-comprar .form-pago .metodo-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.compras .detalle .resumen .opciones .accion-comprar .form-pago .metodo-pago .label-metodo {
+  font-size: 20px;
+  color: #910000;
+}
+.compras .detalle .resumen .opciones .accion-comprar .form-pago .metodo-pago small {
+  color: #ff6060;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.compras .detalle .resumen .opciones .accion-comprar .form-pago .metodo-pago select {
+  color: white;
+  background-color: #ff6060;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+.compras .detalle .resumen .opciones .accion-comprar .form-pago .total-compra {
+  display: flex;
+  border-bottom: 1px solid #ff6060;
+  margin: 20px 0px;
+}
+.compras .detalle .resumen .opciones .accion-comprar .form-pago .total-compra p {
+  font-size: 24px;
+  margin: 5px;
+  color: #910000;
+}
+.compras .detalle .resumen .opciones .accion-comprar .form-pago button {
   background-color: #ffddd1;
   color: #ff6060;
   font-weight: 600;
@@ -982,20 +1024,78 @@
   margin: 20px;
   background-color: #ffefe9;
   border: rgba(158, 0, 0, 0.0941176471) 1px solid;
+  font-weight: 600;
 }
-.compras .detalle .resumen .opciones .accion-comprar button:hover {
+.compras .detalle .resumen .opciones .accion-comprar .form-pago button:hover {
   width: 155px;
   height: 45px;
   color: #fd3838;
   background-color: #facebe;
 }
-.compras .detalle .resumen .opciones .accion-comprar button:hover {
+.compras .detalle .resumen .opciones .accion-comprar .form-pago button:hover {
   background-color: rgba(158, 0, 0, 0.6980392157);
   color: white;
 }
-.compras .detalle .resumen .titulo-resumen {
+.compras .detalle .resumen .opciones .form-compra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.compras .detalle .resumen .opciones .form-compra .titulo-datos-contacto {
   color: #ff6060;
   font-weight: 600;
+}
+.compras .detalle .resumen .opciones .form-compra .form-data {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  gap: 5px;
+}
+.compras .detalle .resumen .opciones .form-compra .form-data .label-comprador {
+  font-size: 16px;
+  color: #910000;
+}
+.compras .detalle .resumen .opciones .form-compra .form-data .input-comprador {
+  background-color: #ffddd1;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  height: 25px;
+  padding: 15px;
+  margin: 5px;
+  width: 200px;
+  background-color: rgba(255, 96, 96, 0.3215686275);
+  padding: 17px;
+}
+.compras .detalle .resumen .opciones .form-compra button {
+  background-color: #ffddd1;
+  color: #ff6060;
+  font-weight: 600;
+  width: 180px;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+  font-weight: normal;
+  margin: 20px;
+  background-color: #ffefe9;
+  border: rgba(158, 0, 0, 0.0941176471) 1px solid;
+  font-weight: 600;
+}
+.compras .detalle .resumen .opciones .form-compra button:hover {
+  width: 185px;
+  height: 45px;
+  color: #fd3838;
+  background-color: #facebe;
+}
+.compras .detalle .resumen .opciones .form-compra button:hover {
+  background-color: rgba(158, 0, 0, 0.6980392157);
+  color: white;
 }
 .compras .detalle .deshabilitado {
   display: none;
