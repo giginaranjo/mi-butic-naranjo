@@ -65,7 +65,6 @@ const mostrarProductosEnBolsa = () => {
 
     });
 
-
     recargarBtn();
     montoTotal();
 }
@@ -90,7 +89,8 @@ function eliminarProducto(e) {
     localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
 }
 
-// Datos del formulario de compra y totales al localStorage
+
+// Datos del formulario de compra al localStorage
 
 let datosCompra;
 
@@ -101,24 +101,9 @@ if (localStorage.getItem("datos-comprador")) {
 }
 
 
-// Función para mostrar el monto total de la compra y almacenar cantidad y monto total
-
-class Totales {
-    constructor(cantidad, monto) {
-        this.cantidad = cantidad;
-        this.monto = monto;
-    }
-}
-
-function guardarTotales(cantidad, monto) {
-    let guardarTotal = new Totales(cantidad, monto)
-    datosCompra.push(guardarTotal)
-
-}
+// Función para mostrar el monto total de la compra 
 
 function montoTotal() {
-
-    const cantidadComprada = bolsaDeCompras.reduce((acc, producto) => acc + (producto.cantidad), 0)
 
     const totalidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)
     subtotal.innerText = `$ ${totalidad}`
@@ -128,49 +113,88 @@ function montoTotal() {
     const totalCompra = totalidad + 500
     total.innerText = `$ ${totalCompra}`
 
-    guardarTotales(cantidadComprada, totalCompra)
-    localStorage.setItem("datos-comprador", JSON.stringify(datosCompra));
+}
 
+
+// Función para generar un número de orden para cada pedido
+function numeroOrden(length) {
+    let orden = "";
+    let numAbc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (let i = 0; i < length; i++) {
+        orden += numAbc.charAt(Math.floor(Math.random() * numAbc.length));
+    }
+    return orden;
 }
 
 // Solicitar y guardar los datos de la compra
-
 class Comprador {
-    constructor(nombre, apellido, correo, celular, metodo) {
+    constructor(nombre, apellido, correo, celular, metodo,cantidad,monto,fecha,orden) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.celular = celular;
         this.metodo = metodo;
+        this.cantidad = cantidad;
+        this.monto = monto;
+        this.fecha = fecha;
+        this.orden = orden;
     }
 }
 
-function guardarDatos(nombre, apellido, correo, celular, metodo) {
-    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo)
+function guardarDatos(nombre, apellido, correo, celular, metodo,cantidad,monto,fecha,orden) {
+    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo,cantidad,monto,fecha,orden)
     datosCompra.push(datosComprador)
 }
 
 btnContinuar.addEventListener("click", pedirDatos)
 
 function pedirDatos() {
+    /* valores a guardar */
+    const cantidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.cantidad), 0)
+
+    const montoCompra = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)
+    const monto = montoCompra + 500;
+
+    const pedido = Date.now();
+    const fecha = new Date(pedido).toLocaleString();
     
+    const orden = numeroOrden(6)
+
+    /* selección de método de pago */
     formPago.addEventListener("submit", (e) => {
         e.preventDefault()
 
-        let metodo = document.getElementById("metodo").value
+        let metodoPago = document.getElementById("metodo").value
+
+        function pago() {
+            if (metodoPago == "1") {
+                return "Tarjeta de débito";
+                
+            }else if(metodoPago == "2"){
+                return "Tarjeta de crédito";
+            }else{
+                return "Transferencia";
+            }  
+        }
+
+        let metodo = pago() 
 
         adicional.classList.remove("deshabilitado")
         adicional.classList.add("adicional")
         btnContinuar.classList.add("deshabilitado")
+
+        /* form de datos comprador */
         formCompra.addEventListener("submit", (e) => {
             e.preventDefault()
 
-            let nombre = document.getElementById("nombre").value.trim().toLowerCase()
-            let apellido = document.getElementById("apellido").value.trim().toLowerCase()
-            let correo = document.getElementById("correo").value.trim().toLowerCase()
-            let celular = document.getElementById("celular").value
+            let nombre = document.getElementById("nombre").value.trim().toUpperCase()
+            let apellido = document.getElementById("apellido").value.trim().toUpperCase()
+            let correo = document.getElementById("correo").value.trim().toUpperCase()
+            let celular = document.getElementById("celular").value.trim()
 
-            guardarDatos(nombre, apellido, correo, celular, metodo)
+            /* guardado de información en el localStorage */
+
+            guardarDatos(nombre, apellido, correo, celular, metodo,cantidad,monto,fecha,orden)
             localStorage.setItem("datos-comprador", JSON.stringify(datosCompra));
 
             formCompra.classList.remove("form-compra")
@@ -209,14 +233,13 @@ btnComprar.addEventListener("click", comprarProductos)
 
 function comprarProductos() {
 
-
     if (bolsaDeCompras && bolsaDeCompras.length > 0) {
         bolsaDeCompras.length = 0;
         localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
 
         Swal.fire({
             title: "Tu compra ha sido efectuada con éxito.",
-            text: "Recibirás en tu correo electrónico el detalle de la compra. Te contactaremos para coordinar la entrega de los productos. \n Gracias por elegirnos :).",
+            text: "Recibirás en tu correo electrónico el detalle de la compra.  Te contactaremos para coordinar la entrega de los productos. \n Gracias por elegirnos :).",
             imageUrl: "../multimedia/imagenes/icono-carrito-de-compras.png",
             imageWidth: 200,
             imageHeight: 200,

@@ -7,8 +7,8 @@
     .pedidos {
         display: flex;
         flex-direction: column;
-        width: 90%;
-        height: 90%;
+        width: 80%;
+        height: 80%;
         gap: 30px;
 
 
@@ -53,7 +53,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 90%;
+                width: 75%;
                 border-bottom: 1px solid $bg-color;
 
                 .pares {
@@ -76,12 +76,14 @@
                 }
             }
 
-            .datos-del-pedido{
+            .datos-del-pedido {
                 display: flex;
                 justify-content: space-around;
-                width: 90%;
+                align-items: start;
+                width: 75%;
                 padding: 20px;
                 margin-bottom: 10px;
+
                 h3 {
                     color: $rosa;
                     font-size: 22px;
@@ -89,55 +91,51 @@
                     padding: 15px;
                 }
 
-                .datos-comprador{
-                    @include flex (center,start,column);
-                    .data{
+                h4 {
+                    color: $vino;
+                }
+
+                small {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: end;
+                    color: $vino;
+                    font-weight: 600;
+                }
+
+                .datos-comprador {
+                    @include flex (center, start, column);
+
+                    .data {
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
-                    }
 
-                    small {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: end;
-                        color: $vino;
-                        font-weight: 600;
+                        .pares {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                        }
                     }
-                    
                 }
 
-                .datos-compra{
-                    @include flex (center,start,column);
-                    .data{
+                .datos-compra {
+                    @include flex (center, start, column);
+
+                    .data {
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
-                    }
+                        .pares {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
 
-                    small {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: end;
-                        color: $vino;
-                        font-weight: 600;
-                    }
-
-                    .mostrar-pedido{
-                        @include boton (150px, 150px);
+                        }
                     }
                 }
-
-
             }
-
-
-
-
-
         }
     }
-
-
-
 }

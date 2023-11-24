@@ -1117,8 +1117,8 @@
 .historial .pedidos {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
   gap: 30px;
 }
 .historial .pedidos .titulo-pages {
@@ -1179,7 +1179,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 75%;
   border-bottom: 1px solid #ffddd1;
 }
 .historial .pedidos .tarjeta-pedido .info-compra .pares {
@@ -1201,7 +1201,8 @@
 .historial .pedidos .tarjeta-pedido .datos-del-pedido {
   display: flex;
   justify-content: space-around;
-  width: 90%;
+  align-items: start;
+  width: 75%;
   padding: 20px;
   margin-bottom: 10px;
 }
@@ -1210,6 +1211,16 @@
   font-size: 22px;
   font-weight: 600;
   padding: 15px;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido h4 {
+  color: #910000;
+}
+.historial .pedidos .tarjeta-pedido .datos-del-pedido small {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  color: #910000;
+  font-weight: 600;
 }
 .historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-comprador {
   display: flex;
@@ -1222,12 +1233,10 @@
   flex-direction: column;
   gap: 10px;
 }
-.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-comprador small {
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-comprador .data .pares {
   display: flex;
-  flex-direction: column;
-  align-items: end;
-  color: #910000;
-  font-weight: 600;
+  align-items: center;
+  gap: 10px;
 }
 .historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra {
   display: flex;
@@ -1240,30 +1249,10 @@
   flex-direction: column;
   gap: 10px;
 }
-.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra small {
+.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra .data .pares {
   display: flex;
-  flex-direction: column;
-  align-items: end;
-  color: #910000;
-  font-weight: 600;
-}
-.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra .mostrar-pedido {
-  background-color: #ffddd1;
-  color: #ff6060;
-  font-weight: 600;
-  width: 150px;
-  height: 40px;
-  margin: 10px;
-  padding: 5px;
-  border-radius: 15px;
-  border: none;
-  transition: 0.5s;
-}
-.historial .pedidos .tarjeta-pedido .datos-del-pedido .datos-compra .mostrar-pedido:hover {
-  width: 150px;
-  height: 45px;
-  color: #fd3838;
-  background-color: #facebe;
+  align-items: center;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
