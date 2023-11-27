@@ -119,9 +119,9 @@ function montoTotal() {
 // Función para generar un número de orden para cada pedido
 function numeroOrden(length) {
     let orden = "";
-    let numAbc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let numAbc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     for (let i = 0; i < length; i++) {
-        orden += numAbc.charAt(Math.floor(Math.random() * numAbc.length));
+        orden += numAbc[Math.floor(Math.random() * numAbc.length)];
     }
     return orden;
 }

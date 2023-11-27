@@ -28,7 +28,7 @@ const mostrarHistorial = (elemento = []) => {
         div.innerHTML = `
         <div id="info-compra" class="info-compra">
             <div class="pares">
-                <h3>N° de órden </h3>
+                <h3>N° de orden </h3>
                 <h4 id="orden">${data.orden}</h4>
             </div>
             <div class="pares">
@@ -74,7 +74,7 @@ const mostrarHistorial = (elemento = []) => {
                     </div>
                     <div class="pares">
                         <small>Monto total</small>
-                        <h4 id="monto-compra">${data.monto}</h4>
+                        <h4 id="monto-compra">$ ${data.monto}</h4>
                     </div>
                 </div>
             </div>
