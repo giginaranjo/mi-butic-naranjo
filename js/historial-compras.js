@@ -13,6 +13,7 @@ const listadoPedidos = document.getElementById("listado-pedidos");
 const formFiltro = document.getElementById("search");
 const btnCancelar = document.getElementById("cancel-filter");
 const inputfiltro = document.getElementById("busqueda");
+const noEncontrado = document.getElementById("no-encontrado");
 
 
 // Función para mostrar en pantalla los pedidos realizados en pantalla
@@ -65,6 +66,10 @@ const mostrarHistorial = (elemento = []) => {
                 <h3>Datos de la compra</h3>
                 <div class="data">
                     <div class="pares">
+                        <small>Dirección de envío</small>
+                        <h4 id="metodo-compra">${data.direccion}</h4>
+                    </div>
+                    <div class="pares">
                         <small>Método de pago</small>
                         <h4 id="metodo-compra">${data.metodo}</h4>
                     </div>
@@ -83,7 +88,8 @@ const mostrarHistorial = (elemento = []) => {
         </div> `;
 
         listadoPedidos.append(div);
-        
+        noEncontrado.innerText = "";
+
     });
 }
 
@@ -92,16 +98,20 @@ mostrarHistorial(datosCompra);
 
 /* Filtrado de pedidos por nombre, apellido u orden */
 
-function filtrado(palabraClave = "", busqueda = []){
+function filtrado(palabraClave = "", busqueda = []) {
     return busqueda.filter((pedido) => {
-        return (pedido.nombre.toUpperCase().includes(palabraClave.toUpperCase()) || pedido.apellido.toUpperCase().includes(palabraClave.toUpperCase()) || pedido.orden.toUpperCase().includes(palabraClave.toUpperCase()));
+        if (pedido.nombre.toUpperCase().includes(palabraClave.toUpperCase()) || pedido.apellido.toUpperCase().includes(palabraClave.toUpperCase()) || pedido.orden.toUpperCase().includes(palabraClave.toUpperCase())) {
+            return (pedido.nombre.toUpperCase().includes(palabraClave.toUpperCase()) || pedido.apellido.toUpperCase().includes(palabraClave.toUpperCase()) || pedido.orden.toUpperCase().includes(palabraClave.toUpperCase()));
+        }else{
+            noEncontrado.innerText = "No se encontraron pedidos.";
+        }
     });
 }
 
 formFiltro.addEventListener("submit", (e) => {
     e.preventDefault()
     const palabraClave = inputfiltro.value;
-    const resultado = filtrado(palabraClave, datosCompra) 
+    const resultado = filtrado(palabraClave, datosCompra)
     mostrarHistorial(resultado)
 });
 

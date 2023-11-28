@@ -16,25 +16,32 @@ const subtotal = document.getElementById("subtotal-compra");
 const envio = document.getElementById("envio");
 
 const formPago = document.getElementById("form-pago");
+const metodos = document.getElementById("metodo");
+const eleccion = document.getElementById("eleccion");
 const formCompra = document.getElementById("form-compra");
 const adicional = document.getElementById("adicional");
 
 let btnEliminarProducto = document.getElementsByClassName("btn-eliminar-producto");
 const btnContinuar = document.getElementById("continuar");
-const btnComprar = document.getElementById("comprar");
+
 
 
 // Función para mostrar en pantalla los productos seleccionados para comprar
 
 const mostrarProductosEnBolsa = () => {
+    if (bolsaDeCompras && bolsaDeCompras.length > 0) {
 
-    bolsaProductos.innerHTML = "";
+        bolsaVacia.classList.add("deshabilitado");
+        bolsaProductos.classList.remove("deshabilitado");
 
-    bolsaDeCompras.forEach(producto => {
 
-        const div = document.createElement("div");
-        div.classList.add("productos-agregados");
-        div.innerHTML = `
+        bolsaProductos.innerHTML = "";
+
+        bolsaDeCompras.forEach(producto => {
+
+            const div = document.createElement("div");
+            div.classList.add("productos-agregados");
+            div.innerHTML = `
         <div class="detalle-producto">
             <img src="${producto.imagen}" alt="${producto.id}">
             <div>
@@ -61,13 +68,21 @@ const mostrarProductosEnBolsa = () => {
         </div>
         `;
 
-        bolsaProductos.append(div);
+            bolsaProductos.append(div);
 
-    });
+        });
 
-    recargarBtn();
-    montoTotal();
+        recargarBtn();
+        montoTotal();
+
+    } else {
+        bolsaVacia.classList.remove("deshabilitado");
+        bolsaProductos.classList.add("deshabilitado");
+        reseteo()
+    }
 }
+
+mostrarProductosEnBolsa();
 
 
 // Función para eliminar de la bolsa productos seleccionados (individual)
@@ -81,7 +96,7 @@ function recargarBtn() {
 function eliminarProducto(e) {
 
     const idEliminarProducto = e.currentTarget.id;
-    const index = bolsaDeCompras.findIndex(producto => producto.id === idEliminarProducto)
+    const index = bolsaDeCompras.findIndex(producto => producto.id === idEliminarProducto);
     bolsaDeCompras.splice(index, 1);
 
     mostrarProductosEnBolsa();
@@ -105,13 +120,13 @@ if (localStorage.getItem("datos-comprador")) {
 
 function montoTotal() {
 
-    const totalidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)
-    subtotal.innerText = `$ ${totalidad}`
+    const totalidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+    subtotal.innerText = `$ ${totalidad}`;
 
-    envio.innerText = `$ 500`
+    envio.innerText = `$ 500`;
 
-    const totalCompra = totalidad + 500
-    total.innerText = `$ ${totalCompra}`
+    const totalCompra = totalidad + 500;
+    total.innerText = `$ ${totalCompra}`;
 
 }
 
@@ -126,9 +141,10 @@ function numeroOrden(length) {
     return orden;
 }
 
+
 // Solicitar y guardar los datos de la compra
 class Comprador {
-    constructor(nombre, apellido, correo, celular, metodo,cantidad,monto,fecha,orden) {
+    constructor(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -138,135 +154,155 @@ class Comprador {
         this.monto = monto;
         this.fecha = fecha;
         this.orden = orden;
+        this.direccion = direccion;
     }
 }
 
-function guardarDatos(nombre, apellido, correo, celular, metodo,cantidad,monto,fecha,orden) {
-    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo,cantidad,monto,fecha,orden)
-    datosCompra.push(datosComprador)
+function guardarDatos(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion) {
+    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion);
+    datosCompra.push(datosComprador);
 }
 
-btnContinuar.addEventListener("click", pedirDatos)
+btnContinuar.addEventListener("click", pedirDatos);
 
 function pedirDatos() {
     /* valores a guardar */
-    const cantidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.cantidad), 0)
+    const cantidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.cantidad), 0);
 
-    const montoCompra = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)
+    const montoCompra = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     const monto = montoCompra + 500;
 
     const pedido = Date.now();
     const fecha = new Date(pedido).toLocaleString();
-    
-    const orden = numeroOrden(6)
+
+    const orden = numeroOrden(6);
 
     /* selección de método de pago */
     formPago.addEventListener("submit", (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        let metodoPago = document.getElementById("metodo").value
+        if (bolsaDeCompras && bolsaDeCompras.length > 0) {
 
-        function pago() {
-            if (metodoPago == "1") {
-                return "Tarjeta de débito";
-                
-            }else if(metodoPago == "2"){
-                return "Tarjeta de crédito";
-            }else{
-                return "Transferencia";
-            }  
+            let metodoPago = document.getElementById("metodo").value;
+
+            function pago() {
+                if (metodoPago == "1") {
+                    return "Tarjeta de débito";
+
+                } else if (metodoPago == "2") {
+                    return "Tarjeta de crédito";
+                } else {
+                    return "Transferencia";
+                }
+            }
+
+            let metodo = pago();
+
+            adicional.classList.replace("deshabilitado", "adicional");
+            btnContinuar.classList.add("deshabilitado");
+            metodos.classList.add("deshabilitado");
+
+            eleccion.innerText = metodo;
+
+
+            /* form de datos comprador */
+            formCompra.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                if (bolsaDeCompras && bolsaDeCompras.length > 0) {
+
+                    let nombre = document.getElementById("nombre").value.trim().toUpperCase();
+                    let apellido = document.getElementById("apellido").value.trim().toUpperCase();
+                    let correo = document.getElementById("correo").value.trim().toUpperCase();
+                    let celular = document.getElementById("celular").value.trim();
+                    let direccion = document.getElementById("direccion").value.trim().toUpperCase();
+
+                    /* guardado de información en el localStorage */
+
+                    guardarDatos(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion);
+                    localStorage.setItem("datos-comprador", JSON.stringify(datosCompra));
+
+                    formCompra.classList.replace("form-compra", "deshabilitado");
+
+                    const p = document.createElement("p");
+                    p.classList.add("guardado");
+                    p.innerText = "La información ha sido guardada.";
+                    adicional.append(p);
+
+                    formCompra.reset();
+
+                    comprarProductos(); // Finaliza la compra
+
+                } else {
+                    reseteo()
+                    avisoBolsaVacia();
+                }
+
+            });
+
+        } else {
+            avisoBolsaVacia();
         }
 
-        let metodo = pago() 
-
-        adicional.classList.remove("deshabilitado")
-        adicional.classList.add("adicional")
-        btnContinuar.classList.add("deshabilitado")
-
-        /* form de datos comprador */
-        formCompra.addEventListener("submit", (e) => {
-            e.preventDefault()
-
-            let nombre = document.getElementById("nombre").value.trim().toUpperCase()
-            let apellido = document.getElementById("apellido").value.trim().toUpperCase()
-            let correo = document.getElementById("correo").value.trim().toUpperCase()
-            let celular = document.getElementById("celular").value.trim()
-
-            /* guardado de información en el localStorage */
-
-            guardarDatos(nombre, apellido, correo, celular, metodo,cantidad,monto,fecha,orden)
-            localStorage.setItem("datos-comprador", JSON.stringify(datosCompra));
-
-            formCompra.classList.remove("form-compra")
-            formCompra.classList.add("deshabilitado")
-
-            const p = document.createElement("p");
-            p.classList.add("guardado");
-            p.innerText = "La información ha sido guardada."
-            adicional.append(p);
-
-            formCompra.reset()
-
-        })
-
-    })
+    });
 
 }
 
 
-// Determinación de qué se mostrará en pantalla
-
-if (bolsaDeCompras && bolsaDeCompras.length > 0) {
-    bolsaVacia.classList.add("deshabilitado")
-    bolsaProductos.classList.remove("deshabilitado")
-    mostrarProductosEnBolsa();
-} else {
-    bolsaVacia.classList.remove("deshabilitado")
-    bolsaProductos.classList.add("deshabilitado")
-}
-
-
-// Función para finalizar compra (Muestra mensaje de despedida)
-
-btnComprar.addEventListener("click", comprarProductos)
-
+// Función para realizar la compra.
 
 function comprarProductos() {
 
-    if (bolsaDeCompras && bolsaDeCompras.length > 0) {
-        bolsaDeCompras.length = 0;
-        localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
+    bolsaDeCompras.length = 0;
+    localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
 
-        Swal.fire({
-            title: "Tu compra ha sido efectuada con éxito.",
-            text: "Recibirás en tu correo electrónico el detalle de la compra.  Te contactaremos para coordinar la entrega de los productos. \n Gracias por elegirnos :).",
-            imageUrl: "../multimedia/imagenes/icono-carrito-de-compras.png",
-            imageWidth: 200,
-            imageHeight: 200,
-            imageAlt: "compra-finalizada"
-        });
+    Swal.fire({
+        title: "Tu compra ha sido efectuada con éxito.",
+        text: "Recibirás en tu correo electrónico el detalle de la compra.  Te contactaremos para coordinar la entrega de los productos. \n Gracias por elegirnos :).",
+        imageUrl: "../multimedia/imagenes/icono-carrito-de-compras.png",
+        imageWidth: 200,
+        imageHeight: 200,
+        imageAlt: "compra-finalizada"
+    });
 
-        bolsaVacia.classList.remove("deshabilitado")
-        bolsaProductos.classList.add("deshabilitado")
-        subtotal.innerText = `$ 0`
-        envio.innerText = `$ 0`
-        total.innerText = `$ 0`
-        adicional.classList.add("deshabilitado")
-        adicional.classList.remove("adicional")
-        formCompra.classList.add("form-compra")
-        formCompra.classList.remove("deshabilitado")
-        btnContinuar.classList.remove("deshabilitado")
+    bolsaVacia.classList.remove("deshabilitado");
+    bolsaProductos.classList.add("deshabilitado");
+    subtotal.innerText = `$ 0`;
+    envio.innerText = `$ 0`;
+    total.innerText = `$ 0`;
+    eleccion.innerText = "";
+    adicional.classList.replace("adicional", "deshabilitado");
+    formCompra.classList.replace("deshabilitado", "form-compra");
+    btnContinuar.classList.remove("deshabilitado");
+    metodos.classList.remove("deshabilitado");
 
-    } else {
-        Swal.fire({
-            title: "Oops... Tu bolsa se encuentra vacía.",
-            text: "Te invitamos a revisar nuestro listado de productos :)",
-            imageUrl: "../multimedia/imagenes/bolsa-de-la-compra-vacia.png",
-            imageWidth: 100,
-            imageHeight: 100,
-            imageAlt: "bolsa-vacia",
-            footer: '<a href="../paginas/productos.html">Productos</a>'
-        });
-    }
+}
 
+// Función que avisa que la bolsa de compras está vacía.
+
+function avisoBolsaVacia() {
+    Swal.fire({
+        title: "Oops... Tu bolsa se encuentra vacía.",
+        text: "Te invitamos a revisar nuestro listado de productos :)",
+        imageUrl: "../multimedia/imagenes/bolsa-de-la-compra-vacia.png",
+        imageWidth: 100,
+        imageHeight: 100,
+        imageAlt: "bolsa-vacia",
+        footer: '<a href="../paginas/productos.html">Productos</a>'
+    });
+}
+
+
+// Función de reseteo al vaciar la bolsa de compras.
+
+function reseteo() {
+    subtotal.innerText = `$ 0`;
+    envio.innerText = `$ 0`;
+    total.innerText = `$ 0`;
+    eleccion.innerText = "";
+    metodos.classList.remove("deshabilitado");
+
+    formCompra.classList.replace("form-compra", "deshabilitado");
+    adicional.classList.replace("adicional", "deshabilitado");
+    btnContinuar.classList.remove("deshabilitado");
 }

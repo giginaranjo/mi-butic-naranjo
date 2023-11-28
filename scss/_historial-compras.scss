@@ -11,6 +11,12 @@
         height: 80%;
         gap: 30px;
 
+        #no-encontrado {
+            color: $rosa;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 10px 0px;
+        }
 
         .titulo-pages {
             margin: 30px 0px;
@@ -127,6 +133,7 @@
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
+
                         .pares {
                             display: flex;
                             align-items: center;

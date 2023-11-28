@@ -187,6 +187,17 @@
                                 border: none;
                                 border-radius: 5px;
                             }
+
+                            p {
+                                font-size: 24px;
+                                margin: 5px;
+                                color: $vino;
+                            }
+
+                            small {
+                                font-weight: 600;
+                            }
+
                         }
 
                         .total-compra {
@@ -251,46 +262,35 @@
                                 padding: 17px;
                             }
 
+                            .direccion {
+                                height: 130px;
+                            }
+
 
                         }
 
                         .btn-guardar {
-                            background-color: #fce5dc;
-                            color: $rosa;
-                            font-weight: 600;
-                            width: 180px;
-                            height: 45px;
-                            margin: 10px;
-                            padding: 5px;
-                            border-radius: 15px;
-                            border: #9e000018 1px solid;
-                        }
-
-
-                    }
-
-                    button {
-                        @include boton (180px, 190px);
-                        font-weight: normal;
-                        margin: 20px;
-                        background-color: #9e0000b2;
-                        border: #9e000018 1px solid;
-                        font-weight: 600;
-                        color: white;
-                        height: 45px;
-
-                        &:hover {
+                            @include boton (180px, 190px);
+                            font-weight: normal;
+                            margin: 20px;
                             background-color: #9e0000b2;
+                            border: #9e000018 1px solid;
+                            font-weight: 600;
                             color: white;
-                            height: 50px;
+                            height: 45px;
+
+                            &:hover {
+                                background-color: #9e0000b2;
+                                color: white;
+                                height: 50px;
+                            }
                         }
+
                     }
+
                 }
 
-
             }
-
-
 
         }
 

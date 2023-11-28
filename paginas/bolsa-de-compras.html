@@ -127,12 +127,13 @@
 
                         <form id="form-pago" class="form-pago">
                             <div class="metodo-pago">
-                                <label for="metodo" class="label-metodo">Método de pago:</label>
+                                <label for="metodo" class="label-metodo">Método de pago: <small id="eleccion"></small></label>
                                 <select name="metodo" id="metodo" class="metodo">
                                     <option value="1">Tarjeta de débito</option>
                                     <option value="2">Tarjeta de crédito</option>
                                     <option value="3">Transferencia</option>
                                 </select>
+                                
                             </div>
 
                             <div class="total-compra">
@@ -147,7 +148,7 @@
                     </div>
                     <div id="adicional" class="deshabilitado">
                         <form id="form-compra" class="form-compra">
-                            <h3 class="titulo-datos-contacto">DATOS DE CONTACTO</h3>
+                            <h3 class="titulo-datos-contacto">DATOS DE ENVÍO</h3>
                             <div class="form-data">
                                 <div>
                                     <label for="nombre" class="label-comprador">Nombre:</label>
@@ -155,7 +156,8 @@
                                 </div>
                                 <div>
                                     <label for="apellido" class="label-comprador">Apellido:</label>
-                                    <input type="text" id="apellido" class="input-comprador" autocomplete="off" required>
+                                    <input type="text" id="apellido" class="input-comprador" autocomplete="off"
+                                        required>
                                 </div>
                                 <div>
                                     <label for="correo" class="label-comprador">Correo electrónico:</label>
@@ -163,16 +165,18 @@
                                 </div>
                                 <div>
                                     <label for="celular" class="label-comprador">Celular:</label>
-                                    <input type="number"  id="celular" class="input-comprador" min="100000000" max="99999999999" autocomplete="off" required>
+                                    <input type="number" id="celular" class="input-comprador" min="100000000" maxlength="11" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" autocomplete="off" required>
+                                </div>
+                                <div>
+                                    <label for="direccion" class="label-comprador"> Dirección de envío: </label>
+                                    <textarea name="direccion" id="direccion" class="input-comprador direccion"  cols="20" rows="5" autocomplete="off" required></textarea>
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn-guardar">Guardar información</button>
-
+                            <button type="submit" class="btn-guardar">Finalizar compra</button>
 
                         </form>
 
-                        <button id="comprar" class="boton">Finalizar compra</button>
                     </div>
 
 
