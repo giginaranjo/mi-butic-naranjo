@@ -231,7 +231,7 @@ function pedirDatos() {
 
                     formCompra.reset();
 
-                    comprarProductos(); // Finaliza la compra
+                    comprarProductos(); // ------ Finaliza la compra -------
 
                 } else {
                     reseteo()
@@ -257,8 +257,8 @@ function comprarProductos() {
     localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
 
     Swal.fire({
-        title: "Tu compra ha sido efectuada con éxito.",
-        text: "Recibirás en tu correo electrónico el detalle de la compra.  Te contactaremos para coordinar la entrega de los productos. \n Gracias por elegirnos :).",
+        title: "Gracias por tu compra :)",
+        text: "Te contactaremos para coordinar la entrega de los productos.",
         imageUrl: "../multimedia/imagenes/icono-carrito-de-compras.png",
         imageWidth: 200,
         imageHeight: 200,
