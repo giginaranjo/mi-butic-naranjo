@@ -105,14 +105,22 @@ function eliminarProducto(e) {
 }
 
 
-// Datos del formulario de compra al localStorage
+// Variables para almacenar localStorage
 
-let datosCompra;
+let datosCompra; // ------ Datos a mostrar en el historial
 
 if (localStorage.getItem("datos-comprador")) {
     datosCompra = JSON.parse(localStorage.getItem("datos-comprador"));
 } else {
     datosCompra = [];
+}
+
+let productosComprados; // ------ Productos comprados
+
+if (localStorage.getItem("productos-comprados")) {
+    productosComprados = JSON.parse(localStorage.getItem("productos-comprados"));
+} else {
+    productosComprados = [];
 }
 
 
@@ -144,7 +152,7 @@ function numeroOrden(length) {
 
 // Solicitar y guardar los datos de la compra
 class Comprador {
-    constructor(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion) {
+    constructor(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion, detalleCompra) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -155,27 +163,18 @@ class Comprador {
         this.fecha = fecha;
         this.orden = orden;
         this.direccion = direccion;
+        this.detalleCompra = detalleCompra;
     }
 }
 
-function guardarDatos(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion) {
-    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion);
+function guardarDatos(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion, detalleCompra) {
+    let datosComprador = new Comprador(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion, detalleCompra);
     datosCompra.push(datosComprador);
 }
 
 btnContinuar.addEventListener("click", pedirDatos);
 
 function pedirDatos() {
-    /* valores a guardar */
-    const cantidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.cantidad), 0);
-
-    const montoCompra = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-    const monto = montoCompra + 500;
-
-    const pedido = Date.now();
-    const fecha = new Date(pedido).toLocaleString();
-
-    const orden = numeroOrden(6);
 
     /* selección de método de pago */
     formPago.addEventListener("submit", (e) => {
@@ -217,10 +216,26 @@ function pedirDatos() {
                     let celular = document.getElementById("celular").value.trim();
                     let direccion = document.getElementById("direccion").value.trim().toUpperCase();
 
+                    /* valores a guardar */
+                    const cantidad = bolsaDeCompras.reduce((acc, producto) => acc + (producto.cantidad), 0);
+
+                    const montoCompra = bolsaDeCompras.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+                    const monto = montoCompra + 500;
+
+                    const pedido = Date.now();
+                    const fecha = new Date(pedido).toLocaleString();
+
+                    const orden = numeroOrden(6);
+
+                    const detalleCompra = bolsaDeCompras;
+                    productosComprados.push(detalleCompra)
+
                     /* guardado de información en el localStorage */
 
-                    guardarDatos(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion);
-                    localStorage.setItem("datos-comprador", JSON.stringify(datosCompra));
+                    guardarDatos(nombre, apellido, correo, celular, metodo, cantidad, monto, fecha, orden, direccion, detalleCompra);
+
+                    localStorage.setItem("datos-comprador", JSON.stringify(datosCompra)); // ------- Almacenamiento para historial
+                    localStorage.setItem("productos-comprados", JSON.stringify(productosComprados)); // ----- Almacenamiento de productos comprados
 
                     formCompra.classList.replace("form-compra", "deshabilitado");
 
@@ -252,7 +267,6 @@ function pedirDatos() {
 // Función para realizar la compra.
 
 function comprarProductos() {
-
     bolsaDeCompras.length = 0;
     localStorage.setItem("productos-agregados-a-bolsa", JSON.stringify(bolsaDeCompras));
 
@@ -267,15 +281,7 @@ function comprarProductos() {
 
     bolsaVacia.classList.remove("deshabilitado");
     bolsaProductos.classList.add("deshabilitado");
-    subtotal.innerText = `$ 0`;
-    envio.innerText = `$ 0`;
-    total.innerText = `$ 0`;
-    eleccion.innerText = "";
-    adicional.classList.replace("adicional", "deshabilitado");
-    formCompra.classList.replace("deshabilitado", "form-compra");
-    btnContinuar.classList.remove("deshabilitado");
-    metodos.classList.remove("deshabilitado");
-
+    reseteo();
 }
 
 // Función que avisa que la bolsa de compras está vacía.
